@@ -12,7 +12,7 @@ elo_ratings = {team: 1500 for team in standings_df['Team Name']}
 def update_elo(elo_ratings, team1, team2, winner, k=32):
     rating1 = elo_ratings[team1]
     rating2 = elo_ratings[team2]
-    expected1 = 1 / (1 + 10 ** ((rating2 - rating1) / 400))
+    expected1 = 1 / (1 + 10 ** ((rating2 - rating1) / 32))
 
     if winner == team1:
         score1, score2 = 1, 0
@@ -55,3 +55,4 @@ def predict_matchup(team1, team2, elo_ratings):
 # Run the simulation and prediction
 simulate_games(standings_df, elo_ratings)
 predict_matchup('Los Angeles Dodgers', 'New York Mets', elo_ratings)
+predict_matchup('New York Mets', 'Los Angeles Dodgers', elo_ratings)
