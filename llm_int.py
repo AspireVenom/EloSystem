@@ -70,6 +70,22 @@ for _, row in standings_df.iterrows():
     for _ in range(losses):
         opponent = random.choice(opponents)
         synthetic_matches.append((team_idx, opponent, opponent))  # team lost
+# Reverse the index mapping: index → team name
+idx_to_team = {idx: name for name, idx in team_to_idx.items()}
+
+# Prepare rows for CSV
+csv_rows = []
+for team1_idx, team2_idx, winner_idx in synthetic_matches:
+    team1 = idx_to_team[team1_idx]
+    team2 = idx_to_team[team2_idx]
+    winner = idx_to_team[winner_idx]
+    csv_rows.append([team1, team2, winner])
+
+# Write to CSV
+with open("synthetic_matches.csv", mode="w", newline='', encoding="utf-8") as file:
+    writer = csv.writer(file)
+    writer.writerow(["Team A", "Team B", "Winner"])
+    writer.writerows(csv_rows)
 
 # Training function
 def train_elo(matches, epochs=300):
