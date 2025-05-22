@@ -1,31 +1,31 @@
-Team Abbreviation,Team Name,Wins,Losses
-NYY,New York Yankees,19,15
-BOS,Boston Red Sox,18,18
-TB,Tampa Bay Rays,16,18
-TOR,Toronto Blue Jays,16,18
-BAL,Baltimore Orioles,13,20
-DET,Detroit Tigers,22,13
-CLE,Cleveland Guardians,20,14
-KC,Kansas City Royals,19,16
-MIN,Minnesota Twins,15,20
-CHW,Chicago White Sox,10,24
-SEA,Seattle Mariners,20,13
-ATH,Athletics,19,16
-HOU,Houston Astros,17,16
-TEX,Texas Rangers,17,18
-LAA,Los Angeles Angels,13,20
-NYM,New York Mets,22,13
-PHI,Philadelphia Phillies,19,15
-WSH,Washington Nationals,16,19
-ATL,Atlanta Braves,15,18
-MIA,Miami Marlins,13,20
-CHC,Chicago Cubs,21,14
-CIN,Cincinnati Reds,18,17
-MIL,Milwaukee Brewers,17,18
-STL,St. Louis Cardinals,16,19
-PIT,Pittsburgh Pirates,12,23
-LAD,Los Angeles Dodgers,23,11
-SD,San Diego Padres,22,11
-SF,San Francisco Giants,22,13
-ARI,Arizona Diamondbacks,18,16
-COL,Colorado Rockies,6,28
+Team,Wins,Losses,Division Rank
+New York Yankees,29,19,1
+Toronto Blue Jays,24,24,2
+Boston Red Sox,25,26,3
+Tampa Bay Rays,23,26,4
+Baltimore Orioles,16,32,5
+Detroit Tigers,33,17,1
+Minnesota Twins,27,22,2
+Kansas City Royals,28,23,3
+Cleveland Guardians,26,22,4
+Chicago White Sox,15,35,5
+Seattle Mariners,28,20,1
+Houston Astros,25,24,2
+Texas Rangers,25,25,3
+Los Angeles Angels,23,25,4
+Athletics,22,28,5
+Philadelphia Phillies,31,18,1
+New York Mets,30,20,2
+Atlanta Braves,24,24,3
+Washington Nationals,22,27,4
+Miami Marlins,19,29,5
+Chicago Cubs,30,20,1
+St. Louis Cardinals,27,23,2
+Cincinnati Reds,25,26,3
+Milwaukee Brewers,24,26,4
+Pittsburgh Pirates,17,33,5
+Los Angeles Dodgers,31,19,1
+San Francisco Giants,29,21,2
+San Diego Padres,27,20,3
+Arizona Diamondbacks,26,24,4
+Colorado Rockies,8,41,5

@@ -3,14 +3,44 @@ import torch
 import torch.optim as optim
 import torch.nn.functional as F
 import random
+import requests
+import csv
 from pathlib import Path
 
-# Load standings data
+
+
+url = "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2025"
+
+response = requests.get(url)
+data = response.json()
+
+standings_data = []
+
+for record in data['records']:
+    for team_record in record['teamRecords']:
+        try:
+            team_name = team_record['team']['name']
+            wins = team_record['wins']
+            losses = team_record['losses']
+            division = team_record['divisionRank']  # Use division rank if division name is missing
+            standings_data.append([team_name, wins, losses, division])
+        except KeyError:
+            continue
+
+# Save to CSV
+with open("mlb_standings.csv", mode="w", newline='', encoding="utf-8") as file:
+    writer = csv.writer(file)
+    writer.writerow(["Team", "Wins", "Losses", "Division Rank"])
+    writer.writerows(standings_data)
+
+# print("✅ Data saved to mlb_standings.csv")
+
+
 file_path = Path("mlb_standings.csv")
 standings_df = pd.read_csv(file_path)
 
-# Team index mapping
-teams = standings_df['Team Name'].tolist()
+
+teams = standings_df['Team'].tolist()
 team_to_idx = {team: idx for idx, team in enumerate(teams)}
 num_teams = len(teams)
 
@@ -21,14 +51,14 @@ torch.nn.init.constant_(elo_ratings.weight, 1500.0)
 # Optimizer
 optimizer = optim.Adam(elo_ratings.parameters(), lr=0.1)
 
-# Elo probability function
+
 def elo_probability(rating1, rating2):
     return 1 / (1 + 10 ** ((rating2 - rating1) / 400))
 
-# Generate synthetic match data from standings
+
 synthetic_matches = []
 for _, row in standings_df.iterrows():
-    team_idx = team_to_idx[row['Team Name']]
+    team_idx = team_to_idx[row['Team']]
     wins = int(row['Wins'])
     losses = int(row['Losses'])
     opponents = [i for i in range(num_teams) if i != team_idx]
@@ -65,10 +95,9 @@ def train_elo(matches, epochs=300):
         if (epoch + 1) % 50 == 0 or epoch == 0:
             print(f"Epoch {epoch + 1}: Loss = {total_loss:.4f}")
 
-# Run training
 train_elo(synthetic_matches)
 
-# Get trained Elo ratings
+
 trained_ratings = {team: elo_ratings(torch.tensor(idx)).item() for team, idx in team_to_idx.items()}
 
 import ace_tools_open as tools; tools.display_dataframe_to_user(name="Trained Elo Ratings", dataframe=pd.DataFrame.from_dict(trained_ratings, orient='index', columns=['Elo Rating']).sort_values(by='Elo Rating', ascending=False))
