@@ -1,11 +1,9 @@
-# Let's adjust the provided code based on the user's CSV file structure
 import pandas as pd
 import random
 
-# Load the standings data from the provided CSV file
+
 standings_df = pd.read_csv('mlb_standings.csv')
 
-# Initialize Elo ratings using team names from the CSV
 elo_ratings = {team: 1500 for team in standings_df['Team Name']}
 
 # Function to update Elo ratings after each game
@@ -54,5 +52,5 @@ def predict_matchup(team1, team2, elo_ratings):
 
 # Run the simulation and prediction
 simulate_games(standings_df, elo_ratings)
-predict_matchup('Los Angeles Dodgers', 'New York Mets', elo_ratings)
-predict_matchup('New York Mets', 'Los Angeles Dodgers', elo_ratings)
+# predict_matchup('Los Angeles Dodgers', 'New York Mets', elo_ratings)
+# predict_matchup('New York Mets', 'Los Angeles Dodgers', elo_ratings)
