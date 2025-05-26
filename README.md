@@ -160,7 +160,6 @@ F.binary_cross_entropy(pred, target, weight=...)
 - Synthetic matches do not reflect real MLB scheduling constraints beyond division grouping.
 - No use of home-field advantage, starting pitchers, or player-level features yet.
 - Real 2025 standings data is not used to initialize Elo — all teams start at 1500.
-- Doesn't persist model state across sessions (you re-train from scratch).
 - Interactive app does not yet support time-based Elo evolution.
 
 ---
