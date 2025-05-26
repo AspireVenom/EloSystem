@@ -2,6 +2,7 @@ import csv
 import random
 from pathlib import Path
 
+import matplotlib.pyplot as plt
 import pandas as pd
 import requests
 import torch
@@ -9,11 +10,11 @@ import torch.nn.functional as F
 import torch.optim as optim
 
 GAME_OUTCOME_URL = (
-    "https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2024&gameType=R"
+    "https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2025&gameType=R"
 )
 outcomeResponse = requests.get(GAME_OUTCOME_URL)
 outcomeData = outcomeResponse.json()
-url = "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2024"
+url = "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2025"
 response = requests.get(url)
 data = response.json()
 
@@ -236,3 +237,20 @@ final_ratings = {
 final_df = pd.DataFrame(final_ratings.items(), columns=["Team", "Elo Rating"])
 final_df = final_df.sort_values(by="Elo Rating", ascending=False)
 final_df.to_csv("final_elo_ratings.csv", index=False)
+
+elo_df = pd.read_csv("final_elo_ratings.csv")
+standings_df = pd.read_csv("mlb_standings.csv")
+
+merged = pd.merge(elo_df, standings_df, on="Team")
+
+plt.figure(figsize=(8, 6))
+plt.scatter(merged["Wins"], merged["Elo Rating"], color="dodgerblue")
+for i in range(len(merged)):
+    plt.text(merged["Wins"][i], merged["Elo Rating"][i], merged["Team"][i], fontsize=8)
+
+plt.xlabel("Wins (2025)")
+plt.ylabel("Elo Rating (2025)")
+plt.title("Elo vs Actual Wins — Over/Underrated Teams")
+plt.grid(True)
+plt.tight_layout()
+plt.show()
