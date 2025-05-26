@@ -78,12 +78,12 @@ num_teams = len(teams)
 # Initialize PyTorch Elo model
 elo_ratings = torch.nn.Embedding(num_teams, 1)
 torch.nn.init.constant_(elo_ratings.weight, 1500.0)
-optimizer = optim.SGD(elo_ratings.parameters(), lr=0.01)
+optimizer = optim.Adam(elo_ratings.parameters(), lr=0.01)
 
 
 def elo_probability(r1, r2):
-    """elo formula"""
-    return 1 / (1 + 10 ** ((r2 - r1) / 400))
+    """Elo formula using natural log for better stability"""
+    return 1 / (1 + torch.exp((r2 - r1) * torch.log(torch.tensor(10.0)) / 400))
 
 
 def generate_synthetic_matches(matches_per_pair=10):
@@ -130,53 +130,59 @@ fixed_matches = generate_synthetic_matches(matches_per_pair=10)
 
 
 def train_on_synthetic_matches(matches, epochs=1000):
-    """Train on the matches that we created in the fn generate_synthetic_matches"""
     for epoch in range(epochs):
         total_loss = 0.0
         random.shuffle(matches)
         optimizer.zero_grad()
-        for team1_idx, team2_idx, winner_idx in matches:
-            rating1 = elo_ratings(torch.tensor(team1_idx))
-            rating2 = elo_ratings(torch.tensor(team2_idx))
-            pred = elo_probability(rating1, rating2)
 
+        for team1_idx, team2_idx, winner_idx in matches:
+            team1_tensor = torch.tensor([team1_idx], dtype=torch.long)
+            team2_tensor = torch.tensor([team2_idx], dtype=torch.long)
+
+            rating1 = elo_ratings(team1_tensor)
+            rating2 = elo_ratings(team2_tensor)
+
+            pred = elo_probability(rating1, rating2)
             target = (
-                torch.tensor([1.0]) if winner_idx == team1_idx else torch.tensor([0.0])
+                torch.tensor([[1.0]])
+                if winner_idx == team1_idx
+                else torch.tensor([[0.0]])
             )
 
-            # Add Elo gap weighting
-            elo_gap = abs(rating1.item() - rating2.item())
-            weight = 1.0 + (elo_gap / 400)
+            # Detach weight to prevent gradient computation
+            elo_gap = torch.abs(rating1 - rating2)
+            weight = (1.0 + (elo_gap / 100)).detach()
 
-            loss = F.binary_cross_entropy(pred, target, weight=torch.tensor([weight]))
+            loss = F.binary_cross_entropy(pred, target, weight=weight)
             loss.backward()
             total_loss += loss.item()
 
         optimizer.step()
         optimizer.zero_grad()
+
         if (epoch + 1) % 100 == 0 or epoch == 0:
-            print(f"Epoch {epoch + 1}: Loss = {total_loss:.4f}")
+            print(f"[Synthetic] Epoch {epoch + 1}: Loss = {total_loss:.4f}")
 
 
 def train_on_real_matches(matches, epochs=1000):
-    """Train Elo model using real match outcomes (historical games)"""
     for epoch in range(epochs):
         total_loss = 0.0
         random.shuffle(matches)
         optimizer.zero_grad()
 
         for team1_idx, team2_idx, winner_idx in matches:
-            rating1 = elo_ratings(torch.tensor(team1_idx))
+            rating1 = elo_ratings(torch.tensor(team1_idx))  # team1_idx defined here
             rating2 = elo_ratings(torch.tensor(team2_idx))
 
             pred = elo_probability(rating1, rating2)
+
             target = (
                 torch.tensor([1.0]) if winner_idx == team1_idx else torch.tensor([0.0])
             )
 
-            # Optional: use lower weight than synthetic since real data is trusted
-            elo_gap = abs(rating1.item() - rating2.item())
-            weight = 1.0 + (elo_gap / 400)
+            # Use raw values only for gap, not for training
+            elo_gap = torch.abs(rating1 - rating2)
+            weight = 1.0 + (elo_gap / 100)
 
             loss = F.binary_cross_entropy(pred, target, weight=torch.tensor([weight]))
             loss.backward()
@@ -184,7 +190,6 @@ def train_on_real_matches(matches, epochs=1000):
 
         optimizer.step()
         optimizer.zero_grad()
-
         if (epoch + 1) % 100 == 0 or epoch == 0:
             print(f"[Real Matches] Epoch {epoch + 1}: Loss = {total_loss:.4f}")
 
