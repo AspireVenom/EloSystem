@@ -143,6 +143,7 @@ python app.py
 ```
 
 Predicts the probability that team 1 beats team 2 based on current ratings.
+Also Considers home team Advante (_new!_)
 
 ### Loss Function
 
@@ -158,7 +159,6 @@ F.binary_cross_entropy(pred, target, weight=...)
 ## Known Limitations
 
 - Synthetic matches do not reflect real MLB scheduling constraints beyond division grouping.
-- No use of home-field advantage, starting pitchers, or player-level features yet.
 - Real 2025 standings data is not used to initialize Elo — all teams start at 1500.
 - Interactive app does not yet support time-based Elo evolution.
 
