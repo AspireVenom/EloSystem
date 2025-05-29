@@ -1,22 +1,25 @@
 import csv
 import os
 import random
-from pathlib import Path
 
-import matplotlib.pyplot as plt
 import pandas as pd
 import requests
 import torch
 import torch.nn.functional as F
 import torch.optim as optim
 
-RETRAIN = False  # Set to True to force retraining
+RETRAIN = True  # Set to True to force retraining
 
 # --- Fetch API Data ---
 GAME_OUTCOME_URL = (
     "https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2025&gameType=R"
 )
 STANDINGS_URL = "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2025"
+
+# -- HOME TEAM ADVANTAGE --
+HOME_ADVANTAGE = (
+    50  # Adjust this value experimentally (typical range: 40–100 Elo points)
+)
 
 # --- DEFAULT DIVISIONS FOR TEAMS
 TEAM_TO_DIVISION = {
@@ -52,9 +55,8 @@ TEAM_TO_DIVISION = {
     "San Francisco Giants": "NL West",
 }
 
-
-outcome_data = requests.get(GAME_OUTCOME_URL).json()
-standings_data_api = requests.get(STANDINGS_URL).json()
+outcome_data = requests.get(GAME_OUTCOME_URL, timeout=10).json()
+standings_data_api = requests.get(STANDINGS_URL, timeout=10).json()
 
 # --- Parse Standings Data ---
 standings_data = []
@@ -129,7 +131,7 @@ else:
 
 # --- Elo Probability ---
 def elo_probability(r1, r2):
-    return 1 / (1 + torch.exp((r2 - r1) * torch.log(torch.tensor(10.0)) / 400))
+    return 1 / (1 + torch.exp((r2 - r1) * torch.log(torch.tensor(10.0)) / 50))
 
 
 # --- Match Generators ---
@@ -141,21 +143,27 @@ def generate_synthetic_matches(matches_per_pair=10):
 
     for division_name, team_names in division_groups.items():
         team_indices = [team_to_idx[team] for team in team_names if team in team_to_idx]
-
-        for i in range(len(team_indices)):
-            for j in range(len(team_indices)):
+        for i, team1 in enumerate(team_indices):
+            for j, team2 in enumerate(team_indices):
                 if i == j:
                     continue
 
-                team1 = team_indices[i]
-                team2 = team_indices[j]
-
                 for _ in range(matches_per_pair):
+                    is_home_team1 = random.choice([True, False])  # randomly choose home
+
+                    # Apply home boost accordingly
                     rating1 = elo_ratings(torch.tensor(team1)).item()
                     rating2 = elo_ratings(torch.tensor(team2)).item()
+
+                    if is_home_team1:
+                        rating1 += HOME_ADVANTAGE
+                    else:
+                        rating2 += HOME_ADVANTAGE
+
                     prob1 = elo_probability(rating1, rating2)
                     winner = team1 if random.random() < prob1 else team2
-                    matches.append((team1, team2, winner))
+
+                    matches.append((team1, team2, winner, is_home_team1))
 
     return matches
 
@@ -167,12 +175,15 @@ def generate_real_matches(game_data):
         away = game["Away Team"]
         home_score = game["Home Score"]
         away_score = game["Away Score"]
+
         if home not in team_to_idx or away not in team_to_idx:
             continue
-        team1 = team_to_idx[home]
-        team2 = team_to_idx[away]
+
+        team1 = team_to_idx[home]  # home
+        team2 = team_to_idx[away]  # away
         winner = team1 if home_score > away_score else team2
-        matches.append((team1, team2, winner))
+
+        matches.append((team1, team2, winner, True))  # last value = is_home_team1
     return matches
 
 
@@ -182,7 +193,7 @@ def train_on_matches(matches, epochs, label):
         total_loss = 0.0
         random.shuffle(matches)
         optimizer.zero_grad()
-        for team1_idx, team2_idx, winner_idx in matches:
+        for team1_idx, team2_idx, winner_idx, is_home_team1 in matches:
             team1_tensor = torch.tensor([team1_idx], dtype=torch.long)
             team2_tensor = torch.tensor([team2_idx], dtype=torch.long)
             rating1 = elo_ratings(team1_tensor)
