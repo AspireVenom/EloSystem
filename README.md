@@ -2,28 +2,36 @@
 
 ## Overview
 
-This program builds an Elo-based rating system for Major League Baseball (MLB) teams using real 2025 game outcomes from the [MLB Stats API](https://statsapi.mlb.com) and synthetic match simulations. The goal is to estimate team strength dynamically and visualize the evolution of ratings.
+This program builds a dynamic **Elo-based rating system** for Major League Baseball (MLB) teams using real 2025 game outcomes from the [MLB Stats API](https://statsapi.mlb.com), along with a post-training match simulation engine.
 
-It follows a **three-phase training strategy**:
+The system now focuses exclusively on **training using real match outcomes**, ensuring stable and interpretable Elo values. Synthetic matches are generated **after training**, using Elo probabilities to simulate full-season outcomes.
 
-1. **Real match training** from actual game outcomes.
-2. **Synthetic match simulation** based on Elo probabilities (now restricted to intra-division matchups).
-3. **Post-training visualization** comparing Elo after each phase.
+---
+
+## 🔍 Key Changes from Previous Version
+
+- 🔁 **Real-only training**: Elo is trained _only_ on actual 2025 game results.
+- ⚖️ **Batch learning with PyTorch**: Uses embedding layers + gradient-based updates with gap-weighted loss.
+- 🎯 **Home-field advantage** built into probability: +28.2 Elo points added to home teams.
+- 🔢 **Post-training synthetic season**: Simulates outcomes for all scheduled 2025 games.
+- 📈 **Dash-based visualization**: Interactive web UI comparing Elo ratings and simulated wins.
 
 ---
 
 ## Features
 
-- Retrieves real match outcomes via MLB API.
-- Downloads current team standings and division information.
-- Initializes all team Elo ratings at 1500.
-- Trains Elo ratings on actual games (2025 season).
-- Generates synthetic matches **only within the same division** to better reflect scheduling logic.
-- Saves CSV snapshots of Elo after each training phase.
-- Visualizes Elo changes with:
+- Fetches real 2025 MLB results & standings via API.
+- Initializes all Elo ratings to 1500.
+- Trains using only real, final game outcomes.
+- Applies gap-weighted binary cross-entropy loss.
+- Simulates full 2025 season schedule based on trained Elo probabilities.
+- Saves results:
 
-  - Side-by-side bar charts using Matplotlib.
-  - A full-screen interactive scatterplot using Dash and Plotly.
+  - Per-match synthetic outcomes
+  - Team standings from simulations
+  - Final Elo ratings
+
+- Visualizes Elo vs Wins using Dash + Plotly.
 
 ---
 
@@ -33,104 +41,80 @@ It follows a **three-phase training strategy**:
 - `requests`
 - `pandas`
 - `torch`
-- `matplotlib`
 - `dash`
 - `plotly`
-- `numpy`
 
-Install dependencies via:
+Install:
 
 ```bash
-pip install requests pandas torch matplotlib dash plotly numpy
+pip install requests pandas torch dash plotly
 ```
 
 ---
 
 ## Data Sources
 
-- **Team Standings (2025):**
+- **Game Results:**
+  `https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2025&gameType=R`
 
-  ```
-  https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2025
-  ```
+- **Future Schedule for Simulation:**
+  `https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2025-03-28&endDate=2025-09-28`
 
-- **Real Match Results (2025):**
-
-  ```
-  https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2025&gameType=R
-  ```
+- **Team Standings:**
+  `https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2025`
 
 ---
 
 ## File Outputs
 
-- `mlb_standings.csv`: Team names, win/loss records, division rank, and division name.
-- `mlb_game_results.csv`: Historical game results with scores.
-- `elo_after_real_training.csv`: Elo ratings after only real-match training.
-- `final_elo_ratings.csv`: Final Elo ratings after both real and synthetic training.
-- _(Optional)_ `elo_rating_comparison.png`: Side-by-side bar chart of rating shifts.
+| File                           | Description                                  |
+| ------------------------------ | -------------------------------------------- |
+| `mlb_standings.csv`            | Actual team standings data from API          |
+| `mlb_game_results.csv`         | Game-by-game results from real 2025 season   |
+| `final_elo_ratings.csv`        | Trained Elo ratings after real-only training |
+| `simulated_future_matches.csv` | Simulated outcomes of full 2025 season       |
+| `simulated_standings.csv`      | Team-level wins/losses from simulation       |
 
 ---
 
 ## Program Flow
 
-### 1. Data Collection
+### 1. Load Data
 
-- **Standings:** Fetches team stats and stores them in `mlb_standings.csv`.
-- **Game Outcomes:** Iterates over daily games and stores final game results in `mlb_game_results.csv`.
+- Pulls real results + standings from MLB Stats API
+- Initializes team rating embeddings
 
-### 2. Preprocessing
-
-- Builds a team name-to-index mapping for Elo matrix.
-- Initializes all Elo scores to 1500.
-- Uses PyTorch `Embedding` to represent team ratings.
-
-### 3. Elo Training
-
-#### A. Real Matches Training
+### 2. Train Elo Ratings
 
 ```python
-train_on_real_matches(real_matches, epochs=1000)
+train_on_matches(real_matches, epochs=10000)
 ```
 
-- Each match outcome updates the predicted win probability via the Elo formula.
-- Uses weighted binary cross-entropy loss where weight is based on Elo gap.
-- Trained ratings saved to `elo_after_real_training.csv`.
+- Uses batch training with PyTorch
+- Applies home-field advantage as Elo offset
+- Uses gap-weighted binary cross-entropy loss
+- Saves ratings to `final_elo_ratings.csv`
 
-#### B. Synthetic Match Simulation (Intra-Division Only)
+### 3. Simulate 2025 Season
 
 ```python
-generate_synthetic_matches(matches_per_pair=10)
-train_on_synthetic_matches(synthetic_matches, epochs=500)
+generate_synthetic_matches_from_schedule()
 ```
 
-- Generates N synthetic matches **only between teams in the same division** using current Elo ratings.
-- Repeats training using these synthetic match outcomes to refine scores.
+- Uses real MLB 2025 schedule
+- Applies trained Elo ratings to calculate win probabilities
+- Simulates winner via `random.random() < P_win`
+- Saves full match outcomes to `simulated_future_matches.csv`
 
-### 4. Output
-
-- Saves post-training Elo ratings to `final_elo_ratings.csv`.
-
-### 5. Visualization
-
-#### A. Static Plot (Matplotlib)
+### 4. Generate Simulated Standings
 
 ```python
-import matplotlib.pyplot as plt
+generate_standings_from_simulated_matches()
 ```
 
-- Compares Elo ratings **after real match training** vs **after full training** with a grouped bar chart.
-
-#### B. Interactive App (Dash)
-
-```bash
-python app.py
-```
-
-- Runs a full-screen web app showing a scatterplot of Elo vs Wins.
-- Allows users to select a team and highlight it dynamically.
-- Includes jitter to prevent overlapping points.
-- Dropdown floats on top of the chart for convenience.
+- Tallies win/loss records per team
+- Sorts and ranks by division
+- Outputs to `simulated_standings.csv`
 
 ---
 
@@ -139,11 +123,11 @@ python app.py
 ### `elo_probability(r1, r2)`
 
 ```python
-1 / (1 + exp((r2 - r1) * ln(10) / 400))
+1 / (1 + 10^((r2 - r1) / 400))
 ```
 
-Predicts the probability that team 1 beats team 2 based on current ratings.
-Also Considers home team Advante (_new!_)
+- Predicts win probability for team 1
+- Elo difference includes +28.2 for home advantage
 
 ### Loss Function
 
@@ -151,30 +135,51 @@ Also Considers home team Advante (_new!_)
 F.binary_cross_entropy(pred, target, weight=...)
 ```
 
-- Targets are 1.0 if team1 wins, else 0.0.
-- `weight` increases proportionally with Elo rating gap.
+- `target = 1.0` if team 1 wins, else `0.0`
+- `weight = 1 + (|r1 - r2| / 50)` to emphasize confident errors
+
+---
+
+## Visualization
+
+### 📊 Dash App
+
+Run the interactive dashboard:
+
+```bash
+python app.py
+```
+
+It displays:
+
+- Bar chart of **Relative Elo Ratings (Elo − 1500)**
+- Bar chart of **Simulated Wins**
+- Division-based color grouping
+- Hover tooltips with full team info
 
 ---
 
 ## Known Limitations
 
-- Synthetic matches do not reflect real MLB scheduling constraints beyond division grouping.
-- Real 2025 standings data is not used to initialize Elo — all teams start at 1500.
-- Interactive app does not yet support time-based Elo evolution.
+- Elo does not yet incorporate time decay or prior season context.
+- Schedule simulation assumes all games play out (no cancellations).
+- Only team Elo is used — no player-level or stat-based inputs.
 
 ---
 
-## Potential Improvements
+## Future Improvements
 
-- Add home-field advantage modifier.
-- Integrate starting pitcher WAR or ERA as additional factors.
-- Use historical team ratings as priors instead of flat 1500.
-- Add seasonal decay to prevent overfitting to early-season games.
-- Incorporate team-level stats like run differential or batting average.
-- Add time-series Elo trendlines in the Dash app.
+- Add rolling Elo tracking over time
+- Integrate starter pitcher or lineup data
+- Visualize match-level predictions with confidence intervals
+- Add time-decayed training and seasonal resets
+- Build playoff simulation using simulated standings
 
 ---
 
 ## Conclusion
 
-This program is a scalable foundation for rating MLB teams using Elo logic. It intelligently combines real and synthetic match data to dynamically adjust team strengths and outputs visualizations — both static and interactive — to monitor rating changes.
+This project models MLB team performance using real match data and an Elo-based probabilistic engine.
+With PyTorch embeddings and simulation logic built-in, it creates a flexible platform for exploring team dynamics, match predictions, and analytics visualization.
+
+Feel free to explore or fork the repo to test new ideas in ranking systems, probability modeling, or sports analytics.
