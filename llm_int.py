@@ -14,7 +14,7 @@ RETRAIN = True  # Set to True to force retraining
 GAME_OUTCOME_URL = (
     "https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2025&gameType=R"
 )
-STANDINGS_URL = "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2025"
+STANDINGS_URL = "https://statsapi.mlb.com/api/v0/standings?leagueId=103,104&season=2025"
 
 SCHEDULE = "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2025-03-28&endDate=2025-09-28"
 

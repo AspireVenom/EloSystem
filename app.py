@@ -10,8 +10,8 @@ standings_df = pd.read_csv(
 )  # Team, Wins, Losses, Division Rank, Division Name
 
 # Add relative Elo and round
-elo_df["Relative Elo"] = elo_df["Elo Rating"] - 1500
-elo_df["Elo Rating"] = elo_df["Elo Rating"].round(1)
+mean_elo = elo_df["Elo Rating"].mean()
+elo_df["Relative Elo"] = elo_df["Elo Rating"] - mean_elo
 
 # Merge on Team
 merged_df = pd.merge(elo_df, standings_df, on="Team")
