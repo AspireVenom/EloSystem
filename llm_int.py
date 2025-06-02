@@ -16,10 +16,10 @@ GAME_OUTCOME_URL = (
 )
 STANDINGS_URL = "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2025"
 
+SCHEDULE = "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2025-03-28&endDate=2025-09-28"
+
 # -- HOME TEAM ADVANTAGE --
-HOME_ADVANTAGE = (
-    50  # Adjust this value experimentally (typical range: 40–100 Elo points)
-)
+HOME_ADVANTAGE = 28.2
 
 # --- DEFAULT DIVISIONS FOR TEAMS
 TEAM_TO_DIVISION = {
@@ -53,10 +53,31 @@ TEAM_TO_DIVISION = {
     "Los Angeles Dodgers": "NL West",
     "San Diego Padres": "NL West",
     "San Francisco Giants": "NL West",
+    "Athletics": "NL West",
 }
 
 outcome_data = requests.get(GAME_OUTCOME_URL, timeout=10).json()
 standings_data_api = requests.get(STANDINGS_URL, timeout=10).json()
+
+
+# --- Parse games from the schedule
+def fetch_future_schedule():
+    url = "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2025-03-28&endDate=2025-09-28"
+    response = requests.get(url, timeout=10).json()
+
+    future_games = []
+    for date_info in response.get("dates", []):
+        for game in date_info.get("games", []):
+            home = game.get("teams", {}).get("home", {}).get("team", {}).get("name")
+            away = game.get("teams", {}).get("away", {}).get("team", {}).get("name")
+
+            if home and away and home in team_to_idx and away in team_to_idx:
+                future_games.append(
+                    (team_to_idx[home], team_to_idx[away])
+                )  # return indices
+
+    return future_games
+
 
 # --- Parse Standings Data ---
 standings_data = []
@@ -119,7 +140,7 @@ idx_to_team = {idx: team for team, idx in team_to_idx.items()}
 num_teams = len(teams)
 
 elo_ratings = torch.nn.Embedding(num_teams, 1)
-optimizer = optim.Adam(elo_ratings.parameters(), lr=0.01)
+optimizer = optim.Adam(elo_ratings.parameters(), lr=0.05)
 
 if os.path.exists("elo_model.pt") and not RETRAIN:
     print("Loading saved Elo model...")
@@ -135,37 +156,131 @@ def elo_probability(r1, r2):
 
 
 # --- Match Generators ---
-def generate_synthetic_matches(matches_per_pair=10):
-    matches = []
 
-    # Group teams by division name
-    division_groups = standings_df.groupby("Division Name")["Team"].apply(list)
 
-    for division_name, team_names in division_groups.items():
-        team_indices = [team_to_idx[team] for team in team_names if team in team_to_idx]
-        for i, team1 in enumerate(team_indices):
-            for j, team2 in enumerate(team_indices):
-                if i == j:
-                    continue
+def train_on_matches(matches, epochs, label, batch_size=64):
+    match_tensor = torch.tensor(matches, dtype=torch.long)
+    for epoch in range(epochs):
+        total_loss = 0.0
+        match_tensor = match_tensor[torch.randperm(len(match_tensor))]  # shuffle
 
-                for _ in range(matches_per_pair):
-                    is_home_team1 = random.choice([True, False])  # randomly choose home
+        for batch_start in range(0, len(match_tensor), batch_size):
+            batch = match_tensor[batch_start : batch_start + batch_size]
 
-                    # Apply home boost accordingly
-                    rating1 = elo_ratings(torch.tensor(team1)).item()
-                    rating2 = elo_ratings(torch.tensor(team2)).item()
+            team1_idx = batch[:, 0]
+            team2_idx = batch[:, 1]
+            winner_idx = batch[:, 2]
+            is_home_team1 = batch[:, 3].bool()
 
-                    if is_home_team1:
-                        rating1 += HOME_ADVANTAGE
-                    else:
-                        rating2 += HOME_ADVANTAGE
+            rating1 = elo_ratings(team1_idx)
+            rating2 = elo_ratings(team2_idx)
 
-                    prob1 = elo_probability(rating1, rating2)
-                    winner = team1 if random.random() < prob1 else team2
+            # Apply home advantage
+            rating1 += HOME_ADVANTAGE * is_home_team1.unsqueeze(1)
+            rating2 += HOME_ADVANTAGE * (~is_home_team1).unsqueeze(1)
 
-                    matches.append((team1, team2, winner, is_home_team1))
+            pred = elo_probability(rating1, rating2)
 
-    return matches
+            # Create target: 1 if winner is team1 else 0
+            target = (winner_idx == team1_idx).float().unsqueeze(1)
+
+            elo_gap = torch.abs(rating1 - rating2)
+            weight = (1.0 + (elo_gap / 50)).detach()
+
+            loss = F.binary_cross_entropy(pred, target, weight=weight)
+
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+
+            total_loss += loss.item()
+
+        if (epoch + 1) % 100 == 0 or epoch == 0:
+            print(f"[{label}] Epoch {epoch + 1}: Loss = {total_loss:.4f}")
+
+
+def generate_synthetic_matches_from_schedule():
+    scheduled_games = fetch_future_schedule()
+    synthetic_matches = []
+
+    for home_idx, away_idx in scheduled_games:
+        # Get Elo ratings
+        r_home = elo_ratings(torch.tensor([home_idx])).item()
+        r_away = elo_ratings(torch.tensor([away_idx])).item()
+
+        # Apply home field advantage
+        r_home += HOME_ADVANTAGE
+
+        # Calculate probability that home team wins
+        prob_home_win = elo_probability(r_home, r_away)
+
+        # Simulate a winner based on probability
+        winner = home_idx if random.random() < prob_home_win else away_idx
+
+        # Append match: (home_team_idx, away_team_idx, winner_idx, is_home_team1=True)
+        synthetic_matches.append((home_idx, away_idx, winner, True))
+
+    return synthetic_matches
+
+
+# --- SAVE data from the synthetic matches predicted post elo
+def save_synthetic_matches_to_csv(matches, filename="simulated_future_matches.csv"):
+    rows = []
+    for team1, team2, winner, is_home_team1 in matches:
+        rows.append(
+            {
+                "Home Team": idx_to_team[team1],
+                "Away Team": idx_to_team[team2],
+                "Winner": idx_to_team[winner],
+                "Home Win": idx_to_team[winner] == idx_to_team[team1],
+            }
+        )
+
+    df = pd.DataFrame(rows)
+    df.to_csv(filename, index=False)
+    print(f"✅ Saved {len(matches)} simulated matches to {filename}")
+
+
+def generate_standings_from_simulated_matches(matches):
+    team_records = {team: {"Wins": 0, "Losses": 0} for team in teams}
+
+    for team1, team2, winner, _ in matches:
+        team1_name = idx_to_team[team1]
+        team2_name = idx_to_team[team2]
+        winner_name = idx_to_team[winner]
+
+        if winner_name == team1_name:
+            team_records[team1_name]["Wins"] += 1
+            team_records[team2_name]["Losses"] += 1
+        else:
+            team_records[team2_name]["Wins"] += 1
+            team_records[team1_name]["Losses"] += 1
+
+    # Add division info
+    rows = []
+    for team in teams:
+        division = TEAM_TO_DIVISION.get(team, "Unknown")
+        wins = team_records[team]["Wins"]
+        losses = team_records[team]["Losses"]
+        rows.append([team, wins, losses, division])
+
+    standings_df = pd.DataFrame(
+        rows, columns=["Team", "Wins", "Losses", "Division Name"]
+    )
+
+    # Assign division ranks
+    standings_df["Division Rank"] = (
+        standings_df.groupby("Division Name")["Wins"]
+        .rank(ascending=False, method="dense")
+        .astype(int)
+    )
+
+    # Reorder columns
+    standings_df = standings_df[
+        ["Team", "Wins", "Losses", "Division Rank", "Division Name"]
+    ]
+
+    return standings_df
 
 
 def generate_real_matches(game_data):
@@ -187,42 +302,11 @@ def generate_real_matches(game_data):
     return matches
 
 
-# --- Trainers ---
-def train_on_matches(matches, epochs, label):
-    for epoch in range(epochs):
-        total_loss = 0.0
-        random.shuffle(matches)
-        optimizer.zero_grad()
-        for team1_idx, team2_idx, winner_idx, is_home_team1 in matches:
-            team1_tensor = torch.tensor([team1_idx], dtype=torch.long)
-            team2_tensor = torch.tensor([team2_idx], dtype=torch.long)
-            rating1 = elo_ratings(team1_tensor)
-            rating2 = elo_ratings(team2_tensor)
-            pred = elo_probability(rating1, rating2)
-            target = (
-                torch.tensor([[1.0]])
-                if winner_idx == team1_idx
-                else torch.tensor([[0.0]])
-            )
-            elo_gap = torch.abs(rating1 - rating2)
-            weight = (1.0 + (elo_gap / 50)).detach()
-            loss = F.binary_cross_entropy(pred, target, weight=weight)
-            loss.backward()
-            total_loss += loss.item()
-        optimizer.step()
-        optimizer.zero_grad()
-        if (epoch + 1) % 100 == 0 or epoch == 0:
-            print(f"[{label}] Epoch {epoch + 1}: Loss = {total_loss:.4f}")
-
-
 # --- Run Training ---
 if not os.path.exists("elo_model.pt") or RETRAIN:
     print("Training Elo model...")
     real_matches = generate_real_matches(games)
-    train_on_matches(real_matches, epochs=1000, label="Real Matches")
-    synthetic_matches = generate_synthetic_matches(matches_per_pair=10)
-    train_on_matches(synthetic_matches, epochs=500, label="Synthetic Matches")
-
+    train_on_matches(real_matches, epochs=10000, label="Real Matches")
     print("Saving Elo model...")
     torch.save(elo_ratings.state_dict(), "elo_model.pt")
 
@@ -233,5 +317,11 @@ if not os.path.exists("elo_model.pt") or RETRAIN:
     final_df = final_df.sort_values(by="Elo Rating", ascending=False)
     final_df.to_csv("final_elo_ratings.csv", index=False)
 
-else:
-    print("Skipping training — Elo model already exists.")
+#  Generate synthetic outcomes for future real schedule
+print("Simulating real MLB 2025 scheduled games with Elo-based winners...")
+
+standings_from_sim = generate_standings_from_simulated_matches(
+    generate_synthetic_matches_from_schedule()
+)
+standings_from_sim.to_csv("simulated_standings.csv", index=False)
+print("Saved simulated standings to simulated_standings.csv")

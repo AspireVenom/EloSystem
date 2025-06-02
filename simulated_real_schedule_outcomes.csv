@@ -1,0 +1,2435 @@
+Home Team,Away Team,Winner,Home Win
+Tampa Bay Rays,Colorado Rockies,Tampa Bay Rays,True
+Toronto Blue Jays,Baltimore Orioles,Toronto Blue Jays,True
+Miami Marlins,Pittsburgh Pirates,Miami Marlins,True
+Texas Rangers,Boston Red Sox,Texas Rangers,True
+Houston Astros,New York Mets,Houston Astros,True
+Arizona Diamondbacks,Chicago Cubs,Chicago Cubs,False
+Seattle Mariners,Athletics,Seattle Mariners,True
+San Diego Padres,Atlanta Braves,San Diego Padres,True
+Los Angeles Dodgers,Detroit Tigers,Los Angeles Dodgers,True
+New York Yankees,Milwaukee Brewers,New York Yankees,True
+Chicago White Sox,Los Angeles Angels,Chicago White Sox,True
+St. Louis Cardinals,Minnesota Twins,St. Louis Cardinals,True
+Toronto Blue Jays,Baltimore Orioles,Toronto Blue Jays,True
+Washington Nationals,Philadelphia Phillies,Washington Nationals,True
+Kansas City Royals,Cleveland Guardians,Cleveland Guardians,False
+Cincinnati Reds,San Francisco Giants,San Francisco Giants,False
+Tampa Bay Rays,Colorado Rockies,Tampa Bay Rays,True
+Miami Marlins,Pittsburgh Pirates,Miami Marlins,True
+Texas Rangers,Boston Red Sox,Texas Rangers,True
+Houston Astros,New York Mets,New York Mets,False
+San Diego Padres,Atlanta Braves,Atlanta Braves,False
+Arizona Diamondbacks,Chicago Cubs,Arizona Diamondbacks,True
+Los Angeles Dodgers,Detroit Tigers,Los Angeles Dodgers,True
+Seattle Mariners,Athletics,Seattle Mariners,True
+Washington Nationals,Philadelphia Phillies,Washington Nationals,True
+New York Yankees,Milwaukee Brewers,New York Yankees,True
+Toronto Blue Jays,Baltimore Orioles,Toronto Blue Jays,True
+Cincinnati Reds,San Francisco Giants,Cincinnati Reds,True
+Tampa Bay Rays,Colorado Rockies,Tampa Bay Rays,True
+Miami Marlins,Pittsburgh Pirates,Miami Marlins,True
+Kansas City Royals,Cleveland Guardians,Kansas City Royals,True
+Chicago White Sox,Los Angeles Angels,Chicago White Sox,True
+St. Louis Cardinals,Minnesota Twins,St. Louis Cardinals,True
+Texas Rangers,Boston Red Sox,Texas Rangers,True
+Arizona Diamondbacks,Chicago Cubs,Arizona Diamondbacks,True
+Seattle Mariners,Athletics,Seattle Mariners,True
+San Diego Padres,Atlanta Braves,San Diego Padres,True
+Chicago White Sox,Minnesota Twins,Minnesota Twins,False
+Milwaukee Brewers,Kansas City Royals,Milwaukee Brewers,True
+Baltimore Orioles,Boston Red Sox,Baltimore Orioles,True
+Philadelphia Phillies,Colorado Rockies,Philadelphia Phillies,True
+Cincinnati Reds,Texas Rangers,Cincinnati Reds,True
+Miami Marlins,New York Mets,New York Mets,False
+Tampa Bay Rays,Pittsburgh Pirates,Pittsburgh Pirates,False
+Toronto Blue Jays,Washington Nationals,Toronto Blue Jays,True
+St. Louis Cardinals,Los Angeles Angels,St. Louis Cardinals,True
+Houston Astros,San Francisco Giants,San Francisco Giants,False
+San Diego Padres,Cleveland Guardians,San Diego Padres,True
+Seattle Mariners,Detroit Tigers,Seattle Mariners,True
+Athletics,Chicago Cubs,Chicago Cubs,False
+Los Angeles Dodgers,Atlanta Braves,Los Angeles Dodgers,True
+Cincinnati Reds,Texas Rangers,Cincinnati Reds,True
+Miami Marlins,New York Mets,Miami Marlins,True
+Tampa Bay Rays,Pittsburgh Pirates,Tampa Bay Rays,True
+New York Yankees,Arizona Diamondbacks,New York Yankees,True
+Toronto Blue Jays,Washington Nationals,Toronto Blue Jays,True
+Chicago White Sox,Minnesota Twins,Minnesota Twins,False
+Milwaukee Brewers,Kansas City Royals,Milwaukee Brewers,True
+St. Louis Cardinals,Los Angeles Angels,St. Louis Cardinals,True
+Houston Astros,San Francisco Giants,Houston Astros,True
+San Diego Padres,Cleveland Guardians,San Diego Padres,True
+Seattle Mariners,Detroit Tigers,Seattle Mariners,True
+Athletics,Chicago Cubs,Athletics,True
+Los Angeles Dodgers,Atlanta Braves,Los Angeles Dodgers,True
+Cincinnati Reds,Texas Rangers,Cincinnati Reds,True
+Tampa Bay Rays,Pittsburgh Pirates,Tampa Bay Rays,True
+Milwaukee Brewers,Kansas City Royals,Milwaukee Brewers,True
+St. Louis Cardinals,Los Angeles Angels,St. Louis Cardinals,True
+Chicago White Sox,Minnesota Twins,Minnesota Twins,False
+Toronto Blue Jays,Washington Nationals,Washington Nationals,False
+Athletics,Chicago Cubs,Chicago Cubs,False
+San Diego Padres,Cleveland Guardians,San Diego Padres,True
+Seattle Mariners,Detroit Tigers,Seattle Mariners,True
+Houston Astros,San Francisco Giants,Houston Astros,True
+Miami Marlins,New York Mets,Miami Marlins,True
+Baltimore Orioles,Boston Red Sox,Baltimore Orioles,True
+Philadelphia Phillies,Colorado Rockies,Philadelphia Phillies,True
+New York Yankees,Arizona Diamondbacks,New York Yankees,True
+Los Angeles Dodgers,Atlanta Braves,Los Angeles Dodgers,True
+Baltimore Orioles,Boston Red Sox,Boston Red Sox,False
+Philadelphia Phillies,Colorado Rockies,Philadelphia Phillies,True
+Minnesota Twins,Houston Astros,Minnesota Twins,True
+New York Yankees,Arizona Diamondbacks,New York Yankees,True
+Milwaukee Brewers,Cincinnati Reds,Milwaukee Brewers,True
+Detroit Tigers,Chicago White Sox,Detroit Tigers,True
+Boston Red Sox,St. Louis Cardinals,St. Louis Cardinals,False
+Chicago Cubs,San Diego Padres,Chicago Cubs,True
+New York Mets,Toronto Blue Jays,New York Mets,True
+Colorado Rockies,Athletics,Colorado Rockies,True
+Pittsburgh Pirates,New York Yankees,Pittsburgh Pirates,True
+San Francisco Giants,Seattle Mariners,San Francisco Giants,True
+Washington Nationals,Arizona Diamondbacks,Washington Nationals,True
+Philadelphia Phillies,Los Angeles Dodgers,Philadelphia Phillies,True
+Atlanta Braves,Miami Marlins,Atlanta Braves,True
+Kansas City Royals,Baltimore Orioles,Kansas City Royals,True
+Texas Rangers,Tampa Bay Rays,Texas Rangers,True
+Milwaukee Brewers,Cincinnati Reds,Milwaukee Brewers,True
+Los Angeles Angels,Cleveland Guardians,Los Angeles Angels,True
+Detroit Tigers,Chicago White Sox,Detroit Tigers,True
+Minnesota Twins,Houston Astros,Minnesota Twins,True
+Chicago Cubs,San Diego Padres,Chicago Cubs,True
+Washington Nationals,Arizona Diamondbacks,Washington Nationals,True
+Philadelphia Phillies,Los Angeles Dodgers,Philadelphia Phillies,True
+Pittsburgh Pirates,New York Yankees,New York Yankees,False
+Kansas City Royals,Baltimore Orioles,Baltimore Orioles,False
+Texas Rangers,Tampa Bay Rays,Tampa Bay Rays,False
+New York Mets,Toronto Blue Jays,New York Mets,True
+Milwaukee Brewers,Cincinnati Reds,Cincinnati Reds,False
+Atlanta Braves,Miami Marlins,Atlanta Braves,True
+Colorado Rockies,Athletics,Athletics,False
+San Francisco Giants,Seattle Mariners,San Francisco Giants,True
+Los Angeles Angels,Cleveland Guardians,Los Angeles Angels,True
+Boston Red Sox,St. Louis Cardinals,St. Louis Cardinals,False
+Washington Nationals,Arizona Diamondbacks,Washington Nationals,True
+Boston Red Sox,St. Louis Cardinals,Boston Red Sox,True
+Boston Red Sox,St. Louis Cardinals,St. Louis Cardinals,False
+Philadelphia Phillies,Los Angeles Dodgers,Philadelphia Phillies,True
+Pittsburgh Pirates,New York Yankees,Pittsburgh Pirates,True
+New York Mets,Toronto Blue Jays,New York Mets,True
+Detroit Tigers,Chicago White Sox,Detroit Tigers,True
+Kansas City Royals,Baltimore Orioles,Kansas City Royals,True
+Minnesota Twins,Houston Astros,Minnesota Twins,True
+Milwaukee Brewers,Cincinnati Reds,Milwaukee Brewers,True
+Chicago Cubs,San Diego Padres,Chicago Cubs,True
+Texas Rangers,Tampa Bay Rays,Texas Rangers,True
+Colorado Rockies,Athletics,Colorado Rockies,True
+San Francisco Giants,Seattle Mariners,San Francisco Giants,True
+Los Angeles Angels,Cleveland Guardians,Los Angeles Angels,True
+Atlanta Braves,Miami Marlins,Atlanta Braves,True
+Detroit Tigers,New York Yankees,Detroit Tigers,True
+Pittsburgh Pirates,St. Louis Cardinals,Pittsburgh Pirates,True
+Washington Nationals,Los Angeles Dodgers,Los Angeles Dodgers,False
+Boston Red Sox,Toronto Blue Jays,Boston Red Sox,True
+New York Mets,Miami Marlins,New York Mets,True
+Chicago Cubs,Texas Rangers,Chicago Cubs,True
+Kansas City Royals,Minnesota Twins,Kansas City Royals,True
+Arizona Diamondbacks,Baltimore Orioles,Arizona Diamondbacks,True
+Seattle Mariners,Houston Astros,Seattle Mariners,True
+San Francisco Giants,Cincinnati Reds,San Francisco Giants,True
+Athletics,San Diego Padres,San Diego Padres,False
+Detroit Tigers,New York Yankees,New York Yankees,False
+Cleveland Guardians,Chicago White Sox,Cleveland Guardians,True
+New York Mets,Miami Marlins,New York Mets,True
+Pittsburgh Pirates,St. Louis Cardinals,St. Louis Cardinals,False
+Washington Nationals,Los Angeles Dodgers,Washington Nationals,True
+Boston Red Sox,Toronto Blue Jays,Toronto Blue Jays,False
+Tampa Bay Rays,Los Angeles Angels,Tampa Bay Rays,True
+Atlanta Braves,Philadelphia Phillies,Philadelphia Phillies,False
+Chicago Cubs,Texas Rangers,Chicago Cubs,True
+Kansas City Royals,Minnesota Twins,Kansas City Royals,True
+Colorado Rockies,Milwaukee Brewers,Milwaukee Brewers,False
+Arizona Diamondbacks,Baltimore Orioles,Arizona Diamondbacks,True
+Seattle Mariners,Houston Astros,Houston Astros,False
+San Francisco Giants,Cincinnati Reds,San Francisco Giants,True
+Athletics,San Diego Padres,San Diego Padres,False
+Pittsburgh Pirates,St. Louis Cardinals,Pittsburgh Pirates,True
+New York Mets,Miami Marlins,New York Mets,True
+Detroit Tigers,New York Yankees,New York Yankees,False
+Chicago Cubs,Texas Rangers,Chicago Cubs,True
+Athletics,San Diego Padres,San Diego Padres,False
+Arizona Diamondbacks,Baltimore Orioles,Baltimore Orioles,False
+San Francisco Giants,Cincinnati Reds,San Francisco Giants,True
+Washington Nationals,Los Angeles Dodgers,Washington Nationals,True
+Seattle Mariners,Houston Astros,Seattle Mariners,True
+Cleveland Guardians,Chicago White Sox,Cleveland Guardians,True
+Boston Red Sox,Toronto Blue Jays,Toronto Blue Jays,False
+Tampa Bay Rays,Los Angeles Angels,Los Angeles Angels,False
+Atlanta Braves,Philadelphia Phillies,Philadelphia Phillies,False
+Kansas City Royals,Minnesota Twins,Kansas City Royals,True
+Colorado Rockies,Milwaukee Brewers,Milwaukee Brewers,False
+Tampa Bay Rays,Los Angeles Angels,Tampa Bay Rays,True
+Cleveland Guardians,Chicago White Sox,Cleveland Guardians,True
+Kansas City Royals,Minnesota Twins,Kansas City Royals,True
+Colorado Rockies,Milwaukee Brewers,Colorado Rockies,True
+Boston Red Sox,Toronto Blue Jays,Boston Red Sox,True
+Atlanta Braves,Philadelphia Phillies,Atlanta Braves,True
+Cleveland Guardians,Kansas City Royals,Kansas City Royals,False
+Cincinnati Reds,Pittsburgh Pirates,Cincinnati Reds,True
+Tampa Bay Rays,Atlanta Braves,Atlanta Braves,False
+New York Yankees,San Francisco Giants,New York Yankees,True
+Miami Marlins,Washington Nationals,Miami Marlins,True
+Chicago White Sox,Boston Red Sox,Chicago White Sox,True
+Houston Astros,Los Angeles Angels,Houston Astros,True
+Minnesota Twins,Detroit Tigers,Minnesota Twins,True
+St. Louis Cardinals,Philadelphia Phillies,St. Louis Cardinals,True
+San Diego Padres,Colorado Rockies,San Diego Padres,True
+Seattle Mariners,Texas Rangers,Seattle Mariners,True
+Arizona Diamondbacks,Milwaukee Brewers,Arizona Diamondbacks,True
+Athletics,New York Mets,Athletics,True
+Los Angeles Dodgers,Chicago Cubs,Los Angeles Dodgers,True
+Baltimore Orioles,Toronto Blue Jays,Toronto Blue Jays,False
+Minnesota Twins,Detroit Tigers,Minnesota Twins,True
+St. Louis Cardinals,Philadelphia Phillies,St. Louis Cardinals,True
+New York Yankees,San Francisco Giants,New York Yankees,True
+Athletics,New York Mets,New York Mets,False
+Baltimore Orioles,Toronto Blue Jays,Baltimore Orioles,True
+Tampa Bay Rays,Atlanta Braves,Tampa Bay Rays,True
+Chicago White Sox,Boston Red Sox,Chicago White Sox,True
+Miami Marlins,Washington Nationals,Miami Marlins,True
+Cleveland Guardians,Kansas City Royals,Kansas City Royals,False
+Cincinnati Reds,Pittsburgh Pirates,Cincinnati Reds,True
+Houston Astros,Los Angeles Angels,Houston Astros,True
+Arizona Diamondbacks,Milwaukee Brewers,Milwaukee Brewers,False
+San Diego Padres,Colorado Rockies,San Diego Padres,True
+Los Angeles Dodgers,Chicago Cubs,Los Angeles Dodgers,True
+Seattle Mariners,Texas Rangers,Seattle Mariners,True
+Baltimore Orioles,Toronto Blue Jays,Toronto Blue Jays,False
+New York Yankees,San Francisco Giants,New York Yankees,True
+Cleveland Guardians,Kansas City Royals,Kansas City Royals,False
+Cincinnati Reds,Pittsburgh Pirates,Cincinnati Reds,True
+Tampa Bay Rays,Atlanta Braves,Tampa Bay Rays,True
+Miami Marlins,Washington Nationals,Miami Marlins,True
+Houston Astros,Los Angeles Angels,Los Angeles Angels,False
+Minnesota Twins,Detroit Tigers,Minnesota Twins,True
+Chicago White Sox,Boston Red Sox,Chicago White Sox,True
+St. Louis Cardinals,Philadelphia Phillies,St. Louis Cardinals,True
+Athletics,New York Mets,New York Mets,False
+San Diego Padres,Colorado Rockies,San Diego Padres,True
+Seattle Mariners,Texas Rangers,Seattle Mariners,True
+Arizona Diamondbacks,Milwaukee Brewers,Arizona Diamondbacks,True
+Los Angeles Dodgers,Chicago Cubs,Chicago Cubs,False
+Pittsburgh Pirates,Washington Nationals,Pittsburgh Pirates,True
+Philadelphia Phillies,San Francisco Giants,Philadelphia Phillies,True
+Tampa Bay Rays,Boston Red Sox,Tampa Bay Rays,True
+New York Yankees,Kansas City Royals,New York Yankees,True
+Toronto Blue Jays,Atlanta Braves,Atlanta Braves,False
+Minnesota Twins,New York Mets,Minnesota Twins,True
+Milwaukee Brewers,Detroit Tigers,Milwaukee Brewers,True
+St. Louis Cardinals,Houston Astros,St. Louis Cardinals,True
+San Diego Padres,Chicago Cubs,San Diego Padres,True
+Los Angeles Dodgers,Colorado Rockies,Los Angeles Dodgers,True
+Pittsburgh Pirates,Washington Nationals,Washington Nationals,False
+Cincinnati Reds,Seattle Mariners,Cincinnati Reds,True
+Miami Marlins,Arizona Diamondbacks,Miami Marlins,True
+Philadelphia Phillies,San Francisco Giants,San Francisco Giants,False
+Baltimore Orioles,Cleveland Guardians,Baltimore Orioles,True
+Tampa Bay Rays,Boston Red Sox,Tampa Bay Rays,True
+New York Yankees,Kansas City Royals,Kansas City Royals,False
+Toronto Blue Jays,Atlanta Braves,Toronto Blue Jays,True
+Minnesota Twins,New York Mets,Minnesota Twins,True
+Chicago White Sox,Athletics,Chicago White Sox,True
+Milwaukee Brewers,Detroit Tigers,Detroit Tigers,False
+St. Louis Cardinals,Houston Astros,St. Louis Cardinals,True
+Texas Rangers,Los Angeles Angels,Texas Rangers,True
+San Diego Padres,Chicago Cubs,Chicago Cubs,False
+Los Angeles Dodgers,Colorado Rockies,Los Angeles Dodgers,True
+Toronto Blue Jays,Atlanta Braves,Toronto Blue Jays,True
+Minnesota Twins,New York Mets,Minnesota Twins,True
+Milwaukee Brewers,Detroit Tigers,Milwaukee Brewers,True
+St. Louis Cardinals,Houston Astros,St. Louis Cardinals,True
+San Diego Padres,Chicago Cubs,Chicago Cubs,False
+Baltimore Orioles,Cleveland Guardians,Baltimore Orioles,True
+Pittsburgh Pirates,Washington Nationals,Washington Nationals,False
+Cincinnati Reds,Seattle Mariners,Cincinnati Reds,True
+Miami Marlins,Arizona Diamondbacks,Miami Marlins,True
+Philadelphia Phillies,San Francisco Giants,Philadelphia Phillies,True
+Tampa Bay Rays,Boston Red Sox,Tampa Bay Rays,True
+New York Yankees,Kansas City Royals,New York Yankees,True
+Chicago White Sox,Athletics,Chicago White Sox,True
+Texas Rangers,Los Angeles Angels,Texas Rangers,True
+Los Angeles Dodgers,Colorado Rockies,Los Angeles Dodgers,True
+Miami Marlins,Arizona Diamondbacks,Miami Marlins,True
+Pittsburgh Pirates,Washington Nationals,Pittsburgh Pirates,True
+Cincinnati Reds,Seattle Mariners,Cincinnati Reds,True
+Chicago White Sox,Athletics,Chicago White Sox,True
+Philadelphia Phillies,San Francisco Giants,Philadelphia Phillies,True
+Baltimore Orioles,Cleveland Guardians,Baltimore Orioles,True
+Detroit Tigers,Kansas City Royals,Detroit Tigers,True
+Tampa Bay Rays,New York Yankees,New York Yankees,False
+New York Mets,St. Louis Cardinals,New York Mets,True
+Texas Rangers,Los Angeles Angels,Texas Rangers,True
+Chicago Cubs,Arizona Diamondbacks,Chicago Cubs,True
+Detroit Tigers,Kansas City Royals,Detroit Tigers,True
+Pittsburgh Pirates,Cleveland Guardians,Cleveland Guardians,False
+Philadelphia Phillies,Miami Marlins,Philadelphia Phillies,True
+Baltimore Orioles,Cincinnati Reds,Baltimore Orioles,True
+Tampa Bay Rays,New York Yankees,Tampa Bay Rays,True
+Toronto Blue Jays,Seattle Mariners,Toronto Blue Jays,True
+New York Mets,St. Louis Cardinals,New York Mets,True
+Boston Red Sox,Chicago White Sox,Boston Red Sox,True
+Atlanta Braves,Minnesota Twins,Atlanta Braves,True
+Texas Rangers,Los Angeles Dodgers,Los Angeles Dodgers,False
+Houston Astros,San Diego Padres,San Diego Padres,False
+Milwaukee Brewers,Athletics,Milwaukee Brewers,True
+Los Angeles Angels,San Francisco Giants,San Francisco Giants,False
+Colorado Rockies,Washington Nationals,Colorado Rockies,True
+Philadelphia Phillies,Miami Marlins,Philadelphia Phillies,True
+Detroit Tigers,Kansas City Royals,Detroit Tigers,True
+Chicago Cubs,Arizona Diamondbacks,Chicago Cubs,True
+Toronto Blue Jays,Seattle Mariners,Toronto Blue Jays,True
+Baltimore Orioles,Cincinnati Reds,Baltimore Orioles,True
+Pittsburgh Pirates,Cleveland Guardians,Cleveland Guardians,False
+New York Mets,St. Louis Cardinals,St. Louis Cardinals,False
+Texas Rangers,Los Angeles Dodgers,Texas Rangers,True
+Colorado Rockies,Washington Nationals,Washington Nationals,False
+Boston Red Sox,Chicago White Sox,Chicago White Sox,False
+Tampa Bay Rays,New York Yankees,New York Yankees,False
+Houston Astros,San Diego Padres,Houston Astros,True
+Milwaukee Brewers,Athletics,Milwaukee Brewers,True
+Atlanta Braves,Minnesota Twins,Minnesota Twins,False
+Los Angeles Angels,San Francisco Giants,Los Angeles Angels,True
+Baltimore Orioles,Cincinnati Reds,Cincinnati Reds,False
+Pittsburgh Pirates,Cleveland Guardians,Pittsburgh Pirates,True
+Atlanta Braves,Minnesota Twins,Atlanta Braves,True
+Boston Red Sox,Chicago White Sox,Boston Red Sox,True
+Philadelphia Phillies,Miami Marlins,Miami Marlins,False
+Toronto Blue Jays,Seattle Mariners,Toronto Blue Jays,True
+Detroit Tigers,Kansas City Royals,Detroit Tigers,True
+New York Mets,St. Louis Cardinals,New York Mets,True
+Tampa Bay Rays,New York Yankees,Tampa Bay Rays,True
+Milwaukee Brewers,Athletics,Milwaukee Brewers,True
+Chicago Cubs,Arizona Diamondbacks,Chicago Cubs,True
+Texas Rangers,Los Angeles Dodgers,Los Angeles Dodgers,False
+Colorado Rockies,Washington Nationals,Washington Nationals,False
+Colorado Rockies,Washington Nationals,Washington Nationals,False
+Los Angeles Angels,San Francisco Giants,Los Angeles Angels,True
+Houston Astros,San Diego Padres,Houston Astros,True
+Boston Red Sox,Chicago White Sox,Boston Red Sox,True
+Cleveland Guardians,New York Yankees,Cleveland Guardians,True
+Detroit Tigers,San Diego Padres,Detroit Tigers,True
+Miami Marlins,Cincinnati Reds,Miami Marlins,True
+New York Mets,Philadelphia Phillies,New York Mets,True
+Atlanta Braves,St. Louis Cardinals,St. Louis Cardinals,False
+Houston Astros,Toronto Blue Jays,Toronto Blue Jays,False
+San Francisco Giants,Milwaukee Brewers,San Francisco Giants,True
+Cleveland Guardians,New York Yankees,Cleveland Guardians,True
+Detroit Tigers,San Diego Padres,Detroit Tigers,True
+Miami Marlins,Cincinnati Reds,Miami Marlins,True
+Washington Nationals,Baltimore Orioles,Washington Nationals,True
+Boston Red Sox,Seattle Mariners,Boston Red Sox,True
+New York Mets,Philadelphia Phillies,New York Mets,True
+Atlanta Braves,St. Louis Cardinals,Atlanta Braves,True
+Kansas City Royals,Colorado Rockies,Kansas City Royals,True
+Chicago Cubs,Los Angeles Dodgers,Chicago Cubs,True
+Minnesota Twins,Chicago White Sox,Minnesota Twins,True
+Houston Astros,Toronto Blue Jays,Houston Astros,True
+Los Angeles Angels,Pittsburgh Pirates,Los Angeles Angels,True
+Arizona Diamondbacks,Tampa Bay Rays,Arizona Diamondbacks,True
+San Francisco Giants,Milwaukee Brewers,San Francisco Giants,True
+Athletics,Texas Rangers,Athletics,True
+Atlanta Braves,St. Louis Cardinals,Atlanta Braves,True
+Detroit Tigers,San Diego Padres,Detroit Tigers,True
+New York Mets,Philadelphia Phillies,New York Mets,True
+Miami Marlins,Cincinnati Reds,Miami Marlins,True
+Cleveland Guardians,New York Yankees,Cleveland Guardians,True
+Washington Nationals,Baltimore Orioles,Washington Nationals,True
+Boston Red Sox,Seattle Mariners,Boston Red Sox,True
+Chicago Cubs,Los Angeles Dodgers,Los Angeles Dodgers,False
+Houston Astros,Toronto Blue Jays,Toronto Blue Jays,False
+Minnesota Twins,Chicago White Sox,Minnesota Twins,True
+Los Angeles Angels,Pittsburgh Pirates,Los Angeles Angels,True
+Arizona Diamondbacks,Tampa Bay Rays,Arizona Diamondbacks,True
+San Francisco Giants,Milwaukee Brewers,San Francisco Giants,True
+Athletics,Texas Rangers,Athletics,True
+Kansas City Royals,Colorado Rockies,Kansas City Royals,True
+Minnesota Twins,Chicago White Sox,Minnesota Twins,True
+Boston Red Sox,Seattle Mariners,Boston Red Sox,True
+Kansas City Royals,Colorado Rockies,Kansas City Royals,True
+Kansas City Royals,Colorado Rockies,Kansas City Royals,True
+San Francisco Giants,Milwaukee Brewers,Milwaukee Brewers,False
+Washington Nationals,Baltimore Orioles,Washington Nationals,True
+Los Angeles Angels,Pittsburgh Pirates,Los Angeles Angels,True
+Arizona Diamondbacks,Tampa Bay Rays,Arizona Diamondbacks,True
+Athletics,Texas Rangers,Athletics,True
+Chicago Cubs,Philadelphia Phillies,Chicago Cubs,True
+Washington Nationals,New York Mets,Washington Nationals,True
+New York Yankees,Toronto Blue Jays,New York Yankees,True
+Kansas City Royals,Houston Astros,Houston Astros,False
+Minnesota Twins,Los Angeles Angels,Minnesota Twins,True
+St. Louis Cardinals,Milwaukee Brewers,Milwaukee Brewers,False
+Colorado Rockies,Cincinnati Reds,Cincinnati Reds,False
+San Diego Padres,Tampa Bay Rays,San Diego Padres,True
+Arizona Diamondbacks,Atlanta Braves,Arizona Diamondbacks,True
+Seattle Mariners,Miami Marlins,Miami Marlins,False
+Athletics,Chicago White Sox,Athletics,True
+Los Angeles Dodgers,Pittsburgh Pirates,Pittsburgh Pirates,False
+San Francisco Giants,Texas Rangers,San Francisco Giants,True
+Detroit Tigers,Baltimore Orioles,Detroit Tigers,True
+Cleveland Guardians,Boston Red Sox,Cleveland Guardians,True
+Cleveland Guardians,Boston Red Sox,Cleveland Guardians,True
+Cleveland Guardians,Boston Red Sox,Cleveland Guardians,True
+Detroit Tigers,Baltimore Orioles,Detroit Tigers,True
+Detroit Tigers,Baltimore Orioles,Detroit Tigers,True
+Minnesota Twins,Los Angeles Angels,Los Angeles Angels,False
+St. Louis Cardinals,Milwaukee Brewers,St. Louis Cardinals,True
+Colorado Rockies,Cincinnati Reds,Cincinnati Reds,False
+Washington Nationals,New York Mets,Washington Nationals,True
+San Francisco Giants,Texas Rangers,San Francisco Giants,True
+Chicago Cubs,Philadelphia Phillies,Chicago Cubs,True
+Athletics,Chicago White Sox,Chicago White Sox,False
+Kansas City Royals,Houston Astros,Kansas City Royals,True
+Arizona Diamondbacks,Atlanta Braves,Atlanta Braves,False
+San Diego Padres,Tampa Bay Rays,San Diego Padres,True
+Los Angeles Dodgers,Pittsburgh Pirates,Los Angeles Dodgers,True
+Seattle Mariners,Miami Marlins,Seattle Mariners,True
+New York Yankees,Toronto Blue Jays,New York Yankees,True
+Washington Nationals,New York Mets,New York Mets,False
+New York Yankees,Toronto Blue Jays,New York Yankees,True
+New York Yankees,Toronto Blue Jays,New York Yankees,True
+Cleveland Guardians,Boston Red Sox,Cleveland Guardians,True
+Detroit Tigers,Baltimore Orioles,Detroit Tigers,True
+Minnesota Twins,Los Angeles Angels,Minnesota Twins,True
+Kansas City Royals,Houston Astros,Kansas City Royals,True
+St. Louis Cardinals,Milwaukee Brewers,St. Louis Cardinals,True
+Colorado Rockies,Cincinnati Reds,Cincinnati Reds,False
+San Francisco Giants,Texas Rangers,San Francisco Giants,True
+Athletics,Chicago White Sox,Athletics,True
+Los Angeles Dodgers,Pittsburgh Pirates,Los Angeles Dodgers,True
+San Diego Padres,Tampa Bay Rays,San Diego Padres,True
+Arizona Diamondbacks,Atlanta Braves,Arizona Diamondbacks,True
+Seattle Mariners,Miami Marlins,Seattle Mariners,True
+Chicago Cubs,Philadelphia Phillies,Philadelphia Phillies,False
+Washington Nationals,New York Mets,Washington Nationals,True
+Cleveland Guardians,Minnesota Twins,Cleveland Guardians,True
+Baltimore Orioles,New York Yankees,New York Yankees,False
+Cincinnati Reds,St. Louis Cardinals,St. Louis Cardinals,False
+Texas Rangers,Athletics,Texas Rangers,True
+Houston Astros,Detroit Tigers,Detroit Tigers,False
+Colorado Rockies,Atlanta Braves,Atlanta Braves,False
+Los Angeles Dodgers,Miami Marlins,Miami Marlins,False
+Cleveland Guardians,Minnesota Twins,Cleveland Guardians,True
+Baltimore Orioles,New York Yankees,New York Yankees,False
+Pittsburgh Pirates,Chicago Cubs,Pittsburgh Pirates,True
+Philadelphia Phillies,Washington Nationals,Philadelphia Phillies,True
+Tampa Bay Rays,Kansas City Royals,Tampa Bay Rays,True
+Toronto Blue Jays,Boston Red Sox,Toronto Blue Jays,True
+New York Mets,Arizona Diamondbacks,Arizona Diamondbacks,False
+Chicago White Sox,Milwaukee Brewers,Chicago White Sox,True
+Texas Rangers,Athletics,Athletics,False
+Houston Astros,Detroit Tigers,Houston Astros,True
+Colorado Rockies,Atlanta Braves,Colorado Rockies,True
+Seattle Mariners,Los Angeles Angels,Seattle Mariners,True
+San Diego Padres,San Francisco Giants,San Diego Padres,True
+Los Angeles Dodgers,Miami Marlins,Los Angeles Dodgers,True
+Cincinnati Reds,St. Louis Cardinals,Cincinnati Reds,True
+Cincinnati Reds,St. Louis Cardinals,Cincinnati Reds,True
+Cincinnati Reds,St. Louis Cardinals,Cincinnati Reds,True
+Houston Astros,Detroit Tigers,Detroit Tigers,False
+Colorado Rockies,Atlanta Braves,Colorado Rockies,True
+Los Angeles Dodgers,Miami Marlins,Los Angeles Dodgers,True
+Seattle Mariners,Los Angeles Angels,Seattle Mariners,True
+San Diego Padres,San Francisco Giants,San Francisco Giants,False
+Cleveland Guardians,Minnesota Twins,Cleveland Guardians,True
+Baltimore Orioles,New York Yankees,New York Yankees,False
+Pittsburgh Pirates,Chicago Cubs,Pittsburgh Pirates,True
+Philadelphia Phillies,Washington Nationals,Philadelphia Phillies,True
+Tampa Bay Rays,Kansas City Royals,Tampa Bay Rays,True
+Toronto Blue Jays,Boston Red Sox,Toronto Blue Jays,True
+New York Mets,Arizona Diamondbacks,New York Mets,True
+Chicago White Sox,Milwaukee Brewers,Chicago White Sox,True
+Texas Rangers,Athletics,Athletics,False
+Pittsburgh Pirates,Chicago Cubs,Pittsburgh Pirates,True
+Cincinnati Reds,St. Louis Cardinals,St. Louis Cardinals,False
+New York Mets,Arizona Diamondbacks,New York Mets,True
+Tampa Bay Rays,Kansas City Royals,Tampa Bay Rays,True
+Cleveland Guardians,Minnesota Twins,Minnesota Twins,False
+Chicago White Sox,Milwaukee Brewers,Chicago White Sox,True
+Texas Rangers,Athletics,Texas Rangers,True
+Philadelphia Phillies,Washington Nationals,Philadelphia Phillies,True
+Toronto Blue Jays,Boston Red Sox,Toronto Blue Jays,True
+Los Angeles Angels,Detroit Tigers,Los Angeles Angels,True
+San Francisco Giants,Colorado Rockies,San Francisco Giants,True
+Cincinnati Reds,Washington Nationals,Cincinnati Reds,True
+Pittsburgh Pirates,San Diego Padres,San Diego Padres,False
+Philadelphia Phillies,Arizona Diamondbacks,Philadelphia Phillies,True
+Baltimore Orioles,Kansas City Royals,Baltimore Orioles,True
+New York Yankees,Tampa Bay Rays,New York Yankees,True
+Toronto Blue Jays,Cleveland Guardians,Toronto Blue Jays,True
+Boston Red Sox,Minnesota Twins,Boston Red Sox,True
+Miami Marlins,Athletics,Miami Marlins,True
+Atlanta Braves,Los Angeles Dodgers,Atlanta Braves,True
+Chicago White Sox,Houston Astros,Chicago White Sox,True
+Texas Rangers,Seattle Mariners,Texas Rangers,True
+Milwaukee Brewers,Chicago Cubs,Milwaukee Brewers,True
+St. Louis Cardinals,New York Mets,St. Louis Cardinals,True
+Los Angeles Angels,Detroit Tigers,Los Angeles Angels,True
+San Francisco Giants,Colorado Rockies,San Francisco Giants,True
+New York Yankees,Tampa Bay Rays,New York Yankees,True
+Chicago White Sox,Houston Astros,Chicago White Sox,True
+Toronto Blue Jays,Cleveland Guardians,Toronto Blue Jays,True
+Pittsburgh Pirates,San Diego Padres,Pittsburgh Pirates,True
+San Francisco Giants,Colorado Rockies,San Francisco Giants,True
+Boston Red Sox,Minnesota Twins,Minnesota Twins,False
+Miami Marlins,Athletics,Miami Marlins,True
+Philadelphia Phillies,Arizona Diamondbacks,Philadelphia Phillies,True
+Cincinnati Reds,Washington Nationals,Cincinnati Reds,True
+Texas Rangers,Seattle Mariners,Texas Rangers,True
+Milwaukee Brewers,Chicago Cubs,Milwaukee Brewers,True
+Baltimore Orioles,Kansas City Royals,Baltimore Orioles,True
+Atlanta Braves,Los Angeles Dodgers,Atlanta Braves,True
+Los Angeles Angels,Detroit Tigers,Detroit Tigers,False
+St. Louis Cardinals,New York Mets,St. Louis Cardinals,True
+St. Louis Cardinals,New York Mets,St. Louis Cardinals,True
+St. Louis Cardinals,New York Mets,St. Louis Cardinals,True
+Baltimore Orioles,Kansas City Royals,Baltimore Orioles,True
+Pittsburgh Pirates,San Diego Padres,Pittsburgh Pirates,True
+Boston Red Sox,Minnesota Twins,Boston Red Sox,True
+New York Yankees,Tampa Bay Rays,New York Yankees,True
+Toronto Blue Jays,Cleveland Guardians,Toronto Blue Jays,True
+Miami Marlins,Athletics,Athletics,False
+Philadelphia Phillies,Arizona Diamondbacks,Philadelphia Phillies,True
+Chicago White Sox,Houston Astros,Houston Astros,False
+Milwaukee Brewers,Chicago Cubs,Chicago Cubs,False
+Texas Rangers,Seattle Mariners,Texas Rangers,True
+San Francisco Giants,Colorado Rockies,San Francisco Giants,True
+Los Angeles Angels,Detroit Tigers,Los Angeles Angels,True
+Cincinnati Reds,Washington Nationals,Cincinnati Reds,True
+Atlanta Braves,Los Angeles Dodgers,Atlanta Braves,True
+Miami Marlins,Los Angeles Dodgers,Los Angeles Dodgers,False
+New York Yankees,San Diego Padres,New York Yankees,True
+Atlanta Braves,Cincinnati Reds,Atlanta Braves,True
+Chicago Cubs,San Francisco Giants,Chicago Cubs,True
+Kansas City Royals,Chicago White Sox,Kansas City Royals,True
+Milwaukee Brewers,Houston Astros,Milwaukee Brewers,True
+St. Louis Cardinals,Pittsburgh Pirates,St. Louis Cardinals,True
+Arizona Diamondbacks,New York Mets,New York Mets,False
+Athletics,Seattle Mariners,Athletics,True
+Washington Nationals,Cleveland Guardians,Washington Nationals,True
+Washington Nationals,Cleveland Guardians,Washington Nationals,True
+Washington Nationals,Cleveland Guardians,Cleveland Guardians,False
+Miami Marlins,Los Angeles Dodgers,Los Angeles Dodgers,False
+Boston Red Sox,Texas Rangers,Boston Red Sox,True
+Tampa Bay Rays,Philadelphia Phillies,Philadelphia Phillies,False
+New York Yankees,San Diego Padres,New York Yankees,True
+Atlanta Braves,Cincinnati Reds,Atlanta Braves,True
+Chicago Cubs,San Francisco Giants,Chicago Cubs,True
+Minnesota Twins,Baltimore Orioles,Minnesota Twins,True
+Kansas City Royals,Chicago White Sox,Kansas City Royals,True
+Milwaukee Brewers,Houston Astros,Milwaukee Brewers,True
+St. Louis Cardinals,Pittsburgh Pirates,St. Louis Cardinals,True
+Los Angeles Angels,Toronto Blue Jays,Los Angeles Angels,True
+Arizona Diamondbacks,New York Mets,Arizona Diamondbacks,True
+Athletics,Seattle Mariners,Seattle Mariners,False
+Colorado Rockies,Detroit Tigers,Detroit Tigers,False
+Washington Nationals,Cleveland Guardians,Washington Nationals,True
+Milwaukee Brewers,Houston Astros,Milwaukee Brewers,True
+St. Louis Cardinals,Pittsburgh Pirates,St. Louis Cardinals,True
+Chicago Cubs,San Francisco Giants,Chicago Cubs,True
+Athletics,Seattle Mariners,Athletics,True
+Arizona Diamondbacks,New York Mets,Arizona Diamondbacks,True
+Miami Marlins,Los Angeles Dodgers,Miami Marlins,True
+Boston Red Sox,Texas Rangers,Boston Red Sox,True
+Tampa Bay Rays,Philadelphia Phillies,Tampa Bay Rays,True
+New York Yankees,San Diego Padres,San Diego Padres,False
+Atlanta Braves,Cincinnati Reds,Atlanta Braves,True
+Minnesota Twins,Baltimore Orioles,Minnesota Twins,True
+Kansas City Royals,Chicago White Sox,Kansas City Royals,True
+Colorado Rockies,Detroit Tigers,Colorado Rockies,True
+Los Angeles Angels,Toronto Blue Jays,Los Angeles Angels,True
+Minnesota Twins,Baltimore Orioles,Minnesota Twins,True
+Boston Red Sox,Texas Rangers,Texas Rangers,False
+Kansas City Royals,Chicago White Sox,Kansas City Royals,True
+Colorado Rockies,Detroit Tigers,Detroit Tigers,False
+Colorado Rockies,Detroit Tigers,Detroit Tigers,False
+Tampa Bay Rays,Philadelphia Phillies,Tampa Bay Rays,True
+Atlanta Braves,Cincinnati Reds,Atlanta Braves,True
+Los Angeles Angels,Toronto Blue Jays,Los Angeles Angels,True
+Arizona Diamondbacks,Los Angeles Dodgers,Los Angeles Dodgers,False
+Detroit Tigers,Texas Rangers,Texas Rangers,False
+Pittsburgh Pirates,Atlanta Braves,Pittsburgh Pirates,True
+Washington Nationals,St. Louis Cardinals,Washington Nationals,True
+Tampa Bay Rays,Milwaukee Brewers,Tampa Bay Rays,True
+New York Mets,Chicago Cubs,New York Mets,True
+Cleveland Guardians,Philadelphia Phillies,Cleveland Guardians,True
+Kansas City Royals,Boston Red Sox,Kansas City Royals,True
+Chicago White Sox,Miami Marlins,Miami Marlins,False
+Houston Astros,Cincinnati Reds,Houston Astros,True
+Minnesota Twins,San Francisco Giants,Minnesota Twins,True
+Colorado Rockies,San Diego Padres,Colorado Rockies,True
+Los Angeles Angels,Baltimore Orioles,Baltimore Orioles,False
+Arizona Diamondbacks,Los Angeles Dodgers,Los Angeles Dodgers,False
+Seattle Mariners,Toronto Blue Jays,Seattle Mariners,True
+Athletics,New York Yankees,New York Yankees,False
+Washington Nationals,St. Louis Cardinals,Washington Nationals,True
+Pittsburgh Pirates,Atlanta Braves,Pittsburgh Pirates,True
+Athletics,New York Yankees,Athletics,True
+Tampa Bay Rays,Milwaukee Brewers,Milwaukee Brewers,False
+Detroit Tigers,Texas Rangers,Texas Rangers,False
+Cleveland Guardians,Philadelphia Phillies,Cleveland Guardians,True
+Houston Astros,Cincinnati Reds,Houston Astros,True
+Kansas City Royals,Boston Red Sox,Kansas City Royals,True
+Chicago White Sox,Miami Marlins,Chicago White Sox,True
+New York Mets,Chicago Cubs,New York Mets,True
+Minnesota Twins,San Francisco Giants,Minnesota Twins,True
+Arizona Diamondbacks,Los Angeles Dodgers,Arizona Diamondbacks,True
+Colorado Rockies,San Diego Padres,Colorado Rockies,True
+Los Angeles Angels,Baltimore Orioles,Los Angeles Angels,True
+Seattle Mariners,Toronto Blue Jays,Seattle Mariners,True
+New York Mets,Chicago Cubs,New York Mets,True
+Washington Nationals,St. Louis Cardinals,St. Louis Cardinals,False
+Pittsburgh Pirates,Atlanta Braves,Atlanta Braves,False
+Detroit Tigers,Texas Rangers,Detroit Tigers,True
+Tampa Bay Rays,Milwaukee Brewers,Tampa Bay Rays,True
+Houston Astros,Cincinnati Reds,Houston Astros,True
+Kansas City Royals,Boston Red Sox,Boston Red Sox,False
+Minnesota Twins,San Francisco Giants,Minnesota Twins,True
+Chicago White Sox,Miami Marlins,Miami Marlins,False
+Colorado Rockies,San Diego Padres,Colorado Rockies,True
+Athletics,New York Yankees,New York Yankees,False
+Los Angeles Angels,Baltimore Orioles,Los Angeles Angels,True
+Arizona Diamondbacks,Los Angeles Dodgers,Los Angeles Dodgers,False
+Seattle Mariners,Toronto Blue Jays,Seattle Mariners,True
+Cleveland Guardians,Philadelphia Phillies,Cleveland Guardians,True
+Cleveland Guardians,Milwaukee Brewers,Cleveland Guardians,True
+Detroit Tigers,Boston Red Sox,Boston Red Sox,False
+Philadelphia Phillies,St. Louis Cardinals,Philadelphia Phillies,True
+New York Mets,Pittsburgh Pirates,New York Mets,True
+Atlanta Braves,Washington Nationals,Atlanta Braves,True
+Chicago Cubs,Miami Marlins,Chicago Cubs,True
+Texas Rangers,Colorado Rockies,Colorado Rockies,False
+Houston Astros,Kansas City Royals,Houston Astros,True
+San Diego Padres,Los Angeles Angels,San Diego Padres,True
+Seattle Mariners,New York Yankees,Seattle Mariners,True
+San Francisco Giants,Arizona Diamondbacks,San Francisco Giants,True
+Cleveland Guardians,Milwaukee Brewers,Cleveland Guardians,True
+Detroit Tigers,Boston Red Sox,Detroit Tigers,True
+Cincinnati Reds,Chicago White Sox,Cincinnati Reds,True
+Toronto Blue Jays,Tampa Bay Rays,Toronto Blue Jays,True
+New York Mets,Pittsburgh Pirates,New York Mets,True
+Atlanta Braves,Washington Nationals,Atlanta Braves,True
+Chicago Cubs,Miami Marlins,Chicago Cubs,True
+Texas Rangers,Colorado Rockies,Texas Rangers,True
+Houston Astros,Kansas City Royals,Houston Astros,True
+San Diego Padres,Los Angeles Angels,San Diego Padres,True
+Seattle Mariners,New York Yankees,Seattle Mariners,True
+San Francisco Giants,Arizona Diamondbacks,San Francisco Giants,True
+Los Angeles Dodgers,Athletics,Los Angeles Dodgers,True
+Baltimore Orioles,Minnesota Twins,Baltimore Orioles,True
+Philadelphia Phillies,St. Louis Cardinals,Philadelphia Phillies,True
+Baltimore Orioles,Minnesota Twins,Baltimore Orioles,True
+Baltimore Orioles,Minnesota Twins,Baltimore Orioles,True
+Philadelphia Phillies,St. Louis Cardinals,St. Louis Cardinals,False
+Philadelphia Phillies,St. Louis Cardinals,Philadelphia Phillies,True
+Cleveland Guardians,Milwaukee Brewers,Cleveland Guardians,True
+San Francisco Giants,Arizona Diamondbacks,San Francisco Giants,True
+Seattle Mariners,New York Yankees,Seattle Mariners,True
+Detroit Tigers,Boston Red Sox,Detroit Tigers,True
+Toronto Blue Jays,Tampa Bay Rays,Tampa Bay Rays,False
+New York Mets,Pittsburgh Pirates,New York Mets,True
+Cincinnati Reds,Chicago White Sox,Cincinnati Reds,True
+Atlanta Braves,Washington Nationals,Atlanta Braves,True
+Chicago Cubs,Miami Marlins,Chicago Cubs,True
+Texas Rangers,Colorado Rockies,Texas Rangers,True
+Houston Astros,Kansas City Royals,Houston Astros,True
+San Diego Padres,Los Angeles Angels,Los Angeles Angels,False
+Los Angeles Dodgers,Athletics,Los Angeles Dodgers,True
+Atlanta Braves,Washington Nationals,Atlanta Braves,True
+Baltimore Orioles,Minnesota Twins,Baltimore Orioles,True
+Cincinnati Reds,Chicago White Sox,Cincinnati Reds,True
+Toronto Blue Jays,Tampa Bay Rays,Toronto Blue Jays,True
+Texas Rangers,Houston Astros,Houston Astros,False
+Los Angeles Dodgers,Athletics,Los Angeles Dodgers,True
+Chicago Cubs,Chicago White Sox,Chicago Cubs,True
+Cincinnati Reds,Cleveland Guardians,Cleveland Guardians,False
+Philadelphia Phillies,Pittsburgh Pirates,Philadelphia Phillies,True
+Baltimore Orioles,Washington Nationals,Washington Nationals,False
+New York Yankees,New York Mets,New York Yankees,True
+Toronto Blue Jays,Detroit Tigers,Toronto Blue Jays,True
+Boston Red Sox,Atlanta Braves,Boston Red Sox,True
+Miami Marlins,Tampa Bay Rays,Miami Marlins,True
+Kansas City Royals,St. Louis Cardinals,Kansas City Royals,True
+Texas Rangers,Houston Astros,Texas Rangers,True
+Milwaukee Brewers,Minnesota Twins,Milwaukee Brewers,True
+Arizona Diamondbacks,Colorado Rockies,Arizona Diamondbacks,True
+San Diego Padres,Seattle Mariners,San Diego Padres,True
+Los Angeles Dodgers,Los Angeles Angels,Los Angeles Dodgers,True
+San Francisco Giants,Athletics,Athletics,False
+New York Yankees,New York Mets,New York Yankees,True
+Chicago Cubs,Chicago White Sox,Chicago Cubs,True
+Toronto Blue Jays,Detroit Tigers,Toronto Blue Jays,True
+Baltimore Orioles,Washington Nationals,Washington Nationals,False
+Miami Marlins,Tampa Bay Rays,Miami Marlins,True
+Philadelphia Phillies,Pittsburgh Pirates,Philadelphia Phillies,True
+Cincinnati Reds,Cleveland Guardians,Cincinnati Reds,True
+Texas Rangers,Houston Astros,Texas Rangers,True
+Kansas City Royals,St. Louis Cardinals,Kansas City Royals,True
+Boston Red Sox,Atlanta Braves,Boston Red Sox,True
+Milwaukee Brewers,Minnesota Twins,Milwaukee Brewers,True
+Arizona Diamondbacks,Colorado Rockies,Arizona Diamondbacks,True
+San Diego Padres,Seattle Mariners,Seattle Mariners,False
+San Francisco Giants,Athletics,San Francisco Giants,True
+Los Angeles Dodgers,Los Angeles Angels,Los Angeles Dodgers,True
+Texas Rangers,Houston Astros,Texas Rangers,True
+Baltimore Orioles,Washington Nationals,Baltimore Orioles,True
+Philadelphia Phillies,Pittsburgh Pirates,Philadelphia Phillies,True
+Boston Red Sox,Atlanta Braves,Boston Red Sox,True
+Toronto Blue Jays,Detroit Tigers,Toronto Blue Jays,True
+Cincinnati Reds,Cleveland Guardians,Cincinnati Reds,True
+Miami Marlins,Tampa Bay Rays,Miami Marlins,True
+Kansas City Royals,St. Louis Cardinals,St. Louis Cardinals,False
+Milwaukee Brewers,Minnesota Twins,Milwaukee Brewers,True
+Chicago Cubs,Chicago White Sox,Chicago Cubs,True
+San Francisco Giants,Athletics,San Francisco Giants,True
+Arizona Diamondbacks,Colorado Rockies,Arizona Diamondbacks,True
+Los Angeles Dodgers,Los Angeles Angels,Los Angeles Dodgers,True
+San Diego Padres,Seattle Mariners,San Diego Padres,True
+New York Yankees,New York Mets,New York Mets,False
+Pittsburgh Pirates,Cincinnati Reds,Cincinnati Reds,False
+Miami Marlins,Chicago Cubs,Chicago Cubs,False
+Boston Red Sox,New York Mets,Boston Red Sox,True
+Tampa Bay Rays,Houston Astros,Tampa Bay Rays,True
+Minnesota Twins,Cleveland Guardians,Minnesota Twins,True
+Chicago White Sox,Seattle Mariners,Chicago White Sox,True
+Milwaukee Brewers,Baltimore Orioles,Milwaukee Brewers,True
+St. Louis Cardinals,Detroit Tigers,St. Louis Cardinals,True
+Colorado Rockies,Philadelphia Phillies,Colorado Rockies,True
+San Francisco Giants,Kansas City Royals,Kansas City Royals,False
+Athletics,Los Angeles Angels,Athletics,True
+Los Angeles Dodgers,Arizona Diamondbacks,Los Angeles Dodgers,True
+Pittsburgh Pirates,Cincinnati Reds,Cincinnati Reds,False
+Miami Marlins,Chicago Cubs,Miami Marlins,True
+Boston Red Sox,New York Mets,New York Mets,False
+Washington Nationals,Atlanta Braves,Atlanta Braves,False
+Tampa Bay Rays,Houston Astros,Tampa Bay Rays,True
+New York Yankees,Texas Rangers,New York Yankees,True
+Toronto Blue Jays,San Diego Padres,Toronto Blue Jays,True
+Chicago White Sox,Seattle Mariners,Chicago White Sox,True
+Milwaukee Brewers,Baltimore Orioles,Milwaukee Brewers,True
+St. Louis Cardinals,Detroit Tigers,Detroit Tigers,False
+Colorado Rockies,Philadelphia Phillies,Colorado Rockies,True
+San Francisco Giants,Kansas City Royals,San Francisco Giants,True
+Athletics,Los Angeles Angels,Athletics,True
+Los Angeles Dodgers,Arizona Diamondbacks,Arizona Diamondbacks,False
+Minnesota Twins,Cleveland Guardians,Minnesota Twins,True
+Pittsburgh Pirates,Cincinnati Reds,Pittsburgh Pirates,True
+Tampa Bay Rays,Houston Astros,Tampa Bay Rays,True
+Minnesota Twins,Cleveland Guardians,Minnesota Twins,True
+Miami Marlins,Chicago Cubs,Miami Marlins,True
+Milwaukee Brewers,Baltimore Orioles,Milwaukee Brewers,True
+St. Louis Cardinals,Detroit Tigers,St. Louis Cardinals,True
+Chicago White Sox,Seattle Mariners,Chicago White Sox,True
+San Francisco Giants,Kansas City Royals,Kansas City Royals,False
+Minnesota Twins,Cleveland Guardians,Cleveland Guardians,False
+Boston Red Sox,New York Mets,Boston Red Sox,True
+New York Yankees,Texas Rangers,New York Yankees,True
+Toronto Blue Jays,San Diego Padres,San Diego Padres,False
+Colorado Rockies,Philadelphia Phillies,Philadelphia Phillies,False
+Athletics,Los Angeles Angels,Athletics,True
+Los Angeles Dodgers,Arizona Diamondbacks,Los Angeles Dodgers,True
+Washington Nationals,Atlanta Braves,Washington Nationals,True
+New York Yankees,Texas Rangers,New York Yankees,True
+Toronto Blue Jays,San Diego Padres,Toronto Blue Jays,True
+Colorado Rockies,Philadelphia Phillies,Philadelphia Phillies,False
+Athletics,Los Angeles Angels,Athletics,True
+Detroit Tigers,Cleveland Guardians,Cleveland Guardians,False
+Pittsburgh Pirates,Milwaukee Brewers,Pittsburgh Pirates,True
+Washington Nationals,Atlanta Braves,Atlanta Braves,False
+Houston Astros,Seattle Mariners,Houston Astros,True
+Boston Red Sox,Baltimore Orioles,Boston Red Sox,True
+Boston Red Sox,Baltimore Orioles,Boston Red Sox,True
+Cincinnati Reds,Chicago Cubs,Cincinnati Reds,True
+Pittsburgh Pirates,Milwaukee Brewers,Pittsburgh Pirates,True
+Washington Nationals,San Francisco Giants,Washington Nationals,True
+Tampa Bay Rays,Toronto Blue Jays,Tampa Bay Rays,True
+Detroit Tigers,Cleveland Guardians,Detroit Tigers,True
+New York Mets,Los Angeles Dodgers,Los Angeles Dodgers,False
+Atlanta Braves,San Diego Padres,Atlanta Braves,True
+Chicago White Sox,Texas Rangers,Chicago White Sox,True
+Houston Astros,Seattle Mariners,Seattle Mariners,False
+Minnesota Twins,Kansas City Royals,Minnesota Twins,True
+St. Louis Cardinals,Arizona Diamondbacks,St. Louis Cardinals,True
+Colorado Rockies,New York Yankees,New York Yankees,False
+Los Angeles Angels,Miami Marlins,Los Angeles Angels,True
+Athletics,Philadelphia Phillies,Athletics,True
+Boston Red Sox,Baltimore Orioles,Boston Red Sox,True
+Boston Red Sox,Baltimore Orioles,Boston Red Sox,True
+Boston Red Sox,Baltimore Orioles,Boston Red Sox,True
+Minnesota Twins,Kansas City Royals,Minnesota Twins,True
+St. Louis Cardinals,Arizona Diamondbacks,St. Louis Cardinals,True
+Washington Nationals,San Francisco Giants,San Francisco Giants,False
+Pittsburgh Pirates,Milwaukee Brewers,Pittsburgh Pirates,True
+Cincinnati Reds,Chicago Cubs,Cincinnati Reds,True
+Houston Astros,Seattle Mariners,Houston Astros,True
+Atlanta Braves,San Diego Padres,San Diego Padres,False
+Chicago White Sox,Texas Rangers,Texas Rangers,False
+Colorado Rockies,New York Yankees,New York Yankees,False
+Tampa Bay Rays,Toronto Blue Jays,Tampa Bay Rays,True
+Detroit Tigers,Cleveland Guardians,Detroit Tigers,True
+New York Mets,Los Angeles Dodgers,Los Angeles Dodgers,False
+Athletics,Philadelphia Phillies,Athletics,True
+Los Angeles Angels,Miami Marlins,Los Angeles Angels,True
+Detroit Tigers,Cleveland Guardians,Detroit Tigers,True
+Boston Red Sox,Baltimore Orioles,Boston Red Sox,True
+Washington Nationals,San Francisco Giants,Washington Nationals,True
+Pittsburgh Pirates,Milwaukee Brewers,Milwaukee Brewers,False
+Cincinnati Reds,Chicago Cubs,Chicago Cubs,False
+Tampa Bay Rays,Toronto Blue Jays,Toronto Blue Jays,False
+Houston Astros,Seattle Mariners,Houston Astros,True
+Minnesota Twins,Kansas City Royals,Kansas City Royals,False
+Chicago White Sox,Texas Rangers,Chicago White Sox,True
+St. Louis Cardinals,Arizona Diamondbacks,St. Louis Cardinals,True
+Colorado Rockies,New York Yankees,Colorado Rockies,True
+Athletics,Philadelphia Phillies,Athletics,True
+Los Angeles Angels,Miami Marlins,Los Angeles Angels,True
+Atlanta Braves,San Diego Padres,Atlanta Braves,True
+New York Mets,Los Angeles Dodgers,New York Mets,True
+Detroit Tigers,San Francisco Giants,Detroit Tigers,True
+Milwaukee Brewers,Boston Red Sox,Milwaukee Brewers,True
+Chicago Cubs,Colorado Rockies,Chicago Cubs,True
+Baltimore Orioles,St. Louis Cardinals,Baltimore Orioles,True
+Texas Rangers,Toronto Blue Jays,Texas Rangers,True
+Kansas City Royals,Cincinnati Reds,Kansas City Royals,True
+New York Mets,Chicago White Sox,New York Mets,True
+Cleveland Guardians,Los Angeles Dodgers,Los Angeles Dodgers,False
+Tampa Bay Rays,Minnesota Twins,Tampa Bay Rays,True
+Arizona Diamondbacks,Pittsburgh Pirates,Arizona Diamondbacks,True
+San Diego Padres,Miami Marlins,San Diego Padres,True
+Los Angeles Angels,New York Yankees,Los Angeles Angels,True
+Cleveland Guardians,Los Angeles Dodgers,Cleveland Guardians,True
+Baltimore Orioles,St. Louis Cardinals,St. Louis Cardinals,False
+Detroit Tigers,San Francisco Giants,San Francisco Giants,False
+Philadelphia Phillies,Atlanta Braves,Philadelphia Phillies,True
+Tampa Bay Rays,Minnesota Twins,Minnesota Twins,False
+New York Mets,Chicago White Sox,New York Mets,True
+Kansas City Royals,Cincinnati Reds,Kansas City Royals,True
+Milwaukee Brewers,Boston Red Sox,Boston Red Sox,False
+Chicago Cubs,Colorado Rockies,Chicago Cubs,True
+Texas Rangers,Toronto Blue Jays,Toronto Blue Jays,False
+Houston Astros,Athletics,Houston Astros,True
+Los Angeles Angels,New York Yankees,Los Angeles Angels,True
+Arizona Diamondbacks,Pittsburgh Pirates,Arizona Diamondbacks,True
+Seattle Mariners,Washington Nationals,Washington Nationals,False
+San Diego Padres,Miami Marlins,San Diego Padres,True
+Cleveland Guardians,Los Angeles Dodgers,Los Angeles Dodgers,False
+Detroit Tigers,San Francisco Giants,Detroit Tigers,True
+Tampa Bay Rays,Minnesota Twins,Minnesota Twins,False
+New York Mets,Chicago White Sox,New York Mets,True
+Milwaukee Brewers,Boston Red Sox,Milwaukee Brewers,True
+Houston Astros,Athletics,Houston Astros,True
+Arizona Diamondbacks,Pittsburgh Pirates,Arizona Diamondbacks,True
+San Diego Padres,Miami Marlins,San Diego Padres,True
+Baltimore Orioles,St. Louis Cardinals,Baltimore Orioles,True
+Kansas City Royals,Cincinnati Reds,Kansas City Royals,True
+Chicago Cubs,Colorado Rockies,Chicago Cubs,True
+Texas Rangers,Toronto Blue Jays,Texas Rangers,True
+Los Angeles Angels,New York Yankees,Los Angeles Angels,True
+Seattle Mariners,Washington Nationals,Seattle Mariners,True
+Philadelphia Phillies,Atlanta Braves,Atlanta Braves,False
+Philadelphia Phillies,Atlanta Braves,Philadelphia Phillies,True
+Philadelphia Phillies,Atlanta Braves,Philadelphia Phillies,True
+Toronto Blue Jays,Athletics,Athletics,False
+Houston Astros,Tampa Bay Rays,Houston Astros,True
+Seattle Mariners,Washington Nationals,Washington Nationals,False
+Chicago Cubs,Cincinnati Reds,Chicago Cubs,True
+Baltimore Orioles,Chicago White Sox,Baltimore Orioles,True
+Philadelphia Phillies,Milwaukee Brewers,Philadelphia Phillies,True
+Toronto Blue Jays,Athletics,Toronto Blue Jays,True
+Cleveland Guardians,Los Angeles Angels,Cleveland Guardians,True
+New York Mets,Colorado Rockies,New York Mets,True
+Miami Marlins,San Francisco Giants,Miami Marlins,True
+Atlanta Braves,Boston Red Sox,Boston Red Sox,False
+Texas Rangers,St. Louis Cardinals,St. Louis Cardinals,False
+Kansas City Royals,Detroit Tigers,Detroit Tigers,False
+Houston Astros,Tampa Bay Rays,Houston Astros,True
+Arizona Diamondbacks,Washington Nationals,Washington Nationals,False
+San Diego Padres,Pittsburgh Pirates,San Diego Padres,True
+Seattle Mariners,Minnesota Twins,Seattle Mariners,True
+Los Angeles Dodgers,New York Yankees,Los Angeles Dodgers,True
+Chicago Cubs,Cincinnati Reds,Chicago Cubs,True
+Toronto Blue Jays,Athletics,Toronto Blue Jays,True
+Texas Rangers,St. Louis Cardinals,Texas Rangers,True
+Baltimore Orioles,Chicago White Sox,Baltimore Orioles,True
+Philadelphia Phillies,Milwaukee Brewers,Philadelphia Phillies,True
+Cleveland Guardians,Los Angeles Angels,Cleveland Guardians,True
+Kansas City Royals,Detroit Tigers,Kansas City Royals,True
+New York Mets,Colorado Rockies,New York Mets,True
+Houston Astros,Tampa Bay Rays,Houston Astros,True
+Atlanta Braves,Boston Red Sox,Atlanta Braves,True
+Miami Marlins,San Francisco Giants,Miami Marlins,True
+Seattle Mariners,Minnesota Twins,Seattle Mariners,True
+Los Angeles Dodgers,New York Yankees,Los Angeles Dodgers,True
+San Diego Padres,Pittsburgh Pirates,San Diego Padres,True
+Arizona Diamondbacks,Washington Nationals,Arizona Diamondbacks,True
+Texas Rangers,St. Louis Cardinals,Texas Rangers,True
+Atlanta Braves,Boston Red Sox,Atlanta Braves,True
+Baltimore Orioles,Chicago White Sox,Baltimore Orioles,True
+Philadelphia Phillies,Milwaukee Brewers,Philadelphia Phillies,True
+Toronto Blue Jays,Athletics,Athletics,False
+Cleveland Guardians,Los Angeles Angels,Cleveland Guardians,True
+New York Mets,Colorado Rockies,New York Mets,True
+Miami Marlins,San Francisco Giants,San Francisco Giants,False
+Kansas City Royals,Detroit Tigers,Detroit Tigers,False
+Houston Astros,Tampa Bay Rays,Houston Astros,True
+Chicago Cubs,Cincinnati Reds,Chicago Cubs,True
+Arizona Diamondbacks,Washington Nationals,Arizona Diamondbacks,True
+Seattle Mariners,Minnesota Twins,Seattle Mariners,True
+San Diego Padres,Pittsburgh Pirates,San Diego Padres,True
+Los Angeles Dodgers,New York Yankees,Los Angeles Dodgers,True
+Miami Marlins,Colorado Rockies,Miami Marlins,True
+Boston Red Sox,Los Angeles Angels,Boston Red Sox,True
+Cincinnati Reds,Milwaukee Brewers,Cincinnati Reds,True
+Chicago White Sox,Detroit Tigers,Chicago White Sox,True
+San Francisco Giants,San Diego Padres,San Francisco Giants,True
+Athletics,Minnesota Twins,Athletics,True
+Los Angeles Dodgers,New York Mets,Los Angeles Dodgers,True
+Pittsburgh Pirates,Houston Astros,Pittsburgh Pirates,True
+Miami Marlins,Colorado Rockies,Miami Marlins,True
+Washington Nationals,Chicago Cubs,Washington Nationals,True
+New York Yankees,Cleveland Guardians,New York Yankees,True
+Toronto Blue Jays,Philadelphia Phillies,Toronto Blue Jays,True
+Boston Red Sox,Los Angeles Angels,Boston Red Sox,True
+Cincinnati Reds,Milwaukee Brewers,Milwaukee Brewers,False
+Atlanta Braves,Arizona Diamondbacks,Arizona Diamondbacks,False
+Tampa Bay Rays,Texas Rangers,Tampa Bay Rays,True
+Chicago White Sox,Detroit Tigers,Detroit Tigers,False
+St. Louis Cardinals,Kansas City Royals,St. Louis Cardinals,True
+Seattle Mariners,Baltimore Orioles,Seattle Mariners,True
+San Francisco Giants,San Diego Padres,San Diego Padres,False
+Athletics,Minnesota Twins,Minnesota Twins,False
+Los Angeles Dodgers,New York Mets,Los Angeles Dodgers,True
+Miami Marlins,Colorado Rockies,Miami Marlins,True
+Cincinnati Reds,Milwaukee Brewers,Cincinnati Reds,True
+Boston Red Sox,Los Angeles Angels,Boston Red Sox,True
+Pittsburgh Pirates,Houston Astros,Pittsburgh Pirates,True
+Washington Nationals,Chicago Cubs,Chicago Cubs,False
+New York Yankees,Cleveland Guardians,Cleveland Guardians,False
+Toronto Blue Jays,Philadelphia Phillies,Toronto Blue Jays,True
+Atlanta Braves,Arizona Diamondbacks,Arizona Diamondbacks,False
+Tampa Bay Rays,Texas Rangers,Tampa Bay Rays,True
+Chicago White Sox,Detroit Tigers,Chicago White Sox,True
+St. Louis Cardinals,Kansas City Royals,St. Louis Cardinals,True
+Seattle Mariners,Baltimore Orioles,Seattle Mariners,True
+San Francisco Giants,San Diego Padres,San Francisco Giants,True
+Athletics,Minnesota Twins,Athletics,True
+Los Angeles Dodgers,New York Mets,Los Angeles Dodgers,True
+Atlanta Braves,Arizona Diamondbacks,Atlanta Braves,True
+Chicago White Sox,Detroit Tigers,Chicago White Sox,True
+Toronto Blue Jays,Philadelphia Phillies,Toronto Blue Jays,True
+Athletics,Minnesota Twins,Minnesota Twins,False
+Seattle Mariners,Baltimore Orioles,Seattle Mariners,True
+San Francisco Giants,San Diego Padres,San Francisco Giants,True
+Los Angeles Dodgers,New York Mets,Los Angeles Dodgers,True
+Pittsburgh Pirates,Houston Astros,Houston Astros,False
+Washington Nationals,Chicago Cubs,Washington Nationals,True
+New York Yankees,Cleveland Guardians,New York Yankees,True
+Tampa Bay Rays,Texas Rangers,Tampa Bay Rays,True
+St. Louis Cardinals,Kansas City Royals,St. Louis Cardinals,True
+Tampa Bay Rays,Miami Marlins,Tampa Bay Rays,True
+Pittsburgh Pirates,Philadelphia Phillies,Pittsburgh Pirates,True
+Washington Nationals,Texas Rangers,Washington Nationals,True
+New York Yankees,Boston Red Sox,New York Yankees,True
+Cincinnati Reds,Arizona Diamondbacks,Arizona Diamondbacks,False
+Detroit Tigers,Chicago Cubs,Detroit Tigers,True
+Cleveland Guardians,Houston Astros,Cleveland Guardians,True
+Chicago White Sox,Kansas City Royals,Chicago White Sox,True
+Minnesota Twins,Toronto Blue Jays,Minnesota Twins,True
+Milwaukee Brewers,San Diego Padres,Milwaukee Brewers,True
+St. Louis Cardinals,Los Angeles Dodgers,St. Louis Cardinals,True
+Colorado Rockies,New York Mets,New York Mets,False
+Los Angeles Angels,Seattle Mariners,Los Angeles Angels,True
+Athletics,Baltimore Orioles,Athletics,True
+San Francisco Giants,Atlanta Braves,San Francisco Giants,True
+Detroit Tigers,Chicago Cubs,Detroit Tigers,True
+Minnesota Twins,Toronto Blue Jays,Minnesota Twins,True
+St. Louis Cardinals,Los Angeles Dodgers,St. Louis Cardinals,True
+Washington Nationals,Texas Rangers,Washington Nationals,True
+Pittsburgh Pirates,Philadelphia Phillies,Philadelphia Phillies,False
+San Francisco Giants,Atlanta Braves,San Francisco Giants,True
+Cincinnati Reds,Arizona Diamondbacks,Cincinnati Reds,True
+Cleveland Guardians,Houston Astros,Cleveland Guardians,True
+Chicago White Sox,Kansas City Royals,Chicago White Sox,True
+Tampa Bay Rays,Miami Marlins,Tampa Bay Rays,True
+New York Yankees,Boston Red Sox,New York Yankees,True
+Milwaukee Brewers,San Diego Padres,Milwaukee Brewers,True
+Los Angeles Angels,Seattle Mariners,Los Angeles Angels,True
+Colorado Rockies,New York Mets,New York Mets,False
+Athletics,Baltimore Orioles,Athletics,True
+Tampa Bay Rays,Miami Marlins,Tampa Bay Rays,True
+Milwaukee Brewers,San Diego Padres,Milwaukee Brewers,True
+Washington Nationals,Texas Rangers,Washington Nationals,True
+Pittsburgh Pirates,Philadelphia Phillies,Pittsburgh Pirates,True
+Cincinnati Reds,Arizona Diamondbacks,Cincinnati Reds,True
+Detroit Tigers,Chicago Cubs,Detroit Tigers,True
+Cleveland Guardians,Houston Astros,Houston Astros,False
+Minnesota Twins,Toronto Blue Jays,Minnesota Twins,True
+Chicago White Sox,Kansas City Royals,Kansas City Royals,False
+St. Louis Cardinals,Los Angeles Dodgers,St. Louis Cardinals,True
+Colorado Rockies,New York Mets,Colorado Rockies,True
+Athletics,Baltimore Orioles,Athletics,True
+San Francisco Giants,Atlanta Braves,San Francisco Giants,True
+Los Angeles Angels,Seattle Mariners,Los Angeles Angels,True
+New York Yankees,Boston Red Sox,New York Yankees,True
+Cleveland Guardians,Cincinnati Reds,Cleveland Guardians,True
+Pittsburgh Pirates,Miami Marlins,Pittsburgh Pirates,True
+Philadelphia Phillies,Chicago Cubs,Philadelphia Phillies,True
+Boston Red Sox,Tampa Bay Rays,Tampa Bay Rays,False
+Milwaukee Brewers,Atlanta Braves,Milwaukee Brewers,True
+St. Louis Cardinals,Toronto Blue Jays,Toronto Blue Jays,False
+Los Angeles Angels,Athletics,Los Angeles Angels,True
+San Diego Padres,Los Angeles Dodgers,San Diego Padres,True
+Arizona Diamondbacks,Seattle Mariners,Seattle Mariners,False
+Baltimore Orioles,Detroit Tigers,Detroit Tigers,False
+Cleveland Guardians,Cincinnati Reds,Cincinnati Reds,False
+Pittsburgh Pirates,Miami Marlins,Pittsburgh Pirates,True
+Philadelphia Phillies,Chicago Cubs,Philadelphia Phillies,True
+New York Mets,Washington Nationals,New York Mets,True
+Boston Red Sox,Tampa Bay Rays,Boston Red Sox,True
+Minnesota Twins,Texas Rangers,Minnesota Twins,True
+Kansas City Royals,New York Yankees,New York Yankees,False
+Milwaukee Brewers,Atlanta Braves,Milwaukee Brewers,True
+St. Louis Cardinals,Toronto Blue Jays,Toronto Blue Jays,False
+Houston Astros,Chicago White Sox,Houston Astros,True
+Colorado Rockies,San Francisco Giants,San Francisco Giants,False
+Los Angeles Angels,Athletics,Los Angeles Angels,True
+San Diego Padres,Los Angeles Dodgers,San Diego Padres,True
+Arizona Diamondbacks,Seattle Mariners,Arizona Diamondbacks,True
+Pittsburgh Pirates,Miami Marlins,Miami Marlins,False
+Philadelphia Phillies,Chicago Cubs,Philadelphia Phillies,True
+Cleveland Guardians,Cincinnati Reds,Cleveland Guardians,True
+Milwaukee Brewers,Atlanta Braves,Milwaukee Brewers,True
+St. Louis Cardinals,Toronto Blue Jays,St. Louis Cardinals,True
+Arizona Diamondbacks,Seattle Mariners,Seattle Mariners,False
+Los Angeles Angels,Athletics,Los Angeles Angels,True
+San Diego Padres,Los Angeles Dodgers,San Diego Padres,True
+Baltimore Orioles,Detroit Tigers,Baltimore Orioles,True
+New York Mets,Washington Nationals,New York Mets,True
+Boston Red Sox,Tampa Bay Rays,Boston Red Sox,True
+Minnesota Twins,Texas Rangers,Minnesota Twins,True
+Kansas City Royals,New York Yankees,Kansas City Royals,True
+Houston Astros,Chicago White Sox,Houston Astros,True
+Colorado Rockies,San Francisco Giants,San Francisco Giants,False
+New York Mets,Washington Nationals,New York Mets,True
+Minnesota Twins,Texas Rangers,Minnesota Twins,True
+Colorado Rockies,San Francisco Giants,San Francisco Giants,False
+Baltimore Orioles,Detroit Tigers,Detroit Tigers,False
+Kansas City Royals,New York Yankees,Kansas City Royals,True
+Milwaukee Brewers,St. Louis Cardinals,Milwaukee Brewers,True
+Chicago Cubs,Pittsburgh Pirates,Chicago Cubs,True
+Houston Astros,Chicago White Sox,Houston Astros,True
+Chicago Cubs,Pittsburgh Pirates,Chicago Cubs,True
+Philadelphia Phillies,Toronto Blue Jays,Philadelphia Phillies,True
+Washington Nationals,Miami Marlins,Washington Nationals,True
+Baltimore Orioles,Los Angeles Angels,Los Angeles Angels,False
+Detroit Tigers,Cincinnati Reds,Detroit Tigers,True
+New York Mets,Tampa Bay Rays,New York Mets,True
+Boston Red Sox,New York Yankees,Boston Red Sox,True
+Atlanta Braves,Colorado Rockies,Colorado Rockies,False
+Texas Rangers,Chicago White Sox,Texas Rangers,True
+Kansas City Royals,Athletics,Kansas City Royals,True
+Houston Astros,Minnesota Twins,Minnesota Twins,False
+Milwaukee Brewers,St. Louis Cardinals,St. Louis Cardinals,False
+Arizona Diamondbacks,San Diego Padres,Arizona Diamondbacks,True
+Seattle Mariners,Cleveland Guardians,Seattle Mariners,True
+Los Angeles Dodgers,San Francisco Giants,Los Angeles Dodgers,True
+Washington Nationals,Miami Marlins,Miami Marlins,False
+Detroit Tigers,Cincinnati Reds,Detroit Tigers,True
+Chicago Cubs,Pittsburgh Pirates,Chicago Cubs,True
+Baltimore Orioles,Los Angeles Angels,Los Angeles Angels,False
+Philadelphia Phillies,Toronto Blue Jays,Philadelphia Phillies,True
+Texas Rangers,Chicago White Sox,Texas Rangers,True
+Kansas City Royals,Athletics,Kansas City Royals,True
+New York Mets,Tampa Bay Rays,New York Mets,True
+Houston Astros,Minnesota Twins,Houston Astros,True
+Atlanta Braves,Colorado Rockies,Atlanta Braves,True
+Milwaukee Brewers,St. Louis Cardinals,Milwaukee Brewers,True
+Arizona Diamondbacks,San Diego Padres,Arizona Diamondbacks,True
+Boston Red Sox,New York Yankees,Boston Red Sox,True
+Seattle Mariners,Cleveland Guardians,Cleveland Guardians,False
+Los Angeles Dodgers,San Francisco Giants,Los Angeles Dodgers,True
+Detroit Tigers,Cincinnati Reds,Detroit Tigers,True
+Baltimore Orioles,Los Angeles Angels,Baltimore Orioles,True
+Philadelphia Phillies,Toronto Blue Jays,Toronto Blue Jays,False
+Atlanta Braves,Colorado Rockies,Atlanta Braves,True
+Washington Nationals,Miami Marlins,Washington Nationals,True
+Boston Red Sox,New York Yankees,Boston Red Sox,True
+New York Mets,Tampa Bay Rays,New York Mets,True
+Kansas City Royals,Athletics,Kansas City Royals,True
+Houston Astros,Minnesota Twins,Minnesota Twins,False
+Milwaukee Brewers,St. Louis Cardinals,Milwaukee Brewers,True
+Chicago Cubs,Pittsburgh Pirates,Chicago Cubs,True
+Texas Rangers,Chicago White Sox,Chicago White Sox,False
+Arizona Diamondbacks,San Diego Padres,Arizona Diamondbacks,True
+Seattle Mariners,Cleveland Guardians,Seattle Mariners,True
+Los Angeles Dodgers,San Francisco Giants,Los Angeles Dodgers,True
+Miami Marlins,Philadelphia Phillies,Philadelphia Phillies,False
+Washington Nationals,Colorado Rockies,Washington Nationals,True
+New York Yankees,Los Angeles Angels,New York Yankees,True
+Tampa Bay Rays,Baltimore Orioles,Tampa Bay Rays,True
+Seattle Mariners,Boston Red Sox,Seattle Mariners,True
+Athletics,Houston Astros,Houston Astros,False
+Los Angeles Dodgers,San Diego Padres,San Diego Padres,False
+Detroit Tigers,Pittsburgh Pirates,Detroit Tigers,True
+Miami Marlins,Philadelphia Phillies,Miami Marlins,True
+Washington Nationals,Colorado Rockies,Washington Nationals,True
+New York Yankees,Los Angeles Angels,New York Yankees,True
+Toronto Blue Jays,Arizona Diamondbacks,Toronto Blue Jays,True
+Cincinnati Reds,Minnesota Twins,Minnesota Twins,False
+Atlanta Braves,New York Mets,Atlanta Braves,True
+Tampa Bay Rays,Baltimore Orioles,Tampa Bay Rays,True
+Chicago White Sox,St. Louis Cardinals,St. Louis Cardinals,False
+Texas Rangers,Kansas City Royals,Texas Rangers,True
+Chicago Cubs,Milwaukee Brewers,Milwaukee Brewers,False
+Seattle Mariners,Boston Red Sox,Seattle Mariners,True
+San Francisco Giants,Cleveland Guardians,San Francisco Giants,True
+Athletics,Houston Astros,Houston Astros,False
+Los Angeles Dodgers,San Diego Padres,Los Angeles Dodgers,True
+Seattle Mariners,Boston Red Sox,Seattle Mariners,True
+Detroit Tigers,Pittsburgh Pirates,Detroit Tigers,True
+Miami Marlins,Philadelphia Phillies,Philadelphia Phillies,False
+Washington Nationals,Colorado Rockies,Washington Nationals,True
+New York Yankees,Los Angeles Angels,Los Angeles Angels,False
+Toronto Blue Jays,Arizona Diamondbacks,Arizona Diamondbacks,False
+Cincinnati Reds,Minnesota Twins,Minnesota Twins,False
+Atlanta Braves,New York Mets,Atlanta Braves,True
+Tampa Bay Rays,Baltimore Orioles,Tampa Bay Rays,True
+Chicago White Sox,St. Louis Cardinals,St. Louis Cardinals,False
+Texas Rangers,Kansas City Royals,Texas Rangers,True
+Chicago Cubs,Milwaukee Brewers,Chicago Cubs,True
+San Francisco Giants,Cleveland Guardians,Cleveland Guardians,False
+Athletics,Houston Astros,Athletics,True
+Los Angeles Dodgers,San Diego Padres,Los Angeles Dodgers,True
+Cincinnati Reds,Minnesota Twins,Cincinnati Reds,True
+Washington Nationals,Colorado Rockies,Washington Nationals,True
+New York Yankees,Los Angeles Angels,New York Yankees,True
+Detroit Tigers,Pittsburgh Pirates,Detroit Tigers,True
+Chicago White Sox,St. Louis Cardinals,Chicago White Sox,True
+Chicago Cubs,Milwaukee Brewers,Chicago Cubs,True
+Texas Rangers,Kansas City Royals,Texas Rangers,True
+Toronto Blue Jays,Arizona Diamondbacks,Toronto Blue Jays,True
+San Francisco Giants,Cleveland Guardians,San Francisco Giants,True
+Miami Marlins,Philadelphia Phillies,Miami Marlins,True
+Atlanta Braves,New York Mets,Atlanta Braves,True
+Tampa Bay Rays,Baltimore Orioles,Tampa Bay Rays,True
+Athletics,Houston Astros,Athletics,True
+Los Angeles Dodgers,San Diego Padres,Los Angeles Dodgers,True
+Chicago Cubs,Seattle Mariners,Chicago Cubs,True
+Pittsburgh Pirates,Texas Rangers,Texas Rangers,False
+Tampa Bay Rays,Detroit Tigers,Detroit Tigers,False
+New York Yankees,Baltimore Orioles,New York Yankees,True
+Toronto Blue Jays,Chicago White Sox,Toronto Blue Jays,True
+Miami Marlins,Atlanta Braves,Miami Marlins,True
+St. Louis Cardinals,Cincinnati Reds,Cincinnati Reds,False
+Philadelphia Phillies,New York Mets,Philadelphia Phillies,True
+Minnesota Twins,Milwaukee Brewers,Minnesota Twins,True
+Colorado Rockies,Arizona Diamondbacks,Arizona Diamondbacks,False
+Los Angeles Angels,Houston Astros,Houston Astros,False
+San Diego Padres,Kansas City Royals,Kansas City Royals,False
+Athletics,Cleveland Guardians,Athletics,True
+Los Angeles Dodgers,Washington Nationals,Los Angeles Dodgers,True
+San Francisco Giants,Boston Red Sox,San Francisco Giants,True
+Tampa Bay Rays,Detroit Tigers,Tampa Bay Rays,True
+New York Yankees,Baltimore Orioles,New York Yankees,True
+Minnesota Twins,Milwaukee Brewers,Minnesota Twins,True
+St. Louis Cardinals,Cincinnati Reds,St. Louis Cardinals,True
+Chicago Cubs,Seattle Mariners,Chicago Cubs,True
+Toronto Blue Jays,Chicago White Sox,Toronto Blue Jays,True
+San Francisco Giants,Boston Red Sox,San Francisco Giants,True
+Pittsburgh Pirates,Texas Rangers,Pittsburgh Pirates,True
+Miami Marlins,Atlanta Braves,Miami Marlins,True
+San Diego Padres,Kansas City Royals,San Diego Padres,True
+Philadelphia Phillies,New York Mets,Philadelphia Phillies,True
+Colorado Rockies,Arizona Diamondbacks,Arizona Diamondbacks,False
+Los Angeles Angels,Houston Astros,Houston Astros,False
+Athletics,Cleveland Guardians,Athletics,True
+Los Angeles Dodgers,Washington Nationals,Washington Nationals,False
+New York Yankees,Baltimore Orioles,New York Yankees,True
+Tampa Bay Rays,Detroit Tigers,Tampa Bay Rays,True
+Pittsburgh Pirates,Texas Rangers,Pittsburgh Pirates,True
+Toronto Blue Jays,Chicago White Sox,Toronto Blue Jays,True
+Miami Marlins,Atlanta Braves,Miami Marlins,True
+Minnesota Twins,Milwaukee Brewers,Minnesota Twins,True
+St. Louis Cardinals,Cincinnati Reds,St. Louis Cardinals,True
+Chicago Cubs,Seattle Mariners,Chicago Cubs,True
+Colorado Rockies,Arizona Diamondbacks,Arizona Diamondbacks,False
+Athletics,Cleveland Guardians,Cleveland Guardians,False
+San Francisco Giants,Boston Red Sox,San Francisco Giants,True
+Los Angeles Angels,Houston Astros,Houston Astros,False
+Los Angeles Dodgers,Washington Nationals,Los Angeles Dodgers,True
+San Diego Padres,Kansas City Royals,San Diego Padres,True
+Philadelphia Phillies,New York Mets,Philadelphia Phillies,True
+Baltimore Orioles,Texas Rangers,Texas Rangers,False
+New York Mets,Atlanta Braves,New York Mets,True
+Cincinnati Reds,New York Yankees,Cincinnati Reds,True
+Minnesota Twins,Seattle Mariners,Minnesota Twins,True
+Chicago White Sox,Arizona Diamondbacks,Arizona Diamondbacks,False
+Milwaukee Brewers,Pittsburgh Pirates,Milwaukee Brewers,True
+St. Louis Cardinals,Chicago Cubs,St. Louis Cardinals,True
+Los Angeles Angels,Boston Red Sox,Los Angeles Angels,True
+San Diego Padres,Washington Nationals,San Diego Padres,True
+Baltimore Orioles,Texas Rangers,Baltimore Orioles,True
+Detroit Tigers,Athletics,Detroit Tigers,True
+Cleveland Guardians,Toronto Blue Jays,Cleveland Guardians,True
+New York Mets,Atlanta Braves,New York Mets,True
+Cincinnati Reds,New York Yankees,Cincinnati Reds,True
+Kansas City Royals,Tampa Bay Rays,Kansas City Royals,True
+Minnesota Twins,Seattle Mariners,Minnesota Twins,True
+Chicago White Sox,Arizona Diamondbacks,Arizona Diamondbacks,False
+Milwaukee Brewers,Pittsburgh Pirates,Milwaukee Brewers,True
+St. Louis Cardinals,Chicago Cubs,St. Louis Cardinals,True
+Houston Astros,Philadelphia Phillies,Houston Astros,True
+Colorado Rockies,Los Angeles Dodgers,Los Angeles Dodgers,False
+Los Angeles Angels,Boston Red Sox,Los Angeles Angels,True
+San Diego Padres,Washington Nationals,San Diego Padres,True
+San Francisco Giants,Miami Marlins,San Francisco Giants,True
+Chicago White Sox,Arizona Diamondbacks,Arizona Diamondbacks,False
+Milwaukee Brewers,Pittsburgh Pirates,Milwaukee Brewers,True
+Los Angeles Angels,Boston Red Sox,Los Angeles Angels,True
+San Diego Padres,Washington Nationals,San Diego Padres,True
+Baltimore Orioles,Texas Rangers,Baltimore Orioles,True
+Detroit Tigers,Athletics,Detroit Tigers,True
+Cleveland Guardians,Toronto Blue Jays,Cleveland Guardians,True
+New York Mets,Atlanta Braves,New York Mets,True
+Cincinnati Reds,New York Yankees,New York Yankees,False
+Kansas City Royals,Tampa Bay Rays,Kansas City Royals,True
+Minnesota Twins,Seattle Mariners,Minnesota Twins,True
+St. Louis Cardinals,Chicago Cubs,St. Louis Cardinals,True
+Houston Astros,Philadelphia Phillies,Philadelphia Phillies,False
+Colorado Rockies,Los Angeles Dodgers,Los Angeles Dodgers,False
+San Francisco Giants,Miami Marlins,San Francisco Giants,True
+Detroit Tigers,Athletics,Detroit Tigers,True
+Cleveland Guardians,Toronto Blue Jays,Toronto Blue Jays,False
+Minnesota Twins,Seattle Mariners,Minnesota Twins,True
+Kansas City Royals,Tampa Bay Rays,Kansas City Royals,True
+Houston Astros,Philadelphia Phillies,Houston Astros,True
+St. Louis Cardinals,Chicago Cubs,St. Louis Cardinals,True
+Colorado Rockies,Los Angeles Dodgers,Los Angeles Dodgers,False
+San Francisco Giants,Miami Marlins,San Francisco Giants,True
+New York Mets,Atlanta Braves,New York Mets,True
+Pittsburgh Pirates,New York Mets,Pittsburgh Pirates,True
+Baltimore Orioles,Tampa Bay Rays,Tampa Bay Rays,False
+New York Yankees,Athletics,New York Yankees,True
+Cincinnati Reds,San Diego Padres,Cincinnati Reds,True
+Cleveland Guardians,St. Louis Cardinals,Cleveland Guardians,True
+Boston Red Sox,Toronto Blue Jays,Boston Red Sox,True
+Detroit Tigers,Minnesota Twins,Detroit Tigers,True
+Atlanta Braves,Philadelphia Phillies,Atlanta Braves,True
+Chicago White Sox,San Francisco Giants,San Francisco Giants,False
+Texas Rangers,Seattle Mariners,Seattle Mariners,False
+Houston Astros,Chicago Cubs,Houston Astros,True
+Kansas City Royals,Los Angeles Dodgers,Kansas City Royals,True
+Milwaukee Brewers,Colorado Rockies,Milwaukee Brewers,True
+Los Angeles Angels,Washington Nationals,Washington Nationals,False
+Arizona Diamondbacks,Miami Marlins,Arizona Diamondbacks,True
+New York Yankees,Athletics,New York Yankees,True
+Detroit Tigers,Minnesota Twins,Detroit Tigers,True
+Pittsburgh Pirates,New York Mets,New York Mets,False
+Baltimore Orioles,Tampa Bay Rays,Tampa Bay Rays,False
+Texas Rangers,Seattle Mariners,Texas Rangers,True
+Kansas City Royals,Los Angeles Dodgers,Kansas City Royals,True
+Cincinnati Reds,San Diego Padres,Cincinnati Reds,True
+Cleveland Guardians,St. Louis Cardinals,Cleveland Guardians,True
+Boston Red Sox,Toronto Blue Jays,Boston Red Sox,True
+Chicago White Sox,San Francisco Giants,Chicago White Sox,True
+Arizona Diamondbacks,Miami Marlins,Arizona Diamondbacks,True
+Milwaukee Brewers,Colorado Rockies,Milwaukee Brewers,True
+Houston Astros,Chicago Cubs,Houston Astros,True
+Atlanta Braves,Philadelphia Phillies,Atlanta Braves,True
+Los Angeles Angels,Washington Nationals,Los Angeles Angels,True
+Cleveland Guardians,St. Louis Cardinals,Cleveland Guardians,True
+Pittsburgh Pirates,New York Mets,Pittsburgh Pirates,True
+Baltimore Orioles,Tampa Bay Rays,Baltimore Orioles,True
+Boston Red Sox,Toronto Blue Jays,Boston Red Sox,True
+Atlanta Braves,Philadelphia Phillies,Atlanta Braves,True
+New York Yankees,Athletics,New York Yankees,True
+Cincinnati Reds,San Diego Padres,Cincinnati Reds,True
+Detroit Tigers,Minnesota Twins,Detroit Tigers,True
+Houston Astros,Chicago Cubs,Chicago Cubs,False
+Kansas City Royals,Los Angeles Dodgers,Kansas City Royals,True
+Chicago White Sox,San Francisco Giants,San Francisco Giants,False
+Milwaukee Brewers,Colorado Rockies,Milwaukee Brewers,True
+Texas Rangers,Seattle Mariners,Texas Rangers,True
+Los Angeles Angels,Washington Nationals,Los Angeles Angels,True
+Arizona Diamondbacks,Miami Marlins,Arizona Diamondbacks,True
+Philadelphia Phillies,San Diego Padres,San Diego Padres,False
+Pittsburgh Pirates,St. Louis Cardinals,St. Louis Cardinals,False
+Toronto Blue Jays,New York Yankees,Toronto Blue Jays,True
+Boston Red Sox,Cincinnati Reds,Boston Red Sox,True
+Tampa Bay Rays,Athletics,Tampa Bay Rays,True
+Texas Rangers,Baltimore Orioles,Texas Rangers,True
+Seattle Mariners,Kansas City Royals,Seattle Mariners,True
+Arizona Diamondbacks,San Francisco Giants,San Francisco Giants,False
+Toronto Blue Jays,New York Yankees,Toronto Blue Jays,True
+Philadelphia Phillies,San Diego Padres,Philadelphia Phillies,True
+Pittsburgh Pirates,St. Louis Cardinals,Pittsburgh Pirates,True
+Miami Marlins,Minnesota Twins,Miami Marlins,True
+Washington Nationals,Detroit Tigers,Detroit Tigers,False
+Tampa Bay Rays,Athletics,Athletics,False
+Boston Red Sox,Cincinnati Reds,Boston Red Sox,True
+New York Mets,Milwaukee Brewers,New York Mets,True
+Atlanta Braves,Los Angeles Angels,Atlanta Braves,True
+Chicago Cubs,Cleveland Guardians,Chicago Cubs,True
+Texas Rangers,Baltimore Orioles,Texas Rangers,True
+Colorado Rockies,Houston Astros,Houston Astros,False
+Seattle Mariners,Kansas City Royals,Seattle Mariners,True
+Arizona Diamondbacks,San Francisco Giants,Arizona Diamondbacks,True
+Los Angeles Dodgers,Chicago White Sox,Los Angeles Dodgers,True
+Tampa Bay Rays,Athletics,Athletics,False
+Pittsburgh Pirates,St. Louis Cardinals,St. Louis Cardinals,False
+Philadelphia Phillies,San Diego Padres,San Diego Padres,False
+Miami Marlins,Minnesota Twins,Minnesota Twins,False
+Washington Nationals,Detroit Tigers,Washington Nationals,True
+Toronto Blue Jays,New York Yankees,Toronto Blue Jays,True
+Boston Red Sox,Cincinnati Reds,Cincinnati Reds,False
+New York Mets,Milwaukee Brewers,New York Mets,True
+Atlanta Braves,Los Angeles Angels,Atlanta Braves,True
+Chicago Cubs,Cleveland Guardians,Chicago Cubs,True
+Texas Rangers,Baltimore Orioles,Baltimore Orioles,False
+Colorado Rockies,Houston Astros,Houston Astros,False
+Seattle Mariners,Kansas City Royals,Seattle Mariners,True
+Arizona Diamondbacks,San Francisco Giants,Arizona Diamondbacks,True
+Los Angeles Dodgers,Chicago White Sox,Los Angeles Dodgers,True
+Miami Marlins,Minnesota Twins,Minnesota Twins,False
+Colorado Rockies,Houston Astros,Houston Astros,False
+Washington Nationals,Detroit Tigers,Detroit Tigers,False
+Toronto Blue Jays,New York Yankees,Toronto Blue Jays,True
+New York Mets,Milwaukee Brewers,New York Mets,True
+Atlanta Braves,Los Angeles Angels,Atlanta Braves,True
+Chicago Cubs,Cleveland Guardians,Chicago Cubs,True
+Arizona Diamondbacks,San Francisco Giants,Arizona Diamondbacks,True
+Seattle Mariners,Kansas City Royals,Seattle Mariners,True
+Los Angeles Dodgers,Chicago White Sox,Los Angeles Dodgers,True
+Washington Nationals,Boston Red Sox,Washington Nationals,True
+Philadelphia Phillies,Cincinnati Reds,Philadelphia Phillies,True
+Chicago Cubs,St. Louis Cardinals,Chicago Cubs,True
+New York Mets,New York Yankees,New York Mets,True
+Seattle Mariners,Pittsburgh Pirates,Seattle Mariners,True
+Minnesota Twins,Tampa Bay Rays,Minnesota Twins,True
+San Diego Padres,Texas Rangers,Texas Rangers,False
+Toronto Blue Jays,Los Angeles Angels,Los Angeles Angels,False
+Cleveland Guardians,Detroit Tigers,Detroit Tigers,False
+Miami Marlins,Milwaukee Brewers,Miami Marlins,True
+Atlanta Braves,Baltimore Orioles,Baltimore Orioles,False
+Colorado Rockies,Chicago White Sox,Chicago White Sox,False
+Los Angeles Dodgers,Houston Astros,Los Angeles Dodgers,True
+Arizona Diamondbacks,Kansas City Royals,Kansas City Royals,False
+Athletics,San Francisco Giants,San Francisco Giants,False
+Minnesota Twins,Tampa Bay Rays,Minnesota Twins,True
+Chicago Cubs,St. Louis Cardinals,Chicago Cubs,True
+Toronto Blue Jays,Los Angeles Angels,Los Angeles Angels,False
+Washington Nationals,Boston Red Sox,Boston Red Sox,False
+Philadelphia Phillies,Cincinnati Reds,Philadelphia Phillies,True
+Arizona Diamondbacks,Kansas City Royals,Arizona Diamondbacks,True
+Atlanta Braves,Baltimore Orioles,Atlanta Braves,True
+New York Mets,New York Yankees,New York Mets,True
+Miami Marlins,Milwaukee Brewers,Milwaukee Brewers,False
+Cleveland Guardians,Detroit Tigers,Detroit Tigers,False
+Los Angeles Dodgers,Houston Astros,Los Angeles Dodgers,True
+Colorado Rockies,Chicago White Sox,Chicago White Sox,False
+San Diego Padres,Texas Rangers,San Diego Padres,True
+Athletics,San Francisco Giants,Athletics,True
+Seattle Mariners,Pittsburgh Pirates,Seattle Mariners,True
+Atlanta Braves,Baltimore Orioles,Atlanta Braves,True
+Washington Nationals,Boston Red Sox,Washington Nationals,True
+Philadelphia Phillies,Cincinnati Reds,Philadelphia Phillies,True
+Toronto Blue Jays,Los Angeles Angels,Toronto Blue Jays,True
+Cleveland Guardians,Detroit Tigers,Detroit Tigers,False
+New York Mets,New York Yankees,New York Yankees,False
+Miami Marlins,Milwaukee Brewers,Milwaukee Brewers,False
+Minnesota Twins,Tampa Bay Rays,Minnesota Twins,True
+Chicago Cubs,St. Louis Cardinals,Chicago Cubs,True
+Colorado Rockies,Chicago White Sox,Colorado Rockies,True
+Arizona Diamondbacks,Kansas City Royals,Arizona Diamondbacks,True
+Los Angeles Dodgers,Houston Astros,Los Angeles Dodgers,True
+Seattle Mariners,Pittsburgh Pirates,Pittsburgh Pirates,False
+San Diego Padres,Texas Rangers,San Diego Padres,True
+Athletics,San Francisco Giants,San Francisco Giants,False
+Detroit Tigers,Tampa Bay Rays,Detroit Tigers,True
+Boston Red Sox,Colorado Rockies,Boston Red Sox,True
+Cincinnati Reds,Miami Marlins,Miami Marlins,False
+Kansas City Royals,Pittsburgh Pirates,Kansas City Royals,True
+Chicago White Sox,Toronto Blue Jays,Chicago White Sox,True
+Milwaukee Brewers,Los Angeles Dodgers,Los Angeles Dodgers,False
+Houston Astros,Cleveland Guardians,Cleveland Guardians,False
+Los Angeles Angels,Texas Rangers,Los Angeles Angels,True
+San Diego Padres,Arizona Diamondbacks,San Diego Padres,True
+San Francisco Giants,Philadelphia Phillies,San Francisco Giants,True
+Baltimore Orioles,New York Mets,Baltimore Orioles,True
+Detroit Tigers,Tampa Bay Rays,Detroit Tigers,True
+New York Yankees,Seattle Mariners,New York Yankees,True
+Boston Red Sox,Colorado Rockies,Boston Red Sox,True
+Cincinnati Reds,Miami Marlins,Cincinnati Reds,True
+Kansas City Royals,Pittsburgh Pirates,Kansas City Royals,True
+Minnesota Twins,Chicago Cubs,Minnesota Twins,True
+Chicago White Sox,Toronto Blue Jays,Chicago White Sox,True
+Milwaukee Brewers,Los Angeles Dodgers,Milwaukee Brewers,True
+St. Louis Cardinals,Washington Nationals,Washington Nationals,False
+Houston Astros,Cleveland Guardians,Houston Astros,True
+Los Angeles Angels,Texas Rangers,Los Angeles Angels,True
+San Diego Padres,Arizona Diamondbacks,San Diego Padres,True
+San Francisco Giants,Philadelphia Phillies,Philadelphia Phillies,False
+Athletics,Atlanta Braves,Athletics,True
+Detroit Tigers,Tampa Bay Rays,Detroit Tigers,True
+Chicago White Sox,Toronto Blue Jays,Chicago White Sox,True
+Milwaukee Brewers,Los Angeles Dodgers,Milwaukee Brewers,True
+San Francisco Giants,Philadelphia Phillies,San Francisco Giants,True
+Baltimore Orioles,New York Mets,New York Mets,False
+New York Yankees,Seattle Mariners,New York Yankees,True
+Boston Red Sox,Colorado Rockies,Boston Red Sox,True
+Cincinnati Reds,Miami Marlins,Miami Marlins,False
+Kansas City Royals,Pittsburgh Pirates,Kansas City Royals,True
+Minnesota Twins,Chicago Cubs,Minnesota Twins,True
+St. Louis Cardinals,Washington Nationals,St. Louis Cardinals,True
+Houston Astros,Cleveland Guardians,Cleveland Guardians,False
+Los Angeles Angels,Texas Rangers,Los Angeles Angels,True
+San Diego Padres,Arizona Diamondbacks,San Diego Padres,True
+Athletics,Atlanta Braves,Atlanta Braves,False
+Baltimore Orioles,New York Mets,New York Mets,False
+Minnesota Twins,Chicago Cubs,Minnesota Twins,True
+Cincinnati Reds,Miami Marlins,Cincinnati Reds,True
+New York Yankees,Seattle Mariners,New York Yankees,True
+Boston Red Sox,Tampa Bay Rays,Boston Red Sox,True
+Chicago White Sox,Cleveland Guardians,Cleveland Guardians,False
+St. Louis Cardinals,Washington Nationals,St. Louis Cardinals,True
+Athletics,Atlanta Braves,Atlanta Braves,False
+Los Angeles Angels,Texas Rangers,Los Angeles Angels,True
+San Diego Padres,Arizona Diamondbacks,San Diego Padres,True
+Baltimore Orioles,Miami Marlins,Baltimore Orioles,True
+New York Yankees,Chicago Cubs,New York Yankees,True
+Cincinnati Reds,Colorado Rockies,Cincinnati Reds,True
+Detroit Tigers,Seattle Mariners,Detroit Tigers,True
+Boston Red Sox,Tampa Bay Rays,Boston Red Sox,True
+Kansas City Royals,New York Mets,Kansas City Royals,True
+Houston Astros,Texas Rangers,Houston Astros,True
+Minnesota Twins,Pittsburgh Pirates,Minnesota Twins,True
+Chicago White Sox,Cleveland Guardians,Chicago White Sox,True
+Milwaukee Brewers,Washington Nationals,Milwaukee Brewers,True
+St. Louis Cardinals,Atlanta Braves,St. Louis Cardinals,True
+Los Angeles Angels,Arizona Diamondbacks,Arizona Diamondbacks,False
+San Diego Padres,Philadelphia Phillies,San Diego Padres,True
+Athletics,Toronto Blue Jays,Toronto Blue Jays,False
+San Francisco Giants,Los Angeles Dodgers,San Francisco Giants,True
+New York Yankees,Chicago Cubs,New York Yankees,True
+Detroit Tigers,Seattle Mariners,Detroit Tigers,True
+Minnesota Twins,Pittsburgh Pirates,Minnesota Twins,True
+St. Louis Cardinals,Atlanta Braves,Atlanta Braves,False
+San Francisco Giants,Los Angeles Dodgers,San Francisco Giants,True
+Baltimore Orioles,Miami Marlins,Baltimore Orioles,True
+Cincinnati Reds,Colorado Rockies,Cincinnati Reds,True
+Kansas City Royals,New York Mets,Kansas City Royals,True
+Boston Red Sox,Tampa Bay Rays,Boston Red Sox,True
+Chicago White Sox,Cleveland Guardians,Cleveland Guardians,False
+Milwaukee Brewers,Washington Nationals,Milwaukee Brewers,True
+Houston Astros,Texas Rangers,Houston Astros,True
+San Diego Padres,Philadelphia Phillies,San Diego Padres,True
+Los Angeles Angels,Arizona Diamondbacks,Los Angeles Angels,True
+Athletics,Toronto Blue Jays,Toronto Blue Jays,False
+Boston Red Sox,Tampa Bay Rays,Boston Red Sox,True
+Baltimore Orioles,Miami Marlins,Baltimore Orioles,True
+New York Yankees,Chicago Cubs,Chicago Cubs,False
+Cincinnati Reds,Colorado Rockies,Cincinnati Reds,True
+Detroit Tigers,Seattle Mariners,Detroit Tigers,True
+Kansas City Royals,New York Mets,Kansas City Royals,True
+Houston Astros,Texas Rangers,Texas Rangers,False
+Minnesota Twins,Pittsburgh Pirates,Minnesota Twins,True
+Chicago White Sox,Cleveland Guardians,Cleveland Guardians,False
+Milwaukee Brewers,Washington Nationals,Milwaukee Brewers,True
+St. Louis Cardinals,Atlanta Braves,St. Louis Cardinals,True
+San Francisco Giants,Los Angeles Dodgers,San Francisco Giants,True
+Athletics,Toronto Blue Jays,Athletics,True
+Los Angeles Angels,Arizona Diamondbacks,Arizona Diamondbacks,False
+San Diego Padres,Philadelphia Phillies,San Diego Padres,True
+Chicago Cubs,Boston Red Sox,Chicago Cubs,True
+Pittsburgh Pirates,Chicago White Sox,Chicago White Sox,False
+Washington Nationals,San Diego Padres,Washington Nationals,True
+Philadelphia Phillies,Los Angeles Angels,Philadelphia Phillies,True
+Toronto Blue Jays,San Francisco Giants,San Francisco Giants,False
+New York Mets,Cincinnati Reds,New York Mets,True
+Cleveland Guardians,Athletics,Cleveland Guardians,True
+Miami Marlins,Kansas City Royals,Kansas City Royals,False
+Atlanta Braves,New York Yankees,New York Yankees,False
+Tampa Bay Rays,Baltimore Orioles,Tampa Bay Rays,True
+Texas Rangers,Detroit Tigers,Detroit Tigers,False
+Colorado Rockies,Minnesota Twins,Colorado Rockies,True
+Arizona Diamondbacks,St. Louis Cardinals,Arizona Diamondbacks,True
+Seattle Mariners,Houston Astros,Seattle Mariners,True
+Los Angeles Dodgers,Milwaukee Brewers,Los Angeles Dodgers,True
+Toronto Blue Jays,San Francisco Giants,Toronto Blue Jays,True
+New York Mets,Cincinnati Reds,New York Mets,True
+Miami Marlins,Kansas City Royals,Miami Marlins,True
+Philadelphia Phillies,Los Angeles Angels,Philadelphia Phillies,True
+Pittsburgh Pirates,Chicago White Sox,Pittsburgh Pirates,True
+Washington Nationals,San Diego Padres,Washington Nationals,True
+Tampa Bay Rays,Baltimore Orioles,Tampa Bay Rays,True
+Texas Rangers,Detroit Tigers,Detroit Tigers,False
+Cleveland Guardians,Athletics,Cleveland Guardians,True
+Chicago Cubs,Boston Red Sox,Boston Red Sox,False
+Arizona Diamondbacks,St. Louis Cardinals,Arizona Diamondbacks,True
+Atlanta Braves,New York Yankees,Atlanta Braves,True
+Colorado Rockies,Minnesota Twins,Colorado Rockies,True
+Los Angeles Dodgers,Milwaukee Brewers,Los Angeles Dodgers,True
+Seattle Mariners,Houston Astros,Seattle Mariners,True
+Toronto Blue Jays,San Francisco Giants,San Francisco Giants,False
+Tampa Bay Rays,Baltimore Orioles,Tampa Bay Rays,True
+Washington Nationals,San Diego Padres,Washington Nationals,True
+Philadelphia Phillies,Los Angeles Angels,Philadelphia Phillies,True
+Pittsburgh Pirates,Chicago White Sox,Pittsburgh Pirates,True
+Atlanta Braves,New York Yankees,Atlanta Braves,True
+New York Mets,Cincinnati Reds,New York Mets,True
+Cleveland Guardians,Athletics,Cleveland Guardians,True
+Miami Marlins,Kansas City Royals,Miami Marlins,True
+Chicago Cubs,Boston Red Sox,Boston Red Sox,False
+Texas Rangers,Detroit Tigers,Detroit Tigers,False
+Colorado Rockies,Minnesota Twins,Colorado Rockies,True
+Seattle Mariners,Houston Astros,Seattle Mariners,True
+Arizona Diamondbacks,St. Louis Cardinals,Arizona Diamondbacks,True
+Los Angeles Dodgers,Milwaukee Brewers,Milwaukee Brewers,False
+Cleveland Guardians,Baltimore Orioles,Cleveland Guardians,True
+Pittsburgh Pirates,Detroit Tigers,Pittsburgh Pirates,True
+Miami Marlins,San Diego Padres,Miami Marlins,True
+Washington Nationals,Cincinnati Reds,Washington Nationals,True
+Philadelphia Phillies,Boston Red Sox,Boston Red Sox,False
+Toronto Blue Jays,New York Yankees,Toronto Blue Jays,True
+New York Mets,Los Angeles Angels,New York Mets,True
+Atlanta Braves,San Francisco Giants,Atlanta Braves,True
+Tampa Bay Rays,Chicago White Sox,Tampa Bay Rays,True
+Chicago Cubs,Kansas City Royals,Chicago Cubs,True
+Texas Rangers,Athletics,Texas Rangers,True
+Colorado Rockies,St. Louis Cardinals,St. Louis Cardinals,False
+Arizona Diamondbacks,Houston Astros,Arizona Diamondbacks,True
+Seattle Mariners,Milwaukee Brewers,Seattle Mariners,True
+Los Angeles Dodgers,Minnesota Twins,Minnesota Twins,False
+Cleveland Guardians,Baltimore Orioles,Cleveland Guardians,True
+Pittsburgh Pirates,Detroit Tigers,Detroit Tigers,False
+Miami Marlins,San Diego Padres,Miami Marlins,True
+Washington Nationals,Cincinnati Reds,Washington Nationals,True
+Philadelphia Phillies,Boston Red Sox,Philadelphia Phillies,True
+Toronto Blue Jays,New York Yankees,Toronto Blue Jays,True
+New York Mets,Los Angeles Angels,Los Angeles Angels,False
+Atlanta Braves,San Francisco Giants,Atlanta Braves,True
+Tampa Bay Rays,Chicago White Sox,Tampa Bay Rays,True
+Chicago Cubs,Kansas City Royals,Chicago Cubs,True
+Texas Rangers,Athletics,Texas Rangers,True
+Colorado Rockies,St. Louis Cardinals,St. Louis Cardinals,False
+Arizona Diamondbacks,Houston Astros,Arizona Diamondbacks,True
+Seattle Mariners,Milwaukee Brewers,Seattle Mariners,True
+Los Angeles Dodgers,Minnesota Twins,Los Angeles Dodgers,True
+Washington Nationals,Cincinnati Reds,Washington Nationals,True
+Miami Marlins,San Diego Padres,San Diego Padres,False
+Atlanta Braves,San Francisco Giants,Atlanta Braves,True
+Pittsburgh Pirates,Detroit Tigers,Pittsburgh Pirates,True
+New York Mets,Los Angeles Angels,New York Mets,True
+Chicago Cubs,Kansas City Royals,Chicago Cubs,True
+Colorado Rockies,St. Louis Cardinals,St. Louis Cardinals,False
+Arizona Diamondbacks,Houston Astros,Arizona Diamondbacks,True
+Seattle Mariners,Milwaukee Brewers,Seattle Mariners,True
+Los Angeles Dodgers,Minnesota Twins,Los Angeles Dodgers,True
+Cleveland Guardians,Baltimore Orioles,Cleveland Guardians,True
+Philadelphia Phillies,Boston Red Sox,Philadelphia Phillies,True
+Toronto Blue Jays,New York Yankees,New York Yankees,False
+Tampa Bay Rays,Chicago White Sox,Tampa Bay Rays,True
+Texas Rangers,Athletics,Texas Rangers,True
+Cleveland Guardians,Baltimore Orioles,Cleveland Guardians,True
+Detroit Tigers,Toronto Blue Jays,Detroit Tigers,True
+St. Louis Cardinals,San Diego Padres,San Diego Padres,False
+Houston Astros,Athletics,Houston Astros,True
+Los Angeles Angels,Seattle Mariners,Seattle Mariners,False
+Milwaukee Brewers,Miami Marlins,Milwaukee Brewers,True
+Pittsburgh Pirates,Arizona Diamondbacks,Pittsburgh Pirates,True
+Baltimore Orioles,Colorado Rockies,Baltimore Orioles,True
+New York Yankees,Philadelphia Phillies,New York Yankees,True
+Boston Red Sox,Los Angeles Dodgers,Los Angeles Dodgers,False
+Cincinnati Reds,Tampa Bay Rays,Cincinnati Reds,True
+Detroit Tigers,Toronto Blue Jays,Detroit Tigers,True
+St. Louis Cardinals,San Diego Padres,St. Louis Cardinals,True
+Chicago White Sox,Chicago Cubs,Chicago Cubs,False
+Texas Rangers,Atlanta Braves,Texas Rangers,True
+Kansas City Royals,Cleveland Guardians,Kansas City Royals,True
+Houston Astros,Athletics,Houston Astros,True
+Minnesota Twins,Washington Nationals,Minnesota Twins,True
+Los Angeles Angels,Seattle Mariners,Los Angeles Angels,True
+San Francisco Giants,New York Mets,San Francisco Giants,True
+New York Yankees,Philadelphia Phillies,New York Yankees,True
+Detroit Tigers,Toronto Blue Jays,Detroit Tigers,True
+Pittsburgh Pirates,Arizona Diamondbacks,Arizona Diamondbacks,False
+Cincinnati Reds,Tampa Bay Rays,Cincinnati Reds,True
+Baltimore Orioles,Colorado Rockies,Baltimore Orioles,True
+Texas Rangers,Atlanta Braves,Texas Rangers,True
+Houston Astros,Athletics,Athletics,False
+Minnesota Twins,Washington Nationals,Washington Nationals,False
+Chicago White Sox,Chicago Cubs,Chicago White Sox,True
+Milwaukee Brewers,Miami Marlins,Milwaukee Brewers,True
+Kansas City Royals,Cleveland Guardians,Kansas City Royals,True
+Boston Red Sox,Los Angeles Dodgers,Boston Red Sox,True
+St. Louis Cardinals,San Diego Padres,San Diego Padres,False
+San Francisco Giants,New York Mets,New York Mets,False
+Los Angeles Angels,Seattle Mariners,Seattle Mariners,False
+Baltimore Orioles,Colorado Rockies,Baltimore Orioles,True
+Boston Red Sox,Los Angeles Dodgers,Boston Red Sox,True
+Pittsburgh Pirates,Arizona Diamondbacks,Pittsburgh Pirates,True
+New York Yankees,Philadelphia Phillies,Philadelphia Phillies,False
+Cincinnati Reds,Tampa Bay Rays,Cincinnati Reds,True
+Detroit Tigers,Toronto Blue Jays,Detroit Tigers,True
+Kansas City Royals,Cleveland Guardians,Cleveland Guardians,False
+Houston Astros,Athletics,Houston Astros,True
+Minnesota Twins,Washington Nationals,Minnesota Twins,True
+Chicago White Sox,Chicago Cubs,Chicago Cubs,False
+Milwaukee Brewers,Miami Marlins,Milwaukee Brewers,True
+St. Louis Cardinals,San Diego Padres,St. Louis Cardinals,True
+Texas Rangers,Atlanta Braves,Texas Rangers,True
+San Francisco Giants,New York Mets,San Francisco Giants,True
+Los Angeles Angels,Seattle Mariners,Los Angeles Angels,True
+Baltimore Orioles,Toronto Blue Jays,Baltimore Orioles,True
+Cleveland Guardians,Colorado Rockies,Cleveland Guardians,True
+Detroit Tigers,Arizona Diamondbacks,Detroit Tigers,True
+New York Yankees,Tampa Bay Rays,New York Yankees,True
+Cincinnati Reds,Los Angeles Dodgers,Cincinnati Reds,True
+Minnesota Twins,Boston Red Sox,Minnesota Twins,True
+Kansas City Royals,Atlanta Braves,Kansas City Royals,True
+Chicago White Sox,Philadelphia Phillies,Chicago White Sox,True
+Milwaukee Brewers,Chicago Cubs,Milwaukee Brewers,True
+St. Louis Cardinals,Miami Marlins,St. Louis Cardinals,True
+Houston Astros,Washington Nationals,Washington Nationals,False
+Los Angeles Angels,Texas Rangers,Texas Rangers,False
+San Diego Padres,New York Mets,San Diego Padres,True
+San Francisco Giants,Pittsburgh Pirates,San Francisco Giants,True
+Athletics,Seattle Mariners,Athletics,True
+Baltimore Orioles,Toronto Blue Jays,Baltimore Orioles,True
+Baltimore Orioles,Toronto Blue Jays,Toronto Blue Jays,False
+Cleveland Guardians,Colorado Rockies,Cleveland Guardians,True
+Detroit Tigers,Arizona Diamondbacks,Detroit Tigers,True
+New York Yankees,Tampa Bay Rays,New York Yankees,True
+Cincinnati Reds,Los Angeles Dodgers,Cincinnati Reds,True
+Minnesota Twins,Boston Red Sox,Minnesota Twins,True
+Kansas City Royals,Atlanta Braves,Kansas City Royals,True
+Chicago White Sox,Philadelphia Phillies,Philadelphia Phillies,False
+Milwaukee Brewers,Chicago Cubs,Milwaukee Brewers,True
+St. Louis Cardinals,Miami Marlins,St. Louis Cardinals,True
+Houston Astros,Washington Nationals,Houston Astros,True
+Los Angeles Angels,Texas Rangers,Los Angeles Angels,True
+San Diego Padres,New York Mets,New York Mets,False
+San Francisco Giants,Pittsburgh Pirates,San Francisco Giants,True
+Athletics,Seattle Mariners,Athletics,True
+Baltimore Orioles,Toronto Blue Jays,Baltimore Orioles,True
+Detroit Tigers,Arizona Diamondbacks,Detroit Tigers,True
+Minnesota Twins,Boston Red Sox,Minnesota Twins,True
+Houston Astros,Washington Nationals,Washington Nationals,False
+Kansas City Royals,Atlanta Braves,Kansas City Royals,True
+Chicago White Sox,Philadelphia Phillies,Philadelphia Phillies,False
+Milwaukee Brewers,Chicago Cubs,Milwaukee Brewers,True
+San Francisco Giants,Pittsburgh Pirates,San Francisco Giants,True
+San Diego Padres,New York Mets,San Diego Padres,True
+Cleveland Guardians,Colorado Rockies,Cleveland Guardians,True
+New York Yankees,Tampa Bay Rays,New York Yankees,True
+Cincinnati Reds,Los Angeles Dodgers,Los Angeles Dodgers,False
+St. Louis Cardinals,Miami Marlins,St. Louis Cardinals,True
+Los Angeles Angels,Texas Rangers,Texas Rangers,False
+Athletics,Seattle Mariners,Athletics,True
+New York Yankees,Tampa Bay Rays,New York Yankees,True
+Cincinnati Reds,Atlanta Braves,Atlanta Braves,False
+Seattle Mariners,Texas Rangers,Seattle Mariners,True
+Cincinnati Reds,Atlanta Braves,Atlanta Braves,False
+Chicago Cubs,Baltimore Orioles,Chicago Cubs,True
+Philadelphia Phillies,Detroit Tigers,Philadelphia Phillies,True
+Washington Nationals,Milwaukee Brewers,Washington Nationals,True
+Toronto Blue Jays,Kansas City Royals,Kansas City Royals,False
+Boston Red Sox,Houston Astros,Houston Astros,False
+New York Mets,San Francisco Giants,New York Mets,True
+Cleveland Guardians,Minnesota Twins,Cleveland Guardians,True
+Miami Marlins,New York Yankees,Miami Marlins,True
+Tampa Bay Rays,Los Angeles Dodgers,Tampa Bay Rays,True
+Colorado Rockies,Pittsburgh Pirates,Pittsburgh Pirates,False
+Los Angeles Angels,Chicago White Sox,Los Angeles Angels,True
+San Diego Padres,St. Louis Cardinals,San Diego Padres,True
+Athletics,Arizona Diamondbacks,Athletics,True
+Seattle Mariners,Texas Rangers,Seattle Mariners,True
+Tampa Bay Rays,Los Angeles Dodgers,Los Angeles Dodgers,False
+Chicago Cubs,Baltimore Orioles,Chicago Cubs,True
+Toronto Blue Jays,Kansas City Royals,Kansas City Royals,False
+Colorado Rockies,Pittsburgh Pirates,Pittsburgh Pirates,False
+Philadelphia Phillies,Detroit Tigers,Philadelphia Phillies,True
+Washington Nationals,Milwaukee Brewers,Washington Nationals,True
+Boston Red Sox,Houston Astros,Boston Red Sox,True
+New York Mets,San Francisco Giants,San Francisco Giants,False
+Seattle Mariners,Texas Rangers,Seattle Mariners,True
+Cleveland Guardians,Minnesota Twins,Cleveland Guardians,True
+Miami Marlins,New York Yankees,Miami Marlins,True
+Cincinnati Reds,Atlanta Braves,Cincinnati Reds,True
+Athletics,Arizona Diamondbacks,Athletics,True
+Los Angeles Angels,Chicago White Sox,Los Angeles Angels,True
+San Diego Padres,St. Louis Cardinals,San Diego Padres,True
+Boston Red Sox,Houston Astros,Houston Astros,False
+Tampa Bay Rays,Los Angeles Dodgers,Los Angeles Dodgers,False
+Philadelphia Phillies,Detroit Tigers,Philadelphia Phillies,True
+Washington Nationals,Milwaukee Brewers,Washington Nationals,True
+Toronto Blue Jays,Kansas City Royals,Toronto Blue Jays,True
+New York Mets,San Francisco Giants,New York Mets,True
+Cleveland Guardians,Minnesota Twins,Minnesota Twins,False
+Miami Marlins,New York Yankees,New York Yankees,False
+Chicago Cubs,Baltimore Orioles,Chicago Cubs,True
+Colorado Rockies,Pittsburgh Pirates,Pittsburgh Pirates,False
+Athletics,Arizona Diamondbacks,Athletics,True
+Los Angeles Angels,Chicago White Sox,Los Angeles Angels,True
+San Diego Padres,St. Louis Cardinals,St. Louis Cardinals,False
+Seattle Mariners,Texas Rangers,Seattle Mariners,True
+Pittsburgh Pirates,San Francisco Giants,San Francisco Giants,False
+Detroit Tigers,Minnesota Twins,Minnesota Twins,False
+Miami Marlins,Houston Astros,Miami Marlins,True
+Philadelphia Phillies,Baltimore Orioles,Philadelphia Phillies,True
+Boston Red Sox,Kansas City Royals,Kansas City Royals,False
+New York Mets,Cleveland Guardians,New York Mets,True
+Atlanta Braves,Milwaukee Brewers,Milwaukee Brewers,False
+Chicago Cubs,Cincinnati Reds,Chicago Cubs,True
+Texas Rangers,New York Yankees,Texas Rangers,True
+Colorado Rockies,Toronto Blue Jays,Colorado Rockies,True
+Los Angeles Angels,Tampa Bay Rays,Los Angeles Angels,True
+Arizona Diamondbacks,San Diego Padres,San Diego Padres,False
+Los Angeles Dodgers,St. Louis Cardinals,Los Angeles Dodgers,True
+Pittsburgh Pirates,San Francisco Giants,San Francisco Giants,False
+Detroit Tigers,Minnesota Twins,Detroit Tigers,True
+Miami Marlins,Houston Astros,Miami Marlins,True
+Washington Nationals,Athletics,Washington Nationals,True
+Philadelphia Phillies,Baltimore Orioles,Philadelphia Phillies,True
+Boston Red Sox,Kansas City Royals,Kansas City Royals,False
+New York Mets,Cleveland Guardians,New York Mets,True
+Atlanta Braves,Milwaukee Brewers,Atlanta Braves,True
+Chicago Cubs,Cincinnati Reds,Chicago Cubs,True
+Texas Rangers,New York Yankees,New York Yankees,False
+Colorado Rockies,Toronto Blue Jays,Toronto Blue Jays,False
+Los Angeles Angels,Tampa Bay Rays,Los Angeles Angels,True
+Arizona Diamondbacks,San Diego Padres,Arizona Diamondbacks,True
+Seattle Mariners,Chicago White Sox,Seattle Mariners,True
+Los Angeles Dodgers,St. Louis Cardinals,Los Angeles Dodgers,True
+Pittsburgh Pirates,San Francisco Giants,Pittsburgh Pirates,True
+Philadelphia Phillies,Baltimore Orioles,Philadelphia Phillies,True
+New York Mets,Cleveland Guardians,New York Mets,True
+Detroit Tigers,Minnesota Twins,Detroit Tigers,True
+Chicago Cubs,Cincinnati Reds,Chicago Cubs,True
+Texas Rangers,New York Yankees,New York Yankees,False
+Colorado Rockies,Toronto Blue Jays,Toronto Blue Jays,False
+Los Angeles Angels,Tampa Bay Rays,Los Angeles Angels,True
+Los Angeles Dodgers,St. Louis Cardinals,Los Angeles Dodgers,True
+Miami Marlins,Houston Astros,Miami Marlins,True
+Washington Nationals,Athletics,Washington Nationals,True
+Boston Red Sox,Kansas City Royals,Kansas City Royals,False
+Atlanta Braves,Milwaukee Brewers,Atlanta Braves,True
+Arizona Diamondbacks,San Diego Padres,Arizona Diamondbacks,True
+Seattle Mariners,Chicago White Sox,Seattle Mariners,True
+Washington Nationals,Athletics,Washington Nationals,True
+Seattle Mariners,Chicago White Sox,Seattle Mariners,True
+Pittsburgh Pirates,Cincinnati Reds,Cincinnati Reds,False
+Atlanta Braves,Miami Marlins,Atlanta Braves,True
+Pittsburgh Pirates,Cincinnati Reds,Pittsburgh Pirates,True
+Baltimore Orioles,Athletics,Baltimore Orioles,True
+New York Yankees,Houston Astros,New York Yankees,True
+Detroit Tigers,Los Angeles Angels,Los Angeles Angels,False
+Atlanta Braves,Miami Marlins,Atlanta Braves,True
+Chicago White Sox,Cleveland Guardians,Chicago White Sox,True
+Texas Rangers,Philadelphia Phillies,Texas Rangers,True
+Minnesota Twins,Kansas City Royals,Minnesota Twins,True
+Milwaukee Brewers,New York Mets,New York Mets,False
+St. Louis Cardinals,Chicago Cubs,St. Louis Cardinals,True
+Arizona Diamondbacks,Colorado Rockies,Colorado Rockies,False
+San Diego Padres,Boston Red Sox,San Diego Padres,True
+Seattle Mariners,Tampa Bay Rays,Seattle Mariners,True
+Los Angeles Dodgers,Toronto Blue Jays,Los Angeles Dodgers,True
+San Francisco Giants,Washington Nationals,San Francisco Giants,True
+Atlanta Braves,Miami Marlins,Miami Marlins,False
+Atlanta Braves,Miami Marlins,Miami Marlins,False
+New York Yankees,Houston Astros,New York Yankees,True
+San Francisco Giants,Washington Nationals,San Francisco Giants,True
+Detroit Tigers,Los Angeles Angels,Detroit Tigers,True
+Pittsburgh Pirates,Cincinnati Reds,Pittsburgh Pirates,True
+Baltimore Orioles,Athletics,Athletics,False
+Minnesota Twins,Kansas City Royals,Minnesota Twins,True
+Chicago White Sox,Cleveland Guardians,Chicago White Sox,True
+Milwaukee Brewers,New York Mets,Milwaukee Brewers,True
+St. Louis Cardinals,Chicago Cubs,St. Louis Cardinals,True
+Texas Rangers,Philadelphia Phillies,Texas Rangers,True
+Arizona Diamondbacks,Colorado Rockies,Arizona Diamondbacks,True
+San Diego Padres,Boston Red Sox,San Diego Padres,True
+Los Angeles Dodgers,Toronto Blue Jays,Los Angeles Dodgers,True
+Seattle Mariners,Tampa Bay Rays,Tampa Bay Rays,False
+Minnesota Twins,Kansas City Royals,Minnesota Twins,True
+Baltimore Orioles,Athletics,Baltimore Orioles,True
+Pittsburgh Pirates,Cincinnati Reds,Pittsburgh Pirates,True
+Atlanta Braves,Miami Marlins,Atlanta Braves,True
+New York Yankees,Houston Astros,New York Yankees,True
+Detroit Tigers,Los Angeles Angels,Detroit Tigers,True
+Chicago White Sox,Cleveland Guardians,Chicago White Sox,True
+Milwaukee Brewers,New York Mets,Milwaukee Brewers,True
+St. Louis Cardinals,Chicago Cubs,St. Louis Cardinals,True
+Texas Rangers,Philadelphia Phillies,Texas Rangers,True
+San Francisco Giants,Washington Nationals,San Francisco Giants,True
+Arizona Diamondbacks,Colorado Rockies,Arizona Diamondbacks,True
+San Diego Padres,Boston Red Sox,San Diego Padres,True
+Seattle Mariners,Tampa Bay Rays,Seattle Mariners,True
+Los Angeles Dodgers,Toronto Blue Jays,Los Angeles Dodgers,True
+Cincinnati Reds,Philadelphia Phillies,Philadelphia Phillies,False
+New York Yankees,Minnesota Twins,New York Yankees,True
+Kansas City Royals,Washington Nationals,Washington Nationals,False
+Chicago White Sox,Detroit Tigers,Chicago White Sox,True
+Milwaukee Brewers,Pittsburgh Pirates,Milwaukee Brewers,True
+St. Louis Cardinals,Colorado Rockies,St. Louis Cardinals,True
+Texas Rangers,Arizona Diamondbacks,Texas Rangers,True
+Houston Astros,Boston Red Sox,Houston Astros,True
+Los Angeles Angels,Los Angeles Dodgers,Los Angeles Dodgers,False
+San Francisco Giants,San Diego Padres,San Francisco Giants,True
+Athletics,Tampa Bay Rays,Tampa Bay Rays,False
+Baltimore Orioles,Seattle Mariners,Baltimore Orioles,True
+Cincinnati Reds,Philadelphia Phillies,Cincinnati Reds,True
+Cleveland Guardians,Miami Marlins,Cleveland Guardians,True
+New York Yankees,Minnesota Twins,Minnesota Twins,False
+Toronto Blue Jays,Chicago Cubs,Toronto Blue Jays,True
+New York Mets,Atlanta Braves,New York Mets,True
+Kansas City Royals,Washington Nationals,Kansas City Royals,True
+Chicago White Sox,Detroit Tigers,Detroit Tigers,False
+Milwaukee Brewers,Pittsburgh Pirates,Milwaukee Brewers,True
+St. Louis Cardinals,Colorado Rockies,St. Louis Cardinals,True
+Texas Rangers,Arizona Diamondbacks,Texas Rangers,True
+Houston Astros,Boston Red Sox,Houston Astros,True
+Los Angeles Angels,Los Angeles Dodgers,Los Angeles Angels,True
+San Francisco Giants,San Diego Padres,San Francisco Giants,True
+Athletics,Tampa Bay Rays,Athletics,True
+Kansas City Royals,Washington Nationals,Kansas City Royals,True
+Chicago White Sox,Detroit Tigers,Detroit Tigers,False
+Milwaukee Brewers,Pittsburgh Pirates,Pittsburgh Pirates,False
+St. Louis Cardinals,Colorado Rockies,St. Louis Cardinals,True
+Texas Rangers,Arizona Diamondbacks,Arizona Diamondbacks,False
+San Francisco Giants,San Diego Padres,San Francisco Giants,True
+Cincinnati Reds,Philadelphia Phillies,Cincinnati Reds,True
+Baltimore Orioles,Seattle Mariners,Baltimore Orioles,True
+Cleveland Guardians,Miami Marlins,Cleveland Guardians,True
+New York Yankees,Minnesota Twins,New York Yankees,True
+Toronto Blue Jays,Chicago Cubs,Toronto Blue Jays,True
+Houston Astros,Boston Red Sox,Houston Astros,True
+New York Mets,Atlanta Braves,New York Mets,True
+Los Angeles Angels,Los Angeles Dodgers,Los Angeles Angels,True
+Athletics,Tampa Bay Rays,Athletics,True
+Baltimore Orioles,Seattle Mariners,Baltimore Orioles,True
+Toronto Blue Jays,Chicago Cubs,Toronto Blue Jays,True
+Cleveland Guardians,Miami Marlins,Cleveland Guardians,True
+Washington Nationals,Philadelphia Phillies,Washington Nationals,True
+New York Mets,Atlanta Braves,New York Mets,True
+Minnesota Twins,Detroit Tigers,Detroit Tigers,False
+Colorado Rockies,Arizona Diamondbacks,Colorado Rockies,True
+Chicago Cubs,Pittsburgh Pirates,Pittsburgh Pirates,False
+Cincinnati Reds,Milwaukee Brewers,Milwaukee Brewers,False
+Washington Nationals,Philadelphia Phillies,Washington Nationals,True
+Toronto Blue Jays,Texas Rangers,Texas Rangers,False
+New York Mets,Seattle Mariners,New York Mets,True
+Cleveland Guardians,Atlanta Braves,Cleveland Guardians,True
+Boston Red Sox,Miami Marlins,Miami Marlins,False
+Houston Astros,Baltimore Orioles,Houston Astros,True
+Minnesota Twins,Detroit Tigers,Minnesota Twins,True
+Kansas City Royals,Chicago White Sox,Kansas City Royals,True
+St. Louis Cardinals,New York Yankees,St. Louis Cardinals,True
+Colorado Rockies,Arizona Diamondbacks,Colorado Rockies,True
+Athletics,Los Angeles Angels,Athletics,True
+Los Angeles Dodgers,San Diego Padres,Los Angeles Dodgers,True
+San Francisco Giants,Tampa Bay Rays,San Francisco Giants,True
+Chicago Cubs,Pittsburgh Pirates,Chicago Cubs,True
+Toronto Blue Jays,Texas Rangers,Toronto Blue Jays,True
+Washington Nationals,Philadelphia Phillies,Washington Nationals,True
+New York Mets,Seattle Mariners,Seattle Mariners,False
+Boston Red Sox,Miami Marlins,Boston Red Sox,True
+Cincinnati Reds,Milwaukee Brewers,Milwaukee Brewers,False
+Houston Astros,Baltimore Orioles,Houston Astros,True
+Cleveland Guardians,Atlanta Braves,Cleveland Guardians,True
+Kansas City Royals,Chicago White Sox,Kansas City Royals,True
+Minnesota Twins,Detroit Tigers,Minnesota Twins,True
+St. Louis Cardinals,New York Yankees,St. Louis Cardinals,True
+Colorado Rockies,Arizona Diamondbacks,Arizona Diamondbacks,False
+San Francisco Giants,Tampa Bay Rays,San Francisco Giants,True
+Los Angeles Dodgers,San Diego Padres,Los Angeles Dodgers,True
+Athletics,Los Angeles Angels,Athletics,True
+Washington Nationals,Philadelphia Phillies,Washington Nationals,True
+Boston Red Sox,Miami Marlins,Miami Marlins,False
+Toronto Blue Jays,Texas Rangers,Toronto Blue Jays,True
+Cleveland Guardians,Atlanta Braves,Cleveland Guardians,True
+Cincinnati Reds,Milwaukee Brewers,Cincinnati Reds,True
+Houston Astros,Baltimore Orioles,Houston Astros,True
+Minnesota Twins,Detroit Tigers,Detroit Tigers,False
+Kansas City Royals,Chicago White Sox,Kansas City Royals,True
+St. Louis Cardinals,New York Yankees,New York Yankees,False
+Chicago Cubs,Pittsburgh Pirates,Chicago Cubs,True
+Colorado Rockies,Arizona Diamondbacks,Arizona Diamondbacks,False
+Athletics,Los Angeles Angels,Athletics,True
+San Francisco Giants,Tampa Bay Rays,San Francisco Giants,True
+Los Angeles Dodgers,San Diego Padres,Los Angeles Dodgers,True
+New York Mets,Seattle Mariners,New York Mets,True
+Detroit Tigers,Houston Astros,Detroit Tigers,True
+Pittsburgh Pirates,Toronto Blue Jays,Toronto Blue Jays,False
+Miami Marlins,St. Louis Cardinals,Miami Marlins,True
+Philadelphia Phillies,Seattle Mariners,Seattle Mariners,False
+Boston Red Sox,Baltimore Orioles,Baltimore Orioles,False
+Atlanta Braves,Chicago White Sox,Atlanta Braves,True
+Kansas City Royals,Texas Rangers,Kansas City Royals,True
+Chicago Cubs,Milwaukee Brewers,Chicago Cubs,True
+Colorado Rockies,Los Angeles Dodgers,Los Angeles Dodgers,False
+Los Angeles Angels,Cincinnati Reds,Los Angeles Angels,True
+Arizona Diamondbacks,Cleveland Guardians,Cleveland Guardians,False
+San Diego Padres,San Francisco Giants,San Diego Padres,True
+Detroit Tigers,Houston Astros,Detroit Tigers,True
+Pittsburgh Pirates,Toronto Blue Jays,Pittsburgh Pirates,True
+Miami Marlins,St. Louis Cardinals,Miami Marlins,True
+Washington Nationals,New York Mets,New York Mets,False
+Philadelphia Phillies,Seattle Mariners,Philadelphia Phillies,True
+Boston Red Sox,Baltimore Orioles,Baltimore Orioles,False
+Atlanta Braves,Chicago White Sox,Chicago White Sox,False
+Tampa Bay Rays,New York Yankees,New York Yankees,False
+Kansas City Royals,Texas Rangers,Kansas City Royals,True
+Minnesota Twins,Athletics,Minnesota Twins,True
+Chicago Cubs,Milwaukee Brewers,Chicago Cubs,True
+Colorado Rockies,Los Angeles Dodgers,Los Angeles Dodgers,False
+Los Angeles Angels,Cincinnati Reds,Los Angeles Angels,True
+Arizona Diamondbacks,Cleveland Guardians,Cleveland Guardians,False
+San Diego Padres,San Francisco Giants,San Diego Padres,True
+Pittsburgh Pirates,Toronto Blue Jays,Toronto Blue Jays,False
+Philadelphia Phillies,Seattle Mariners,Philadelphia Phillies,True
+Detroit Tigers,Houston Astros,Detroit Tigers,True
+Arizona Diamondbacks,Cleveland Guardians,Cleveland Guardians,False
+Miami Marlins,St. Louis Cardinals,Miami Marlins,True
+Washington Nationals,New York Mets,Washington Nationals,True
+Atlanta Braves,Chicago White Sox,Atlanta Braves,True
+Tampa Bay Rays,New York Yankees,New York Yankees,False
+Kansas City Royals,Texas Rangers,Kansas City Royals,True
+Minnesota Twins,Athletics,Minnesota Twins,True
+Chicago Cubs,Milwaukee Brewers,Milwaukee Brewers,False
+Colorado Rockies,Los Angeles Dodgers,Los Angeles Dodgers,False
+Los Angeles Angels,Cincinnati Reds,Los Angeles Angels,True
+San Diego Padres,San Francisco Giants,San Diego Padres,True
+Minnesota Twins,Athletics,Minnesota Twins,True
+Kansas City Royals,Texas Rangers,Kansas City Royals,True
+Chicago Cubs,Milwaukee Brewers,Chicago Cubs,True
+Colorado Rockies,Los Angeles Dodgers,Los Angeles Dodgers,False
+Washington Nationals,New York Mets,Washington Nationals,True
+San Diego Padres,San Francisco Giants,San Diego Padres,True
+Baltimore Orioles,Houston Astros,Baltimore Orioles,True
+New York Yankees,Boston Red Sox,New York Yankees,True
+Tampa Bay Rays,St. Louis Cardinals,Tampa Bay Rays,True
+Pittsburgh Pirates,Colorado Rockies,Pittsburgh Pirates,True
+Philadelphia Phillies,Washington Nationals,Philadelphia Phillies,True
+Baltimore Orioles,Houston Astros,Baltimore Orioles,True
+New York Yankees,Boston Red Sox,New York Yankees,True
+Detroit Tigers,Kansas City Royals,Detroit Tigers,True
+Miami Marlins,Toronto Blue Jays,Miami Marlins,True
+Atlanta Braves,New York Mets,Atlanta Braves,True
+Tampa Bay Rays,St. Louis Cardinals,Tampa Bay Rays,True
+Chicago White Sox,Minnesota Twins,Minnesota Twins,False
+Texas Rangers,Cleveland Guardians,Texas Rangers,True
+Milwaukee Brewers,San Francisco Giants,Milwaukee Brewers,True
+Los Angeles Angels,Chicago Cubs,Los Angeles Angels,True
+Arizona Diamondbacks,Cincinnati Reds,Cincinnati Reds,False
+San Diego Padres,Los Angeles Dodgers,San Diego Padres,True
+Seattle Mariners,Athletics,Seattle Mariners,True
+New York Yankees,Boston Red Sox,Boston Red Sox,False
+Miami Marlins,Toronto Blue Jays,Miami Marlins,True
+Philadelphia Phillies,Washington Nationals,Philadelphia Phillies,True
+Detroit Tigers,Kansas City Royals,Detroit Tigers,True
+Pittsburgh Pirates,Colorado Rockies,Pittsburgh Pirates,True
+Baltimore Orioles,Houston Astros,Baltimore Orioles,True
+Texas Rangers,Cleveland Guardians,Cleveland Guardians,False
+Chicago White Sox,Minnesota Twins,Minnesota Twins,False
+Milwaukee Brewers,San Francisco Giants,Milwaukee Brewers,True
+Atlanta Braves,New York Mets,Atlanta Braves,True
+Arizona Diamondbacks,Cincinnati Reds,Arizona Diamondbacks,True
+San Diego Padres,Los Angeles Dodgers,San Diego Padres,True
+Los Angeles Angels,Chicago Cubs,Chicago Cubs,False
+Seattle Mariners,Athletics,Seattle Mariners,True
+Pittsburgh Pirates,Colorado Rockies,Pittsburgh Pirates,True
+Tampa Bay Rays,St. Louis Cardinals,Tampa Bay Rays,True
+Baltimore Orioles,Houston Astros,Baltimore Orioles,True
+Philadelphia Phillies,Washington Nationals,Washington Nationals,False
+Atlanta Braves,New York Mets,New York Mets,False
+New York Yankees,Boston Red Sox,New York Yankees,True
+Detroit Tigers,Kansas City Royals,Detroit Tigers,True
+Miami Marlins,Toronto Blue Jays,Miami Marlins,True
+Chicago White Sox,Minnesota Twins,Chicago White Sox,True
+Milwaukee Brewers,San Francisco Giants,San Francisco Giants,False
+Texas Rangers,Cleveland Guardians,Texas Rangers,True
+Los Angeles Angels,Chicago Cubs,Los Angeles Angels,True
+Arizona Diamondbacks,Cincinnati Reds,Arizona Diamondbacks,True
+San Diego Padres,Los Angeles Dodgers,San Diego Padres,True
+Seattle Mariners,Athletics,Athletics,False
+Baltimore Orioles,Boston Red Sox,Baltimore Orioles,True
+Cleveland Guardians,Tampa Bay Rays,Cleveland Guardians,True
+Miami Marlins,Atlanta Braves,Miami Marlins,True
+New York Yankees,Washington Nationals,New York Yankees,True
+Toronto Blue Jays,Minnesota Twins,Toronto Blue Jays,True
+New York Mets,Philadelphia Phillies,New York Mets,True
+Chicago White Sox,Kansas City Royals,Chicago White Sox,True
+Milwaukee Brewers,Arizona Diamondbacks,Milwaukee Brewers,True
+St. Louis Cardinals,Pittsburgh Pirates,St. Louis Cardinals,True
+Texas Rangers,Los Angeles Angels,Los Angeles Angels,False
+Seattle Mariners,San Diego Padres,Seattle Mariners,True
+Athletics,Detroit Tigers,Athletics,True
+Los Angeles Dodgers,Cincinnati Reds,Los Angeles Dodgers,True
+Baltimore Orioles,Boston Red Sox,Baltimore Orioles,True
+Cleveland Guardians,Tampa Bay Rays,Cleveland Guardians,True
+Miami Marlins,Atlanta Braves,Miami Marlins,True
+New York Yankees,Washington Nationals,Washington Nationals,False
+Toronto Blue Jays,Minnesota Twins,Toronto Blue Jays,True
+New York Mets,Philadelphia Phillies,New York Mets,True
+Chicago White Sox,Kansas City Royals,Kansas City Royals,False
+Milwaukee Brewers,Arizona Diamondbacks,Milwaukee Brewers,True
+St. Louis Cardinals,Pittsburgh Pirates,Pittsburgh Pirates,False
+Texas Rangers,Los Angeles Angels,Texas Rangers,True
+Houston Astros,Colorado Rockies,Houston Astros,True
+Seattle Mariners,San Diego Padres,Seattle Mariners,True
+San Francisco Giants,Chicago Cubs,San Francisco Giants,True
+Athletics,Detroit Tigers,Detroit Tigers,False
+Los Angeles Dodgers,Cincinnati Reds,Cincinnati Reds,False
+New York Yankees,Washington Nationals,New York Yankees,True
+Cleveland Guardians,Tampa Bay Rays,Tampa Bay Rays,False
+Miami Marlins,Atlanta Braves,Atlanta Braves,False
+Seattle Mariners,San Diego Padres,San Diego Padres,False
+Baltimore Orioles,Boston Red Sox,Baltimore Orioles,True
+Toronto Blue Jays,Minnesota Twins,Minnesota Twins,False
+New York Mets,Philadelphia Phillies,Philadelphia Phillies,False
+Chicago White Sox,Kansas City Royals,Chicago White Sox,True
+Milwaukee Brewers,Arizona Diamondbacks,Milwaukee Brewers,True
+St. Louis Cardinals,Pittsburgh Pirates,St. Louis Cardinals,True
+Texas Rangers,Los Angeles Angels,Texas Rangers,True
+Houston Astros,Colorado Rockies,Houston Astros,True
+Los Angeles Dodgers,Cincinnati Reds,Los Angeles Dodgers,True
+San Francisco Giants,Chicago Cubs,San Francisco Giants,True
+Athletics,Detroit Tigers,Detroit Tigers,False
+Baltimore Orioles,Boston Red Sox,Baltimore Orioles,True
+Houston Astros,Colorado Rockies,Houston Astros,True
+Milwaukee Brewers,Arizona Diamondbacks,Milwaukee Brewers,True
+St. Louis Cardinals,Pittsburgh Pirates,St. Louis Cardinals,True
+San Francisco Giants,Chicago Cubs,San Francisco Giants,True
+Philadelphia Phillies,Atlanta Braves,Philadelphia Phillies,True
+New York Mets,Miami Marlins,New York Mets,True
+Chicago White Sox,New York Yankees,Chicago White Sox,True
+Cincinnati Reds,St. Louis Cardinals,Cincinnati Reds,True
+Washington Nationals,Tampa Bay Rays,Washington Nationals,True
+Philadelphia Phillies,Atlanta Braves,Philadelphia Phillies,True
+Toronto Blue Jays,Milwaukee Brewers,Milwaukee Brewers,False
+Boston Red Sox,Pittsburgh Pirates,Boston Red Sox,True
+Cleveland Guardians,Seattle Mariners,Cleveland Guardians,True
+New York Mets,Miami Marlins,New York Mets,True
+Chicago White Sox,New York Yankees,New York Yankees,False
+Houston Astros,Los Angeles Angels,Houston Astros,True
+Kansas City Royals,Detroit Tigers,Detroit Tigers,False
+Minnesota Twins,San Diego Padres,Minnesota Twins,True
+Colorado Rockies,Chicago Cubs,Chicago Cubs,False
+Athletics,Texas Rangers,Athletics,True
+Los Angeles Dodgers,Arizona Diamondbacks,Los Angeles Dodgers,True
+San Francisco Giants,Baltimore Orioles,San Francisco Giants,True
+Toronto Blue Jays,Milwaukee Brewers,Toronto Blue Jays,True
+Washington Nationals,Tampa Bay Rays,Washington Nationals,True
+Boston Red Sox,Pittsburgh Pirates,Boston Red Sox,True
+New York Mets,Miami Marlins,New York Mets,True
+Philadelphia Phillies,Atlanta Braves,Philadelphia Phillies,True
+Cincinnati Reds,St. Louis Cardinals,Cincinnati Reds,True
+Houston Astros,Los Angeles Angels,Houston Astros,True
+Minnesota Twins,San Diego Padres,Minnesota Twins,True
+Chicago White Sox,New York Yankees,New York Yankees,False
+Kansas City Royals,Detroit Tigers,Detroit Tigers,False
+Cleveland Guardians,Seattle Mariners,Cleveland Guardians,True
+San Francisco Giants,Baltimore Orioles,San Francisco Giants,True
+Colorado Rockies,Chicago Cubs,Chicago Cubs,False
+Los Angeles Dodgers,Arizona Diamondbacks,Los Angeles Dodgers,True
+Athletics,Texas Rangers,Athletics,True
+Cincinnati Reds,St. Louis Cardinals,Cincinnati Reds,True
+Minnesota Twins,San Diego Padres,Minnesota Twins,True
+Boston Red Sox,Pittsburgh Pirates,Boston Red Sox,True
+Washington Nationals,Tampa Bay Rays,Washington Nationals,True
+Philadelphia Phillies,Atlanta Braves,Atlanta Braves,False
+Toronto Blue Jays,Milwaukee Brewers,Toronto Blue Jays,True
+Cleveland Guardians,Seattle Mariners,Cleveland Guardians,True
+New York Mets,Miami Marlins,New York Mets,True
+Houston Astros,Los Angeles Angels,Houston Astros,True
+Kansas City Royals,Detroit Tigers,Detroit Tigers,False
+Chicago White Sox,New York Yankees,New York Yankees,False
+Colorado Rockies,Chicago Cubs,Colorado Rockies,True
+San Francisco Giants,Baltimore Orioles,Baltimore Orioles,False
+Athletics,Texas Rangers,Athletics,True
+Los Angeles Dodgers,Arizona Diamondbacks,Los Angeles Dodgers,True
+Washington Nationals,Miami Marlins,Washington Nationals,True
+Detroit Tigers,New York Mets,Detroit Tigers,True
+Cincinnati Reds,Toronto Blue Jays,Cincinnati Reds,True
+Boston Red Sox,Cleveland Guardians,Cleveland Guardians,False
+Houston Astros,Los Angeles Angels,Los Angeles Angels,False
+Minnesota Twins,Chicago White Sox,Minnesota Twins,True
+St. Louis Cardinals,Athletics,St. Louis Cardinals,True
+Chicago Cubs,Atlanta Braves,Chicago Cubs,True
+Colorado Rockies,San Francisco Giants,San Francisco Giants,False
+Milwaukee Brewers,Philadelphia Phillies,Milwaukee Brewers,True
+San Diego Padres,Baltimore Orioles,San Diego Padres,True
+Tampa Bay Rays,Seattle Mariners,Tampa Bay Rays,True
+Arizona Diamondbacks,Texas Rangers,Arizona Diamondbacks,True
+Detroit Tigers,New York Mets,Detroit Tigers,True
+Pittsburgh Pirates,Los Angeles Dodgers,Pittsburgh Pirates,True
+Cincinnati Reds,Toronto Blue Jays,Cincinnati Reds,True
+Boston Red Sox,Cleveland Guardians,Boston Red Sox,True
+Washington Nationals,Miami Marlins,Washington Nationals,True
+Tampa Bay Rays,Seattle Mariners,Tampa Bay Rays,True
+Kansas City Royals,Los Angeles Angels,Kansas City Royals,True
+Chicago Cubs,Atlanta Braves,Chicago Cubs,True
+Minnesota Twins,Chicago White Sox,Minnesota Twins,True
+St. Louis Cardinals,Athletics,St. Louis Cardinals,True
+Houston Astros,New York Yankees,Houston Astros,True
+Colorado Rockies,San Francisco Giants,San Francisco Giants,False
+San Diego Padres,Baltimore Orioles,San Diego Padres,True
+Arizona Diamondbacks,Texas Rangers,Arizona Diamondbacks,True
+Washington Nationals,Miami Marlins,Washington Nationals,True
+Detroit Tigers,New York Mets,Detroit Tigers,True
+Arizona Diamondbacks,Texas Rangers,Texas Rangers,False
+San Diego Padres,Baltimore Orioles,San Diego Padres,True
+Pittsburgh Pirates,Los Angeles Dodgers,Pittsburgh Pirates,True
+Cincinnati Reds,Toronto Blue Jays,Cincinnati Reds,True
+Boston Red Sox,Cleveland Guardians,Boston Red Sox,True
+Tampa Bay Rays,Seattle Mariners,Tampa Bay Rays,True
+Kansas City Royals,Los Angeles Angels,Kansas City Royals,True
+Chicago Cubs,Atlanta Braves,Atlanta Braves,False
+Minnesota Twins,Chicago White Sox,Minnesota Twins,True
+Milwaukee Brewers,Philadelphia Phillies,Milwaukee Brewers,True
+St. Louis Cardinals,Athletics,St. Louis Cardinals,True
+Houston Astros,New York Yankees,Houston Astros,True
+Colorado Rockies,San Francisco Giants,San Francisco Giants,False
+Milwaukee Brewers,Philadelphia Phillies,Milwaukee Brewers,True
+Pittsburgh Pirates,Los Angeles Dodgers,Los Angeles Dodgers,False
+Tampa Bay Rays,Cleveland Guardians,Tampa Bay Rays,True
+Kansas City Royals,Los Angeles Angels,Kansas City Royals,True
+Minnesota Twins,Chicago White Sox,Minnesota Twins,True
+Houston Astros,New York Yankees,New York Yankees,False
+Chicago Cubs,Washington Nationals,Chicago Cubs,True
+Cincinnati Reds,New York Mets,Cincinnati Reds,True
+Detroit Tigers,Chicago White Sox,Detroit Tigers,True
+Pittsburgh Pirates,Milwaukee Brewers,Pittsburgh Pirates,True
+Baltimore Orioles,Los Angeles Dodgers,Baltimore Orioles,True
+New York Yankees,Toronto Blue Jays,New York Yankees,True
+Miami Marlins,Philadelphia Phillies,Philadelphia Phillies,False
+Atlanta Braves,Seattle Mariners,Atlanta Braves,True
+Tampa Bay Rays,Cleveland Guardians,Tampa Bay Rays,True
+Kansas City Royals,Minnesota Twins,Kansas City Royals,True
+Texas Rangers,Houston Astros,Texas Rangers,True
+St. Louis Cardinals,San Francisco Giants,St. Louis Cardinals,True
+Colorado Rockies,San Diego Padres,Colorado Rockies,True
+Los Angeles Angels,Athletics,Los Angeles Angels,True
+Arizona Diamondbacks,Boston Red Sox,Arizona Diamondbacks,True
+New York Yankees,Toronto Blue Jays,New York Yankees,True
+Chicago Cubs,Washington Nationals,Chicago Cubs,True
+Miami Marlins,Philadelphia Phillies,Philadelphia Phillies,False
+Detroit Tigers,Chicago White Sox,Detroit Tigers,True
+Cincinnati Reds,New York Mets,Cincinnati Reds,True
+Pittsburgh Pirates,Milwaukee Brewers,Milwaukee Brewers,False
+Baltimore Orioles,Los Angeles Dodgers,Baltimore Orioles,True
+Tampa Bay Rays,Cleveland Guardians,Cleveland Guardians,False
+St. Louis Cardinals,San Francisco Giants,St. Louis Cardinals,True
+Texas Rangers,Houston Astros,Texas Rangers,True
+Kansas City Royals,Minnesota Twins,Kansas City Royals,True
+Atlanta Braves,Seattle Mariners,Seattle Mariners,False
+Arizona Diamondbacks,Boston Red Sox,Arizona Diamondbacks,True
+Colorado Rockies,San Diego Padres,San Diego Padres,False
+Los Angeles Angels,Athletics,Los Angeles Angels,True
+Atlanta Braves,Seattle Mariners,Atlanta Braves,True
+Tampa Bay Rays,Cleveland Guardians,Tampa Bay Rays,True
+Baltimore Orioles,Los Angeles Dodgers,Baltimore Orioles,True
+New York Yankees,Toronto Blue Jays,Toronto Blue Jays,False
+Pittsburgh Pirates,Milwaukee Brewers,Pittsburgh Pirates,True
+Cincinnati Reds,New York Mets,Cincinnati Reds,True
+Detroit Tigers,Chicago White Sox,Detroit Tigers,True
+Miami Marlins,Philadelphia Phillies,Miami Marlins,True
+Kansas City Royals,Minnesota Twins,Kansas City Royals,True
+St. Louis Cardinals,San Francisco Giants,St. Louis Cardinals,True
+Chicago Cubs,Washington Nationals,Washington Nationals,False
+Texas Rangers,Houston Astros,Houston Astros,False
+Colorado Rockies,San Diego Padres,Colorado Rockies,True
+Los Angeles Angels,Athletics,Los Angeles Angels,True
+Arizona Diamondbacks,Boston Red Sox,Boston Red Sox,False
+Cleveland Guardians,Kansas City Royals,Kansas City Royals,False
+Miami Marlins,Washington Nationals,Miami Marlins,True
+Philadelphia Phillies,New York Mets,Philadelphia Phillies,True
+Atlanta Braves,Chicago Cubs,Chicago Cubs,False
+Texas Rangers,Milwaukee Brewers,Texas Rangers,True
+Los Angeles Angels,Minnesota Twins,Los Angeles Angels,True
+San Diego Padres,Cincinnati Reds,San Diego Padres,True
+Seattle Mariners,St. Louis Cardinals,Seattle Mariners,True
+San Francisco Giants,Arizona Diamondbacks,Arizona Diamondbacks,False
+Athletics,Boston Red Sox,Boston Red Sox,False
+Los Angeles Dodgers,Colorado Rockies,Los Angeles Dodgers,True
+Baltimore Orioles,Pittsburgh Pirates,Baltimore Orioles,True
+Cleveland Guardians,Kansas City Royals,Kansas City Royals,False
+Miami Marlins,Washington Nationals,Miami Marlins,True
+Philadelphia Phillies,New York Mets,New York Mets,False
+New York Yankees,Detroit Tigers,New York Yankees,True
+Toronto Blue Jays,Houston Astros,Houston Astros,False
+Atlanta Braves,Chicago Cubs,Atlanta Braves,True
+Chicago White Sox,Tampa Bay Rays,Tampa Bay Rays,False
+Texas Rangers,Milwaukee Brewers,Texas Rangers,True
+Los Angeles Angels,Minnesota Twins,Minnesota Twins,False
+San Diego Padres,Cincinnati Reds,San Diego Padres,True
+Seattle Mariners,St. Louis Cardinals,Seattle Mariners,True
+San Francisco Giants,Arizona Diamondbacks,San Francisco Giants,True
+Athletics,Boston Red Sox,Boston Red Sox,False
+Los Angeles Dodgers,Colorado Rockies,Los Angeles Dodgers,True
+Texas Rangers,Milwaukee Brewers,Texas Rangers,True
+Athletics,Boston Red Sox,Athletics,True
+San Francisco Giants,Arizona Diamondbacks,San Francisco Giants,True
+Los Angeles Angels,Minnesota Twins,Minnesota Twins,False
+Baltimore Orioles,Pittsburgh Pirates,Pittsburgh Pirates,False
+Cleveland Guardians,Kansas City Royals,Cleveland Guardians,True
+Miami Marlins,Washington Nationals,Miami Marlins,True
+Philadelphia Phillies,New York Mets,Philadelphia Phillies,True
+New York Yankees,Detroit Tigers,New York Yankees,True
+Toronto Blue Jays,Houston Astros,Toronto Blue Jays,True
+Atlanta Braves,Chicago Cubs,Atlanta Braves,True
+Chicago White Sox,Tampa Bay Rays,Tampa Bay Rays,False
+San Diego Padres,Cincinnati Reds,San Diego Padres,True
+Seattle Mariners,St. Louis Cardinals,Seattle Mariners,True
+Los Angeles Dodgers,Colorado Rockies,Los Angeles Dodgers,True
+Baltimore Orioles,Pittsburgh Pirates,Baltimore Orioles,True
+Chicago White Sox,Tampa Bay Rays,Chicago White Sox,True
+Toronto Blue Jays,Houston Astros,Houston Astros,False
+Miami Marlins,Washington Nationals,Washington Nationals,False
+New York Yankees,Detroit Tigers,New York Yankees,True
+Cleveland Guardians,Kansas City Royals,Cleveland Guardians,True
+Philadelphia Phillies,New York Mets,Philadelphia Phillies,True
+San Diego Padres,Colorado Rockies,San Diego Padres,True
+Seattle Mariners,Los Angeles Angels,Seattle Mariners,True
+Chicago Cubs,Tampa Bay Rays,Chicago Cubs,True
+Washington Nationals,Pittsburgh Pirates,Washington Nationals,True
+Philadelphia Phillies,Kansas City Royals,Philadelphia Phillies,True
+Toronto Blue Jays,Baltimore Orioles,Toronto Blue Jays,True
+New York Mets,Texas Rangers,New York Mets,True
+Cleveland Guardians,Chicago White Sox,Cleveland Guardians,True
+Miami Marlins,Detroit Tigers,Detroit Tigers,False
+Boston Red Sox,New York Yankees,Boston Red Sox,True
+Atlanta Braves,Houston Astros,Atlanta Braves,True
+Minnesota Twins,Arizona Diamondbacks,Minnesota Twins,True
+Milwaukee Brewers,St. Louis Cardinals,St. Louis Cardinals,False
+San Diego Padres,Colorado Rockies,San Diego Padres,True
+Athletics,Cincinnati Reds,Athletics,True
+Seattle Mariners,Los Angeles Angels,Los Angeles Angels,False
+San Francisco Giants,Los Angeles Dodgers,San Francisco Giants,True
+Chicago Cubs,Tampa Bay Rays,Chicago Cubs,True
+Toronto Blue Jays,Baltimore Orioles,Toronto Blue Jays,True
+Washington Nationals,Pittsburgh Pirates,Pittsburgh Pirates,False
+New York Mets,Texas Rangers,New York Mets,True
+Miami Marlins,Detroit Tigers,Miami Marlins,True
+Boston Red Sox,New York Yankees,New York Yankees,False
+Philadelphia Phillies,Kansas City Royals,Kansas City Royals,False
+Cleveland Guardians,Chicago White Sox,Cleveland Guardians,True
+Minnesota Twins,Arizona Diamondbacks,Minnesota Twins,True
+Milwaukee Brewers,St. Louis Cardinals,Milwaukee Brewers,True
+Atlanta Braves,Houston Astros,Atlanta Braves,True
+San Diego Padres,Colorado Rockies,San Diego Padres,True
+San Francisco Giants,Los Angeles Dodgers,San Francisco Giants,True
+Seattle Mariners,Los Angeles Angels,Seattle Mariners,True
+Athletics,Cincinnati Reds,Athletics,True
+Washington Nationals,Pittsburgh Pirates,Washington Nationals,True
+Philadelphia Phillies,Kansas City Royals,Kansas City Royals,False
+Atlanta Braves,Houston Astros,Atlanta Braves,True
+Boston Red Sox,New York Yankees,Boston Red Sox,True
+Toronto Blue Jays,Baltimore Orioles,Toronto Blue Jays,True
+New York Mets,Texas Rangers,Texas Rangers,False
+Cleveland Guardians,Chicago White Sox,Cleveland Guardians,True
+Miami Marlins,Detroit Tigers,Detroit Tigers,False
+Minnesota Twins,Arizona Diamondbacks,Minnesota Twins,True
+Milwaukee Brewers,St. Louis Cardinals,Milwaukee Brewers,True
+Chicago Cubs,Tampa Bay Rays,Chicago Cubs,True
+Athletics,Cincinnati Reds,Cincinnati Reds,False
+San Francisco Giants,Los Angeles Dodgers,San Francisco Giants,True
+San Diego Padres,Colorado Rockies,San Diego Padres,True
+Seattle Mariners,Los Angeles Angels,Seattle Mariners,True
+Pittsburgh Pirates,Chicago Cubs,Pittsburgh Pirates,True
+Washington Nationals,Atlanta Braves,Washington Nationals,True
+Tampa Bay Rays,Toronto Blue Jays,Tampa Bay Rays,True
+Chicago White Sox,Baltimore Orioles,Baltimore Orioles,False
+Minnesota Twins,New York Yankees,Minnesota Twins,True
+St. Louis Cardinals,Cincinnati Reds,St. Louis Cardinals,True
+Houston Astros,Texas Rangers,Houston Astros,True
+Arizona Diamondbacks,San Francisco Giants,Arizona Diamondbacks,True
+Los Angeles Dodgers,Philadelphia Phillies,Los Angeles Dodgers,True
+Washington Nationals,Atlanta Braves,Washington Nationals,True
+Washington Nationals,Atlanta Braves,Washington Nationals,True
+Detroit Tigers,Cleveland Guardians,Detroit Tigers,True
+Pittsburgh Pirates,Chicago Cubs,Chicago Cubs,False
+Boston Red Sox,Athletics,Athletics,False
+New York Mets,San Diego Padres,New York Mets,True
+Tampa Bay Rays,Toronto Blue Jays,Toronto Blue Jays,False
+Kansas City Royals,Seattle Mariners,Kansas City Royals,True
+Chicago White Sox,Baltimore Orioles,Baltimore Orioles,False
+Minnesota Twins,New York Yankees,Minnesota Twins,True
+Milwaukee Brewers,Los Angeles Angels,Milwaukee Brewers,True
+St. Louis Cardinals,Cincinnati Reds,St. Louis Cardinals,True
+Houston Astros,Texas Rangers,Houston Astros,True
+Colorado Rockies,Miami Marlins,Miami Marlins,False
+Arizona Diamondbacks,San Francisco Giants,San Francisco Giants,False
+Los Angeles Dodgers,Philadelphia Phillies,Los Angeles Dodgers,True
+Pittsburgh Pirates,Chicago Cubs,Chicago Cubs,False
+St. Louis Cardinals,Cincinnati Reds,St. Louis Cardinals,True
+Chicago White Sox,Baltimore Orioles,Baltimore Orioles,False
+Arizona Diamondbacks,San Francisco Giants,Arizona Diamondbacks,True
+Washington Nationals,Atlanta Braves,Washington Nationals,True
+Detroit Tigers,Cleveland Guardians,Detroit Tigers,True
+Boston Red Sox,Athletics,Boston Red Sox,True
+Tampa Bay Rays,Toronto Blue Jays,Toronto Blue Jays,False
+New York Mets,San Diego Padres,New York Mets,True
+Kansas City Royals,Seattle Mariners,Kansas City Royals,True
+Minnesota Twins,New York Yankees,Minnesota Twins,True
+Milwaukee Brewers,Los Angeles Angels,Milwaukee Brewers,True
+Houston Astros,Texas Rangers,Houston Astros,True
+Colorado Rockies,Miami Marlins,Miami Marlins,False
+Los Angeles Dodgers,Philadelphia Phillies,Los Angeles Dodgers,True
+Detroit Tigers,Cleveland Guardians,Cleveland Guardians,False
+New York Mets,San Diego Padres,New York Mets,True
+Tampa Bay Rays,Toronto Blue Jays,Tampa Bay Rays,True
+Boston Red Sox,Athletics,Boston Red Sox,True
+Kansas City Royals,Seattle Mariners,Kansas City Royals,True
+Colorado Rockies,Miami Marlins,Miami Marlins,False
+Cincinnati Reds,Chicago Cubs,Cincinnati Reds,True
+Baltimore Orioles,New York Yankees,Baltimore Orioles,True
+Milwaukee Brewers,Los Angeles Angels,Milwaukee Brewers,True
+Los Angeles Dodgers,San Francisco Giants,San Francisco Giants,False
+Cincinnati Reds,Chicago Cubs,Chicago Cubs,False
+Pittsburgh Pirates,Athletics,Pittsburgh Pirates,True
+Detroit Tigers,Atlanta Braves,Detroit Tigers,True
+Baltimore Orioles,New York Yankees,New York Yankees,False
+New York Mets,Washington Nationals,New York Mets,True
+Tampa Bay Rays,Boston Red Sox,Boston Red Sox,False
+Kansas City Royals,Toronto Blue Jays,Kansas City Royals,True
+Chicago White Sox,San Diego Padres,Chicago White Sox,True
+Texas Rangers,Miami Marlins,Texas Rangers,True
+Colorado Rockies,Los Angeles Angels,Colorado Rockies,True
+Houston Astros,Seattle Mariners,Houston Astros,True
+Minnesota Twins,Cleveland Guardians,Cleveland Guardians,False
+St. Louis Cardinals,Milwaukee Brewers,St. Louis Cardinals,True
+Arizona Diamondbacks,Philadelphia Phillies,Philadelphia Phillies,False
+Los Angeles Dodgers,San Francisco Giants,Los Angeles Dodgers,True
+Detroit Tigers,Atlanta Braves,Detroit Tigers,True
+Minnesota Twins,Cleveland Guardians,Minnesota Twins,True
+Minnesota Twins,Cleveland Guardians,Minnesota Twins,True
+New York Mets,Washington Nationals,New York Mets,True
+Cincinnati Reds,Chicago Cubs,Cincinnati Reds,True
+Pittsburgh Pirates,Athletics,Pittsburgh Pirates,True
+Tampa Bay Rays,Boston Red Sox,Tampa Bay Rays,True
+Texas Rangers,Miami Marlins,Texas Rangers,True
+Baltimore Orioles,New York Yankees,New York Yankees,False
+Houston Astros,Seattle Mariners,Houston Astros,True
+Kansas City Royals,Toronto Blue Jays,Kansas City Royals,True
+Chicago White Sox,San Diego Padres,San Diego Padres,False
+St. Louis Cardinals,Milwaukee Brewers,St. Louis Cardinals,True
+Colorado Rockies,Los Angeles Angels,Colorado Rockies,True
+Arizona Diamondbacks,Philadelphia Phillies,Arizona Diamondbacks,True
+Los Angeles Dodgers,San Francisco Giants,Los Angeles Dodgers,True
+Pittsburgh Pirates,Athletics,Pittsburgh Pirates,True
+Baltimore Orioles,New York Yankees,New York Yankees,False
+Cincinnati Reds,Chicago Cubs,Chicago Cubs,False
+New York Mets,Washington Nationals,New York Mets,True
+Detroit Tigers,Atlanta Braves,Detroit Tigers,True
+Houston Astros,Seattle Mariners,Seattle Mariners,False
+Kansas City Royals,Toronto Blue Jays,Kansas City Royals,True
+Minnesota Twins,Cleveland Guardians,Minnesota Twins,True
+Chicago White Sox,San Diego Padres,Chicago White Sox,True
+St. Louis Cardinals,Milwaukee Brewers,St. Louis Cardinals,True
+Texas Rangers,Miami Marlins,Miami Marlins,False
+Colorado Rockies,Los Angeles Angels,Colorado Rockies,True
+Los Angeles Dodgers,San Francisco Giants,Los Angeles Dodgers,True
+Arizona Diamondbacks,Philadelphia Phillies,Arizona Diamondbacks,True
+Tampa Bay Rays,Boston Red Sox,Tampa Bay Rays,True
+Atlanta Braves,Washington Nationals,Atlanta Braves,True
+San Diego Padres,Milwaukee Brewers,San Diego Padres,True
+San Francisco Giants,St. Louis Cardinals,San Francisco Giants,True
+Baltimore Orioles,Tampa Bay Rays,Tampa Bay Rays,False
+Cleveland Guardians,Detroit Tigers,Detroit Tigers,False
+Cincinnati Reds,Pittsburgh Pirates,Cincinnati Reds,True
+Philadelphia Phillies,Miami Marlins,Philadelphia Phillies,True
+New York Yankees,Chicago White Sox,New York Yankees,True
+Toronto Blue Jays,Boston Red Sox,Toronto Blue Jays,True
+Atlanta Braves,Washington Nationals,Atlanta Braves,True
+Chicago Cubs,New York Mets,New York Mets,False
+Texas Rangers,Minnesota Twins,Texas Rangers,True
+Los Angeles Angels,Kansas City Royals,Los Angeles Angels,True
+Arizona Diamondbacks,Los Angeles Dodgers,Arizona Diamondbacks,True
+Seattle Mariners,Colorado Rockies,Seattle Mariners,True
+San Diego Padres,Milwaukee Brewers,San Diego Padres,True
+San Francisco Giants,St. Louis Cardinals,San Francisco Giants,True
+Athletics,Houston Astros,Houston Astros,False
+Atlanta Braves,Washington Nationals,Atlanta Braves,True
+San Diego Padres,Milwaukee Brewers,San Diego Padres,True
+Baltimore Orioles,Tampa Bay Rays,Tampa Bay Rays,False
+Cleveland Guardians,Detroit Tigers,Cleveland Guardians,True
+Cincinnati Reds,Pittsburgh Pirates,Cincinnati Reds,True
+Philadelphia Phillies,Miami Marlins,Philadelphia Phillies,True
+New York Yankees,Chicago White Sox,New York Yankees,True
+Toronto Blue Jays,Boston Red Sox,Toronto Blue Jays,True
+Chicago Cubs,New York Mets,Chicago Cubs,True
+Texas Rangers,Minnesota Twins,Texas Rangers,True
+Los Angeles Angels,Kansas City Royals,Los Angeles Angels,True
+Arizona Diamondbacks,Los Angeles Dodgers,Los Angeles Dodgers,False
+Seattle Mariners,Colorado Rockies,Seattle Mariners,True
+San Francisco Giants,St. Louis Cardinals,San Francisco Giants,True
+Athletics,Houston Astros,Houston Astros,False
+Cincinnati Reds,Pittsburgh Pirates,Cincinnati Reds,True
+Baltimore Orioles,Tampa Bay Rays,Tampa Bay Rays,False
+Texas Rangers,Minnesota Twins,Texas Rangers,True
+Athletics,Houston Astros,Athletics,True
+Arizona Diamondbacks,Los Angeles Dodgers,Los Angeles Dodgers,False
+Philadelphia Phillies,Miami Marlins,Philadelphia Phillies,True
+Cleveland Guardians,Detroit Tigers,Detroit Tigers,False
+New York Yankees,Chicago White Sox,New York Yankees,True
+Toronto Blue Jays,Boston Red Sox,Boston Red Sox,False
+Chicago Cubs,New York Mets,Chicago Cubs,True
+Los Angeles Angels,Kansas City Royals,Los Angeles Angels,True
+Seattle Mariners,Colorado Rockies,Seattle Mariners,True
+Chicago Cubs,St. Louis Cardinals,Chicago Cubs,True
+Philadelphia Phillies,Minnesota Twins,Philadelphia Phillies,True
+Washington Nationals,Chicago White Sox,Washington Nationals,True
+New York Yankees,Baltimore Orioles,New York Yankees,True
+Toronto Blue Jays,Tampa Bay Rays,Toronto Blue Jays,True
+Boston Red Sox,Detroit Tigers,Boston Red Sox,True
+Cleveland Guardians,Texas Rangers,Cleveland Guardians,True
+Miami Marlins,New York Mets,New York Mets,False
+Atlanta Braves,Pittsburgh Pirates,Atlanta Braves,True
+Milwaukee Brewers,Cincinnati Reds,Milwaukee Brewers,True
+Los Angeles Angels,Houston Astros,Los Angeles Angels,True
+San Diego Padres,Arizona Diamondbacks,San Diego Padres,True
+Seattle Mariners,Los Angeles Dodgers,Seattle Mariners,True
+Athletics,Kansas City Royals,Athletics,True
+San Francisco Giants,Colorado Rockies,San Francisco Giants,True
+New York Yankees,Baltimore Orioles,New York Yankees,True
+Chicago Cubs,St. Louis Cardinals,Chicago Cubs,True
+Toronto Blue Jays,Tampa Bay Rays,Tampa Bay Rays,False
+San Francisco Giants,Colorado Rockies,San Francisco Giants,True
+Washington Nationals,Chicago White Sox,Washington Nationals,True
+Boston Red Sox,Detroit Tigers,Detroit Tigers,False
+Miami Marlins,New York Mets,New York Mets,False
+Philadelphia Phillies,Minnesota Twins,Minnesota Twins,False
+Cleveland Guardians,Texas Rangers,Cleveland Guardians,True
+Milwaukee Brewers,Cincinnati Reds,Milwaukee Brewers,True
+Atlanta Braves,Pittsburgh Pirates,Atlanta Braves,True
+San Diego Padres,Arizona Diamondbacks,Arizona Diamondbacks,False
+Los Angeles Angels,Houston Astros,Los Angeles Angels,True
+Seattle Mariners,Los Angeles Dodgers,Los Angeles Dodgers,False
+Athletics,Kansas City Royals,Athletics,True
+Boston Red Sox,Detroit Tigers,Boston Red Sox,True
+Athletics,Kansas City Royals,Kansas City Royals,False
+San Francisco Giants,Colorado Rockies,San Francisco Giants,True
+Philadelphia Phillies,Minnesota Twins,Philadelphia Phillies,True
+Washington Nationals,Chicago White Sox,Washington Nationals,True
+New York Yankees,Baltimore Orioles,New York Yankees,True
+Los Angeles Angels,Houston Astros,Los Angeles Angels,True
+Toronto Blue Jays,Tampa Bay Rays,Toronto Blue Jays,True
+San Diego Padres,Arizona Diamondbacks,San Diego Padres,True
+Seattle Mariners,Los Angeles Dodgers,Seattle Mariners,True
+Cleveland Guardians,Texas Rangers,Cleveland Guardians,True
+Miami Marlins,New York Mets,Miami Marlins,True
+Milwaukee Brewers,Cincinnati Reds,Milwaukee Brewers,True
+Atlanta Braves,Pittsburgh Pirates,Atlanta Braves,True
+Chicago Cubs,St. Louis Cardinals,St. Louis Cardinals,False

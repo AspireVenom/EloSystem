@@ -1,73 +1,59 @@
 import dash
-import numpy as np
 import pandas as pd
 import plotly.express as px
 from dash import dcc, html
-from dash.dependencies import Input, Output
 
-# Load your data
-elo_df = pd.read_csv("final_elo_ratings.csv")
-standings_df = pd.read_csv("mlb_standings.csv")
+# Load CSVs
+elo_df = pd.read_csv("final_elo_ratings.csv")  # Columns: Team, Elo Rating
+standings_df = pd.read_csv(
+    "simulated_standings.csv"
+)  # Team, Wins, Losses, Division Rank, Division Name
+
+# Add relative Elo and round
+elo_df["Relative Elo"] = elo_df["Elo Rating"] - 1500
+elo_df["Elo Rating"] = elo_df["Elo Rating"].round(1)
+
+# Merge on Team
 merged_df = pd.merge(elo_df, standings_df, on="Team")
 
-# Add jitter to reduce overlap
-np.random.seed(42)  # Reproducibility
-merged_df["Wins_Jittered"] = merged_df["Wins"] + np.random.normal(
-    0, 0.3, size=len(merged_df)
-)
+# Sort by Relative Elo
+merged_df = merged_df.sort_values(by="Relative Elo", ascending=False)
 
-# Initialize the Dash app
+# Create Dash App
 app = dash.Dash(__name__)
-server = app.server  # Needed for deployment
+app.title = "MLB Elo & Simulated Standings"
 
 app.layout = html.Div(
     [
-        dcc.Graph(id="elo-scatter", className="full-graph"),  # ← add comma here
-        dcc.Dropdown(
-            id="team-selector",
-            className="floating-dropdown",
-            options=[{"label": team, "value": team} for team in merged_df["Team"]],
-            placeholder="Select a team",
+        html.H1(
+            "MLB 2025 — Elo Ratings vs Simulated Wins", style={"textAlign": "center"}
+        ),
+        dcc.Graph(
+            id="elo-bar",
+            figure=px.bar(
+                merged_df,
+                x="Team",
+                y="Relative Elo",
+                color="Division Name",
+                title="Relative Elo Ratings by Team (Centered at 1500)",
+                hover_data=["Elo Rating", "Division Rank", "Wins", "Losses"],
+                color_discrete_sequence=px.colors.qualitative.Set2,
+            ),
+        ),
+        dcc.Graph(
+            id="wins-bar",
+            figure=px.bar(
+                merged_df,
+                x="Team",
+                y="Wins",
+                color="Division Name",
+                title="Simulated Wins by Team",
+                hover_data=["Elo Rating", "Losses", "Division Rank"],
+                color_discrete_sequence=px.colors.qualitative.Set3,
+            ),
         ),
     ]
 )
 
-
-# Callback to update scatter plot
-@app.callback(Output("elo-scatter", "figure"), Input("team-selector", "value"))
-def update_figure(selected_team):
-    fig = px.scatter(
-        merged_df,
-        x="Wins_Jittered",
-        y="Elo Rating",
-        text="Team",
-        hover_data=["Wins", "Losses", "Division Rank"],
-        title="Elo Rating vs Wins — Over/Underrated Teams",
-    )
-
-    fig.update_traces(
-        textposition="top right",
-        textfont=dict(size=10),
-        texttemplate="%{text}",  # default
-    )
-    if selected_team:
-        selected = merged_df[merged_df["Team"] == selected_team]
-        fig.add_scatter(
-            x=selected["Wins_Jittered"],
-            y=selected["Elo Rating"],
-            mode="markers+text",
-            text=selected["Team"],
-            marker=dict(color="red", size=16),
-            name="Selected Team",
-        )
-
-    fig.update_layout(
-        xaxis_title="Wins (2025)", yaxis_title="Elo Rating", template="plotly_white"
-    )
-
-    return fig
-
-
-# Run the app
 if __name__ == "__main__":
     app.run(debug=True)
