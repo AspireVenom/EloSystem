@@ -364,8 +364,13 @@ if not os.path.exists("elo_model.pt") or RETRAIN:
 #  Generate synthetic outcomes for future real schedule
 print("Simulating real MLB 2025 scheduled games with Elo-based winners...")
 
-standings_from_sim = generate_standings_from_simulated_matches(
-    generate_synthetic_matches_from_schedule()
-)
+# Generate the synthetic results for every remaining 2025 game
+synthetic_matches = generate_synthetic_matches_from_schedule()
+
+# Persist the match-level outcomes so they remain in sync with standings
+save_synthetic_matches_to_csv(synthetic_matches, "simulated_real_schedule_outcomes.csv")
+
+# Now compute standings from those same simulated matches
+standings_from_sim = generate_standings_from_simulated_matches(synthetic_matches)
 standings_from_sim.to_csv("simulated_standings.csv", index=False)
 print("Saved simulated standings to simulated_standings.csv")
