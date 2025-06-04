@@ -14,7 +14,7 @@ RETRAIN = True  # Set to True to force retraining
 GAME_OUTCOME_URL = (
     "https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2025&gameType=R"
 )
-STANDINGS_URL = "https://statsapi.mlb.com/api/v0/standings?leagueId=103,104&season=2025"
+STANDINGS_URL = "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2025"
 
 SCHEDULE = "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2025-03-28&endDate=2025-09-28"
 
@@ -82,8 +82,22 @@ def fetch_future_schedule():
 
 # --- Parse Standings Data ---
 standings_data = []
+standings_data = []
+
+if "records" not in standings_data_api:
+    print(" API response missing 'records'. Here is the actual response:")
+    import json
+
+    print(json.dumps(standings_data_api, indent=2))
+    raise SystemExit("Aborting due to invalid standings API response.")
+
 for record in standings_data_api["records"]:
-    for team_record in record["teamRecords"]:
+    team_records = record.get("teamRecords")
+    if not team_records:
+        print(" 'teamRecords' missing or empty in a record. Skipping...")
+        continue
+
+    for team_record in team_records:
         try:
             team_name = team_record["team"]["name"]
             wins = team_record["wins"]
@@ -95,9 +109,15 @@ for record in standings_data_api["records"]:
             standings_data.append(
                 [team_name, wins, losses, division_rank, division_name]
             )
-        except KeyError:
+        except KeyError as e:
+            print(f" Missing key in team_record: {e}. Skipping this record.")
             continue
-    # Always overwrite with fresh data to avoid mismatches
+
+if not standings_data:
+    raise ValueError(
+        " No valid standings data parsed. Check team names and API structure."
+    )
+# Always overwrite with fresh data to avoid mismatches
 with open("mlb_standings.csv", mode="w", newline="", encoding="utf-8") as file:
     writer = csv.writer(file)
     writer.writerow(["Team", "Wins", "Losses", "Division Rank", "Division Name"])
@@ -141,19 +161,14 @@ idx_to_team = {idx: team for team, idx in team_to_idx.items()}
 num_teams = len(teams)
 
 # --- Division ratings based on win percentages ---
-division_totals = (
-    standings_df.groupby("Division Name")[["Wins", "Losses"]].sum()
-)
+division_totals = standings_df.groupby("Division Name")[["Wins", "Losses"]].sum()
 division_strength = (
-    division_totals["Wins"]
-    / (division_totals["Wins"] + division_totals["Losses"])
+    division_totals["Wins"] / (division_totals["Wins"] + division_totals["Losses"])
     - 0.5
 ).to_dict()
 
 team_division_bonus = {
-    team_to_idx[team]: division_strength.get(
-        TEAM_TO_DIVISION.get(team, ""), 0.0
-    )
+    team_to_idx[team]: division_strength.get(TEAM_TO_DIVISION.get(team, ""), 0.0)
     for team in teams
 }
 division_bonus_tensor = torch.tensor(
