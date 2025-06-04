@@ -53,7 +53,7 @@ TEAM_TO_DIVISION = {
     "Los Angeles Dodgers": "NL West",
     "San Diego Padres": "NL West",
     "San Francisco Giants": "NL West",
-    "Athletics": "NL West",
+    "Athletics": "AL West",
 }
 
 outcome_data = requests.get(GAME_OUTCOME_URL, timeout=10).json()
@@ -212,7 +212,7 @@ def generate_synthetic_matches_from_schedule():
         r_home += HOME_ADVANTAGE
 
         # Calculate probability that home team wins
-        prob_home_win = elo_probability(r_home, r_away)
+        prob_home_win = elo_probability(r_home, r_away).item()
 
         # Simulate a winner based on probability
         winner = home_idx if random.random() < prob_home_win else away_idx
