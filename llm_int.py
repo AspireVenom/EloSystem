@@ -20,6 +20,7 @@ SCHEDULE = "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2025-03
 
 # -- HOME TEAM ADVANTAGE --
 HOME_ADVANTAGE = 28.2
+DIVISION_RATING_SCALE = 50.0
 
 # --- DEFAULT DIVISIONS FOR TEAMS
 TEAM_TO_DIVISION = {
@@ -139,6 +140,26 @@ team_to_idx = {team: idx for idx, team in enumerate(teams)}
 idx_to_team = {idx: team for team, idx in team_to_idx.items()}
 num_teams = len(teams)
 
+# --- Division ratings based on win percentages ---
+division_totals = (
+    standings_df.groupby("Division Name")[["Wins", "Losses"]].sum()
+)
+division_strength = (
+    division_totals["Wins"]
+    / (division_totals["Wins"] + division_totals["Losses"])
+    - 0.5
+).to_dict()
+
+team_division_bonus = {
+    team_to_idx[team]: division_strength.get(
+        TEAM_TO_DIVISION.get(team, ""), 0.0
+    )
+    for team in teams
+}
+division_bonus_tensor = torch.tensor(
+    [team_division_bonus[i] for i in range(num_teams)], dtype=torch.float32
+).view(num_teams, 1)
+
 elo_ratings = torch.nn.Embedding(num_teams, 1)
 optimizer = optim.Adam(elo_ratings.parameters(), lr=0.05)
 
@@ -179,6 +200,10 @@ def train_on_matches(matches, epochs, label, batch_size=64):
             rating1 += HOME_ADVANTAGE * is_home_team1.unsqueeze(1)
             rating2 += HOME_ADVANTAGE * (~is_home_team1).unsqueeze(1)
 
+            # Apply division rating
+            rating1 += DIVISION_RATING_SCALE * division_bonus_tensor[team1_idx]
+            rating2 += DIVISION_RATING_SCALE * division_bonus_tensor[team2_idx]
+
             pred = elo_probability(rating1, rating2)
 
             # Create target: 1 if winner is team1 else 0
@@ -210,6 +235,10 @@ def generate_synthetic_matches_from_schedule():
 
         # Apply home field advantage
         r_home += HOME_ADVANTAGE
+
+        # Apply division rating
+        r_home += DIVISION_RATING_SCALE * division_bonus_tensor[home_idx].item()
+        r_away += DIVISION_RATING_SCALE * division_bonus_tensor[away_idx].item()
 
         # Calculate probability that home team wins
         prob_home_win = elo_probability(r_home, r_away).item()
