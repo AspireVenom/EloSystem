@@ -162,10 +162,11 @@ num_teams = len(teams)
 
 # --- Division ratings based on win percentages ---
 division_totals = standings_df.groupby("Division Name")[["Wins", "Losses"]].sum()
-division_strength = (
+division_strength = pd.Series(
     division_totals["Wins"] / (division_totals["Wins"] + division_totals["Losses"])
     - 0.5
 ).to_dict()
+
 
 team_division_bonus = {
     team_to_idx[team]: division_strength.get(TEAM_TO_DIVISION.get(team, ""), 0.0)

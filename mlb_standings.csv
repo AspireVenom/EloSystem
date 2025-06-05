@@ -2,7 +2,7 @@ Team,Wins,Losses,Division Rank,Division Name
 New York Yankees,37,22,1,AL East
 Tampa Bay Rays,31,29,2,AL East
 Toronto Blue Jays,31,29,3,AL East
-Boston Red Sox,29,34,4,AL East
+Boston Red Sox,30,34,4,AL East
 Baltimore Orioles,23,36,5,AL East
 Detroit Tigers,40,22,1,AL Central
 Minnesota Twins,33,27,2,AL Central
@@ -12,20 +12,20 @@ Chicago White Sox,19,42,5,AL Central
 Houston Astros,33,27,1,AL West
 Seattle Mariners,32,27,2,AL West
 Texas Rangers,29,32,3,AL West
-Los Angeles Angels,28,32,4,AL West
+Los Angeles Angels,28,33,4,AL West
 Athletics,23,39,5,AL West
 New York Mets,38,23,1,NL East
 Philadelphia Phillies,37,23,2,NL East
 Washington Nationals,28,32,3,NL East
 Atlanta Braves,27,32,4,NL East
-Miami Marlins,23,36,5,NL East
+Miami Marlins,23,37,5,NL East
 Chicago Cubs,38,22,1,NL Central
 St. Louis Cardinals,33,27,2,NL Central
-Milwaukee Brewers,33,29,3,NL Central
-Cincinnati Reds,30,32,4,NL Central
+Milwaukee Brewers,34,29,3,NL Central
+Cincinnati Reds,30,33,4,NL Central
 Pittsburgh Pirates,22,39,5,NL Central
 Los Angeles Dodgers,37,24,1,NL West
 San Diego Padres,35,24,2,NL West
 San Francisco Giants,33,28,3,NL West
 Arizona Diamondbacks,29,31,4,NL West
-Colorado Rockies,11,50,5,NL West
+Colorado Rockies,12,50,5,NL West
