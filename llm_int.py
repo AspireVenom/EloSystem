@@ -1,6 +1,15 @@
+"""
+llm_int.py
+
+Simulates MLB game outcomes and standings using an Elo-based model. Fetches real and future schedules, trains an Elo model on real results, and simulates future games.
+"""
+
+# --- Imports ---
 import csv
 import os
 import random
+import json
+from typing import List, Tuple, Dict, Any
 
 import pandas as pd
 import requests
@@ -8,21 +17,21 @@ import torch
 import torch.nn.functional as F
 import torch.optim as optim
 
+# --- Configuration & Constants ---
 RETRAIN = True  # Set to True to force retraining
 
-# --- Fetch API Data ---
 GAME_OUTCOME_URL = (
     "https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2025&gameType=R"
 )
 STANDINGS_URL = "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2025"
+SCHEDULE_URL = "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2025-03-28&endDate=2025-09-28"
 
-SCHEDULE = "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2025-03-28&endDate=2025-09-28"
+# --- Optimized Hyperparameters (from Optuna Bayesian optimization) ---
+HOME_ADVANTAGE = 10.24  # optimized
+DIVISION_RATING_SCALE = 71.15  # optimized
+LEARNING_RATE = 0.00125  # optimized
+BATCH_SIZE = 32  # optimized
 
-# -- HOME TEAM ADVANTAGE --
-HOME_ADVANTAGE = 28.2
-DIVISION_RATING_SCALE = 50.0
-
-# --- DEFAULT DIVISIONS FOR TEAMS
 TEAM_TO_DIVISION = {
     "New York Yankees": "AL East",
     "Boston Red Sox": "AL East",
@@ -57,219 +66,153 @@ TEAM_TO_DIVISION = {
     "Athletics": "AL West",
 }
 
-outcome_data = requests.get(GAME_OUTCOME_URL, timeout=10).json()
-standings_data_api = requests.get(STANDINGS_URL, timeout=10).json()
+# --- Utility Functions ---
+def fetch_json(url: str) -> dict:
+    """Fetch JSON data from a URL with error handling."""
+    try:
+        response = requests.get(url, timeout=10)
+        response.raise_for_status()
+        return response.json()
+    except Exception as e:
+        print(f"Error fetching {url}: {e}")
+        return {}
 
-
-# --- Parse games from the schedule
-def fetch_future_schedule():
-    url = "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2025-03-28&endDate=2025-09-28"
-    response = requests.get(url, timeout=10).json()
-
+def fetch_future_schedule(team_to_idx: Dict[str, int]) -> List[Tuple[int, int]]:
+    """Fetches the future MLB schedule and returns a list of (home_idx, away_idx) tuples."""
+    response = fetch_json(SCHEDULE_URL)
     future_games = []
     for date_info in response.get("dates", []):
         for game in date_info.get("games", []):
             home = game.get("teams", {}).get("home", {}).get("team", {}).get("name")
             away = game.get("teams", {}).get("away", {}).get("team", {}).get("name")
-
             if home and away and home in team_to_idx and away in team_to_idx:
-                future_games.append(
-                    (team_to_idx[home], team_to_idx[away])
-                )  # return indices
-
+                future_games.append((team_to_idx[home], team_to_idx[away]))
     return future_games
 
-
-# --- Parse Standings Data ---
-standings_data = []
-standings_data = []
-
-if "records" not in standings_data_api:
-    print(" API response missing 'records'. Here is the actual response:")
-    import json
-
-    print(json.dumps(standings_data_api, indent=2))
-    raise SystemExit("Aborting due to invalid standings API response.")
-
-for record in standings_data_api["records"]:
-    team_records = record.get("teamRecords")
-    if not team_records:
-        print(" 'teamRecords' missing or empty in a record. Skipping...")
-        continue
-
-    for team_record in team_records:
-        try:
-            team_name = team_record["team"]["name"]
-            wins = team_record["wins"]
-            losses = team_record["losses"]
-            division_rank = team_record["divisionRank"]
-            division_name = team_record.get("division", {}).get(
-                "name", TEAM_TO_DIVISION.get(team_name, "Unknown Division")
-            )
-            standings_data.append(
-                [team_name, wins, losses, division_rank, division_name]
-            )
-        except KeyError as e:
-            print(f" Missing key in team_record: {e}. Skipping this record.")
+def parse_standings_data(api_data: dict) -> List[list]:
+    """Parse standings data from API response."""
+    standings_data = []
+    if "records" not in api_data:
+        print("API response missing 'records'. Here is the actual response:")
+        print(json.dumps(api_data, indent=2))
+        raise SystemExit("Aborting due to invalid standings API response.")
+    for record in api_data["records"]:
+        team_records = record.get("teamRecords")
+        if not team_records:
+            print("'teamRecords' missing or empty in a record. Skipping...")
             continue
+        for team_record in team_records:
+            try:
+                team_name = team_record["team"]["name"]
+                wins = team_record["wins"]
+                losses = team_record["losses"]
+                division_rank = team_record["divisionRank"]
+                division_name = team_record.get("division", {}).get(
+                    "name", TEAM_TO_DIVISION.get(team_name, "Unknown Division")
+                )
+                standings_data.append(
+                    [team_name, wins, losses, division_rank, division_name]
+                )
+            except KeyError as e:
+                print(f"Missing key in team_record: {e}. Skipping this record.")
+                continue
+    if not standings_data:
+        raise ValueError("No valid standings data parsed. Check team names and API structure.")
+    return standings_data
 
-if not standings_data:
-    raise ValueError(
-        " No valid standings data parsed. Check team names and API structure."
-    )
-# Always overwrite with fresh data to avoid mismatches
-with open("mlb_standings.csv", mode="w", newline="", encoding="utf-8") as file:
-    writer = csv.writer(file)
-    writer.writerow(["Team", "Wins", "Losses", "Division Rank", "Division Name"])
-    writer.writerows(standings_data)
-# --- Parse Game Outcomes ---
-games = []
-for date_info in outcome_data.get("dates", []):
-    for game in date_info.get("games", []):
-        if game.get("status", {}).get("detailedState") != "Final":
-            continue
-        games.append(
-            {
-                "Date": game.get("gameDate"),
-                "Home Team": game.get("teams", {})
-                .get("home", {})
-                .get("team", {})
-                .get("name"),
-                "Away Team": game.get("teams", {})
-                .get("away", {})
-                .get("team", {})
-                .get("name"),
-                "Home Score": game.get("teams", {}).get("home", {}).get("score"),
-                "Away Score": game.get("teams", {}).get("away", {}).get("score"),
-            }
-        )
+def save_csv(filename: str, header: List[str], rows: List[Any]) -> None:
+    """Save rows to a CSV file with a header."""
+    with open(filename, mode="w", newline="", encoding="utf-8") as file:
+        writer = csv.writer(file)
+        writer.writerow(header)
+        writer.writerows(rows)
 
-if not os.path.exists("mlb_game_results.csv"):
-    with open("mlb_game_results.csv", mode="w", newline="", encoding="utf-8") as file:
-        writer = csv.DictWriter(
-            file,
-            fieldnames=["Date", "Home Team", "Away Team", "Home Score", "Away Score"],
-        )
-        writer.writeheader()
-        writer.writerows(games)
+def parse_game_outcomes(api_data: dict) -> List[dict]:
+    """Parse completed game outcomes from API response."""
+    games = []
+    for date_info in api_data.get("dates", []):
+        for game in date_info.get("games", []):
+            if game.get("status", {}).get("detailedState") != "Final":
+                continue
+            games.append(
+                {
+                    "Date": game.get("gameDate"),
+                    "Home Team": game.get("teams", {}).get("home", {}).get("team", {}).get("name"),
+                    "Away Team": game.get("teams", {}).get("away", {}).get("team", {}).get("name"),
+                    "Home Score": game.get("teams", {}).get("home", {}).get("score"),
+                    "Away Score": game.get("teams", {}).get("away", {}).get("score"),
+                }
+            )
+    return games
 
-# --- Setup for Elo Model ---
-standings_df = pd.read_csv("mlb_standings.csv")
-teams = standings_df["Team"].tolist()
-team_to_idx = {team: idx for idx, team in enumerate(teams)}
-idx_to_team = {idx: team for team, idx in team_to_idx.items()}
-num_teams = len(teams)
-
-# --- Division ratings based on win percentages ---
-division_totals = standings_df.groupby("Division Name")[["Wins", "Losses"]].sum()
-division_strength = pd.Series(
-    division_totals["Wins"] / (division_totals["Wins"] + division_totals["Losses"])
-    - 0.5
-).to_dict()
-
-
-team_division_bonus = {
-    team_to_idx[team]: division_strength.get(TEAM_TO_DIVISION.get(team, ""), 0.0)
-    for team in teams
-}
-division_bonus_tensor = torch.tensor(
-    [team_division_bonus[i] for i in range(num_teams)], dtype=torch.float32
-).view(num_teams, 1)
-
-elo_ratings = torch.nn.Embedding(num_teams, 1)
-optimizer = optim.Adam(elo_ratings.parameters(), lr=0.05)
-
-if os.path.exists("elo_model.pt") and not RETRAIN:
-    print("Loading saved Elo model...")
-    elo_ratings.load_state_dict(torch.load("elo_model.pt"))
-else:
-    print("Initializing Elo ratings to 1500...")
-    torch.nn.init.constant_(elo_ratings.weight, 1500.0)
-
-
-# --- Elo Probability ---
-def elo_probability(r1, r2):
+def elo_probability(r1: torch.Tensor, r2: torch.Tensor) -> torch.Tensor:
+    """Calculate the probability that r1 beats r2 using the Elo formula."""
     return 1 / (1 + torch.exp((r2 - r1) * torch.log(torch.tensor(10.0)) / 50))
 
-
-# --- Match Generators ---
-
-
-def train_on_matches(matches, epochs, label, batch_size=64):
+def train_on_matches(
+    matches: List[Tuple[int, int, int, bool]],
+    epochs: int,
+    label: str,
+    batch_size: int,
+    elo_ratings: torch.nn.Embedding,
+    division_bonus_tensor: torch.Tensor,
+    optimizer: torch.optim.Optimizer,
+) -> None:
+    """Train the Elo model on match data."""
     match_tensor = torch.tensor(matches, dtype=torch.long)
     for epoch in range(epochs):
         total_loss = 0.0
         match_tensor = match_tensor[torch.randperm(len(match_tensor))]  # shuffle
-
         for batch_start in range(0, len(match_tensor), batch_size):
             batch = match_tensor[batch_start : batch_start + batch_size]
-
             team1_idx = batch[:, 0]
             team2_idx = batch[:, 1]
             winner_idx = batch[:, 2]
             is_home_team1 = batch[:, 3].bool()
-
             rating1 = elo_ratings(team1_idx)
             rating2 = elo_ratings(team2_idx)
-
             # Apply home advantage
             rating1 += HOME_ADVANTAGE * is_home_team1.unsqueeze(1)
             rating2 += HOME_ADVANTAGE * (~is_home_team1).unsqueeze(1)
-
             # Apply division rating
             rating1 += DIVISION_RATING_SCALE * division_bonus_tensor[team1_idx]
             rating2 += DIVISION_RATING_SCALE * division_bonus_tensor[team2_idx]
-
             pred = elo_probability(rating1, rating2)
-
-            # Create target: 1 if winner is team1 else 0
             target = (winner_idx == team1_idx).float().unsqueeze(1)
-
             elo_gap = torch.abs(rating1 - rating2)
             weight = (1.0 + (elo_gap / 50)).detach()
-
             loss = F.binary_cross_entropy(pred, target, weight=weight)
-
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
-
             total_loss += loss.item()
-
         if (epoch + 1) % 100 == 0 or epoch == 0:
             print(f"[{label}] Epoch {epoch + 1}: Loss = {total_loss:.4f}")
 
-
-def generate_synthetic_matches_from_schedule():
-    scheduled_games = fetch_future_schedule()
+def generate_synthetic_matches_from_schedule(
+    scheduled_games: List[Tuple[int, int]],
+    elo_ratings: torch.nn.Embedding,
+    division_bonus_tensor: torch.Tensor,
+) -> List[Tuple[int, int, int, bool]]:
+    """Simulate future matches using the current Elo ratings."""
     synthetic_matches = []
-
     for home_idx, away_idx in scheduled_games:
-        # Get Elo ratings
         r_home = elo_ratings(torch.tensor([home_idx])).item()
         r_away = elo_ratings(torch.tensor([away_idx])).item()
-
-        # Apply home field advantage
         r_home += HOME_ADVANTAGE
-
-        # Apply division rating
         r_home += DIVISION_RATING_SCALE * division_bonus_tensor[home_idx].item()
         r_away += DIVISION_RATING_SCALE * division_bonus_tensor[away_idx].item()
-
-        # Calculate probability that home team wins
-        prob_home_win = elo_probability(r_home, r_away).item()
-
-        # Simulate a winner based on probability
+        prob_home_win = elo_probability(torch.tensor(r_home), torch.tensor(r_away)).item()
         winner = home_idx if random.random() < prob_home_win else away_idx
-
-        # Append match: (home_team_idx, away_team_idx, winner_idx, is_home_team1=True)
         synthetic_matches.append((home_idx, away_idx, winner, True))
-
     return synthetic_matches
 
-
-# --- SAVE data from the synthetic matches predicted post elo
-def save_synthetic_matches_to_csv(matches, filename="simulated_future_matches.csv"):
+def save_synthetic_matches_to_csv(
+    matches: List[Tuple[int, int, int, bool]],
+    idx_to_team: Dict[int, str],
+    filename: str = "simulated_future_matches.csv",
+) -> None:
+    """Save simulated match results to a CSV file."""
     rows = []
     for team1, team2, winner, is_home_team1 in matches:
         rows.append(
@@ -280,98 +223,144 @@ def save_synthetic_matches_to_csv(matches, filename="simulated_future_matches.cs
                 "Home Win": idx_to_team[winner] == idx_to_team[team1],
             }
         )
-
     df = pd.DataFrame(rows)
     df.to_csv(filename, index=False)
-    print(f"✅ Saved {len(matches)} simulated matches to {filename}")
+    print(f"Saved {len(matches)} simulated matches to {filename}")
 
-
-def generate_standings_from_simulated_matches(matches):
+def generate_standings_from_simulated_matches(
+    matches: List[Tuple[int, int, int, bool]],
+    teams: List[str],
+    idx_to_team: Dict[int, str],
+) -> pd.DataFrame:
+    """Generate standings from simulated matches."""
     team_records = {team: {"Wins": 0, "Losses": 0} for team in teams}
-
     for team1, team2, winner, _ in matches:
         team1_name = idx_to_team[team1]
         team2_name = idx_to_team[team2]
         winner_name = idx_to_team[winner]
-
         if winner_name == team1_name:
             team_records[team1_name]["Wins"] += 1
             team_records[team2_name]["Losses"] += 1
         else:
             team_records[team2_name]["Wins"] += 1
             team_records[team1_name]["Losses"] += 1
-
-    # Add division info
     rows = []
     for team in teams:
         division = TEAM_TO_DIVISION.get(team, "Unknown")
         wins = team_records[team]["Wins"]
         losses = team_records[team]["Losses"]
         rows.append([team, wins, losses, division])
-
     standings_df = pd.DataFrame(
         rows, columns=["Team", "Wins", "Losses", "Division Name"]
     )
-
-    # Assign division ranks
     standings_df["Division Rank"] = (
         standings_df.groupby("Division Name")["Wins"]
         .rank(ascending=False, method="dense")
         .astype(int)
     )
-
-    # Reorder columns
     standings_df = standings_df[
         ["Team", "Wins", "Losses", "Division Rank", "Division Name"]
     ]
-
     return standings_df
 
-
-def generate_real_matches(game_data):
+def generate_real_matches(
+    game_data: List[dict], team_to_idx: Dict[str, int]
+) -> List[Tuple[int, int, int, bool]]:
+    """Convert real game data to match tuples for training."""
     matches = []
     for game in game_data:
         home = game["Home Team"]
         away = game["Away Team"]
         home_score = game["Home Score"]
         away_score = game["Away Score"]
-
         if home not in team_to_idx or away not in team_to_idx:
             continue
-
         team1 = team_to_idx[home]  # home
         team2 = team_to_idx[away]  # away
         winner = team1 if home_score > away_score else team2
-
         matches.append((team1, team2, winner, True))  # last value = is_home_team1
     return matches
 
-
-# --- Run Training ---
-if not os.path.exists("elo_model.pt") or RETRAIN:
-    print("Training Elo model...")
-    real_matches = generate_real_matches(games)
-    train_on_matches(real_matches, epochs=10000, label="Real Matches")
-    print("Saving Elo model...")
-    torch.save(elo_ratings.state_dict(), "elo_model.pt")
-
-    final_ratings = {
-        team: elo_ratings(torch.tensor(idx)).item() for team, idx in team_to_idx.items()
+def main():
+    # --- Fetch and save standings data ---
+    standings_data_api = fetch_json(STANDINGS_URL)
+    standings_data = parse_standings_data(standings_data_api)
+    save_csv(
+        "mlb_standings.csv",
+        ["Team", "Wins", "Losses", "Division Rank", "Division Name"],
+        standings_data,
+    )
+    # --- Parse teams and indices ---
+    standings_df = pd.read_csv("mlb_standings.csv")
+    teams = standings_df["Team"].tolist()
+    team_to_idx = {team: idx for idx, team in enumerate(teams)}
+    idx_to_team = {idx: team for team, idx in team_to_idx.items()}
+    num_teams = len(teams)
+    # --- Division ratings based on win percentages ---
+    division_totals = standings_df.groupby("Division Name")[["Wins", "Losses"]].sum()
+    division_strength = pd.Series(
+        division_totals["Wins"] / (division_totals["Wins"] + division_totals["Losses"]) - 0.5
+    ).to_dict()
+    team_division_bonus = {
+        team_to_idx[team]: division_strength.get(TEAM_TO_DIVISION.get(team, ""), 0.0)
+        for team in teams
     }
-    final_df = pd.DataFrame(final_ratings.items(), columns=["Team", "Elo Rating"])
-    final_df = final_df.sort_values(by="Elo Rating", ascending=False)
-    final_df.to_csv("final_elo_ratings.csv", index=False)
+    division_bonus_tensor = torch.tensor(
+        [team_division_bonus[i] for i in range(num_teams)], dtype=torch.float32
+    ).view(num_teams, 1)
+    # --- Setup Elo model ---
+    elo_ratings = torch.nn.Embedding(num_teams, 1)
+    optimizer = optim.Adam(elo_ratings.parameters(), lr=LEARNING_RATE)
+    if os.path.exists("elo_model.pt") and not RETRAIN:
+        print("Loading saved Elo model...")
+        elo_ratings.load_state_dict(torch.load("elo_model.pt"))
+    else:
+        print("Initializing Elo ratings to 1500...")
+        torch.nn.init.constant_(elo_ratings.weight, 1500.0)
+    # --- Parse and save real game outcomes ---
+    outcome_data = fetch_json(GAME_OUTCOME_URL)
+    games = parse_game_outcomes(outcome_data)
+    if not os.path.exists("mlb_game_results.csv"):
+        with open("mlb_game_results.csv", mode="w", newline="", encoding="utf-8") as file:
+            writer = csv.DictWriter(
+                file,
+                fieldnames=["Date", "Home Team", "Away Team", "Home Score", "Away Score"],
+            )
+            writer.writeheader()
+            writer.writerows(games)
+    # --- Train Elo model ---
+    if not os.path.exists("elo_model.pt") or RETRAIN:
+        print("Training Elo model...")
+        real_matches = generate_real_matches(games, team_to_idx)
+        train_on_matches(
+            real_matches,
+            epochs=10000,
+            label="Real Matches",
+            batch_size=BATCH_SIZE,
+            elo_ratings=elo_ratings,
+            division_bonus_tensor=division_bonus_tensor,
+            optimizer=optimizer,
+        )
+        print("Saving Elo model...")
+        torch.save(elo_ratings.state_dict(), "elo_model.pt")
+        final_ratings = {
+            team: elo_ratings(torch.tensor(idx)).item() for team, idx in team_to_idx.items()
+        }
+        final_df = pd.DataFrame(final_ratings.items(), columns=["Team", "Elo Rating"])
+        final_df = final_df.sort_values(by="Elo Rating", ascending=False)
+        final_df.to_csv("final_elo_ratings.csv", index=False)
+    # --- Simulate future schedule ---
+    print("Simulating real MLB 2025 scheduled games with Elo-based winners...")
+    scheduled_games = fetch_future_schedule(team_to_idx)
+    synthetic_matches = generate_synthetic_matches_from_schedule(
+        scheduled_games, elo_ratings, division_bonus_tensor
+    )
+    save_synthetic_matches_to_csv(synthetic_matches, idx_to_team, "simulated_real_schedule_outcomes.csv")
+    standings_from_sim = generate_standings_from_simulated_matches(
+        synthetic_matches, teams, idx_to_team
+    )
+    standings_from_sim.to_csv("simulated_standings.csv", index=False)
+    print("Saved simulated standings to simulated_standings.csv")
 
-#  Generate synthetic outcomes for future real schedule
-print("Simulating real MLB 2025 scheduled games with Elo-based winners...")
-
-# Generate the synthetic results for every remaining 2025 game
-synthetic_matches = generate_synthetic_matches_from_schedule()
-
-# Persist the match-level outcomes so they remain in sync with standings
-save_synthetic_matches_to_csv(synthetic_matches, "simulated_real_schedule_outcomes.csv")
-
-# Now compute standings from those same simulated matches
-standings_from_sim = generate_standings_from_simulated_matches(synthetic_matches)
-standings_from_sim.to_csv("simulated_standings.csv", index=False)
-print("Saved simulated standings to simulated_standings.csv")
+if __name__ == "__main__":
+    main()
