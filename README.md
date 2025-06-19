@@ -63,7 +63,7 @@ pip install requests pandas torch dash plotly scikit-learn scipy numpy matplotli
 ### 1. **Setup Environment**
 ```bash
 # Clone and setup
-git clone <repository>
+git clone https://github.com/AspireVenom/EloSystem.git
 cd win_calculator
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
