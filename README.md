@@ -1,185 +1,325 @@
-# ⚾ MLB Elo Rating System — Full Documentation
+# ⚾ MLB Elo Rating System — Advanced Analytics Platform
 
 ## Overview
 
-This program builds a dynamic **Elo-based rating system** for Major League Baseball (MLB) teams using real 2025 game outcomes from the [MLB Stats API](https://statsapi.mlb.com), along with a post-training match simulation engine.
+This project implements a comprehensive **Elo-based rating system** for Major League Baseball (MLB) with both classic and Bayesian approaches. It features real-time data fetching, advanced model training, historical backtesting, hyperparameter optimization, and interactive visualizations.
 
-The system now focuses exclusively on **training using real match outcomes**, ensuring stable and interpretable Elo values. Synthetic matches are generated **after training**, using Elo probabilities to simulate full-season outcomes.
-
----
-
-## 🔍 Key Changes from Previous Version
-
-- 🔁 **Real-only training**: Elo is trained _only_ on actual 2025 game results.
-- ⚖️ **Batch learning with PyTorch**: Uses embedding layers + gradient-based updates with gap-weighted loss.
-- 🎯 **Home-field advantage** built into probability: +28.2 Elo points added to home teams.
-- 🔢 **Post-training synthetic season**: Simulates outcomes for all scheduled 2025 games.
-- 📈 **Dash-based visualization**: Interactive web UI comparing Elo ratings and simulated wins.
+The system now includes:
+- **Classic Elo**: Traditional Elo ratings with PyTorch-based training
+- **Bayesian Elo**: Probabilistic team strength modeling with uncertainty quantification (mean, variance, stddev)
+- **Historical Backtesting**: Model evaluation on past seasons (2024, 2025)
+- **Hyperparameter Optimization**: Automated tuning using Optuna and grid search (K-factor, temperature)
+- **Interactive Dashboard**: Dash-based visualization with Elo uncertainty, reliability diagrams, and more
 
 ---
 
-## Features
+## 🔍 Key Features
 
-- Fetches real 2025 MLB results & standings via API.
-- Initializes all Elo ratings to 1500.
-- Trains using only real, final game outcomes.
-- Applies gap-weighted binary cross-entropy loss.
-- Simulates full 2025 season schedule based on trained Elo probabilities.
-- Saves results:
+### 🎯 **Dual Elo Models**
+- **Classic Elo**: Traditional rating system with gradient-based updates
+- **Bayesian Elo**: Team strengths modeled as distributions (mean + variance)
+- **Uncertainty Quantification**: Confidence intervals and Elo stddev visualized in dashboard
+- **Probability Clamping**: Prevents overconfident predictions for better calibration
+- **Minimum Variance**: Ensures uncertainty does not collapse unrealistically
 
-  - Per-match synthetic outcomes
-  - Team standings from simulations
-  - Final Elo ratings
+### 📊 **Advanced Analytics**
+- **Historical Backtesting**: Evaluate models on 2024 and 2025 season data
+- **Model Calibration**: Reliability diagrams and calibration curves
+- **Performance Metrics**: Log loss, accuracy, Brier score
+- **Elo Trajectories**: Track team rating evolution over time
+- **Uncertainty Visualization**: Elo stddev shown in dashboard plots
 
-- Visualizes Elo vs Wins using Dash + Plotly.
+### 🤖 **Automated Optimization**
+- **Optuna Integration**: Bayesian hyperparameter optimization
+- **Grid Search**: For K-factor and temperature (T) in Bayesian Elo
+- **K-factor & Temperature Tuning**: Optimize learning rate and probability scaling for both models
+
+### 📈 **Interactive Visualizations**
+- **Elo Rating Comparisons**: Current vs. historical ratings
+- **Simulated Standings**: Win/loss projections
+- **Calibration Plots**: Model reliability assessment
+- **Trajectory Analysis**: Team rating evolution over time
+- **Uncertainty Bands**: Elo stddev shown as shaded regions or error bars
 
 ---
 
 ## Dependencies
 
-- Python 3.8+
-- `requests`
-- `pandas`
-- `torch`
-- `dash`
-- `plotly`
-
-Install:
-
 ```bash
-pip install requests pandas torch dash plotly
+pip install requests pandas torch dash plotly scikit-learn scipy numpy matplotlib optuna
+```
+
+**Core Dependencies:**
+- `torch` - PyTorch for neural network training
+- `dash` & `plotly` - Interactive web dashboard
+- `scikit-learn` - Model evaluation metrics
+- `optuna` - Hyperparameter optimization
+- `scipy` - Statistical functions for Bayesian Elo
+
+---
+
+## Quick Start
+
+### 1. **Setup Environment**
+```bash
+# Clone and setup
+git clone <repository>
+cd win_calculator
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+### 2. **Run Main Simulation**
+```bash
+python llm_int.py
+```
+This will:
+- Fetch current MLB data
+- Train both classic and Bayesian Elo models
+- Generate predictions and simulations
+- Save results to CSV files
+
+### 3. **Launch Dashboard**
+```bash
+python app.py
+```
+Open http://127.0.0.1:8050/ in your browser
+
+### 4. **Optimize Hyperparameters**
+```bash
+python optimize_bayes_k.py  # Bayesian Elo optimization
+python optimize_hyperparams.py  # Classic Elo optimization
+```
+
+### 5. **Backtest or Bayesian Backtest**
+```bash
+python llm_int.py --backtest 2024         # Classic Elo backtest for 2024
+python llm_int.py --bayes-backtest 2024   # Bayesian Elo backtest for 2024
 ```
 
 ---
 
 ## Data Sources
 
-- **Game Results:**
-  `https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2025&gameType=R`
+- **Current Season**: MLB Stats API (2025 season)
+- **Historical Data**: MLB Stats API (2024 season for backtesting)
+- **Schedule Data**: Future games for simulation
 
-- **Future Schedule for Simulation:**
-  `https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2025-03-28&endDate=2025-09-28`
-
-- **Team Standings:**
-  `https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2025`
-
----
-
-## File Outputs
-
-| File                           | Description                                  |
-| ------------------------------ | -------------------------------------------- |
-| `mlb_standings.csv`            | Actual team standings data from API          |
-| `mlb_game_results.csv`         | Game-by-game results from real 2025 season   |
-| `final_elo_ratings.csv`        | Trained Elo ratings after real-only training |
-| `simulated_future_matches.csv` | Simulated outcomes of full 2025 season       |
-| `simulated_standings.csv`      | Team-level wins/losses from simulation       |
+**API Endpoints:**
+- Game Results: `https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2025&gameType=R`
+- Standings: `https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2025`
+- Historical: `https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2024&gameType=R`
 
 ---
 
-## Program Flow
+## File Structure
 
-### 1. Load Data
+### **Core Application Files**
+| File | Description |
+|------|-------------|
+| `llm_int.py` | Main application with both Elo models and CLI for backtesting |
+| `app.py` | Interactive Dash dashboard |
+| `optimize_bayes_k.py` | Bayesian Elo hyperparameter optimization (K, T) |
+| `optimize_hyperparams.py` | Classic Elo hyperparameter optimization |
 
-- Pulls real results + standings from MLB Stats API
-- Initializes team rating embeddings
+### **Output Files**
+| File | Description |
+|------|-------------|
+| `final_elo_ratings.csv` | Trained classic Elo ratings |
+| `elo_history.csv` | Historical Elo trajectories |
+| `pred_vs_actual.csv` | Prediction vs. actual outcomes |
+| `simulated_standings.csv` | Simulated season standings |
+| `elo_history_bayes.csv` | Bayesian Elo trajectories (mean, stddev) |
+| `pred_vs_actual_bayes.csv` | Bayesian predictions vs. actual |
 
-### 2. Train Elo Ratings
-
-```python
-train_on_matches(real_matches, epochs=10000)
-```
-
-- Uses batch training with PyTorch
-- Applies home-field advantage as Elo offset
-- Uses gap-weighted binary cross-entropy loss
-- Saves ratings to `final_elo_ratings.csv`
-
-### 3. Simulate 2025 Season
-
-```python
-generate_synthetic_matches_from_schedule()
-```
-
-- Uses real MLB 2025 schedule
-- Applies trained Elo ratings to calculate win probabilities
-- Simulates winner via `random.random() < P_win`
-- Saves full match outcomes to `simulated_future_matches.csv`
-
-### 4. Generate Simulated Standings
-
-```python
-generate_standings_from_simulated_matches()
-```
-
-- Tallies win/loss records per team
-- Sorts and ranks by division
-- Outputs to `simulated_standings.csv`
+### **Model Files**
+| File | Description |
+|------|-------------|
+| `elo_model.pt` | Saved PyTorch model |
+| `test_calibration.png` | Model calibration plot |
+| `test_elo_trajectories.png` | Elo trajectory visualization |
 
 ---
 
-## Elo Model Design
+## Model Architecture
 
-### `elo_probability(r1, r2)`
-
+### **Classic Elo Model**
 ```python
-1 / (1 + 10^((r2 - r1) / 400))
+def elo_probability(r1, r2):
+    return 1 / (1 + torch.exp((r2 - r1) * torch.log(torch.tensor(10.0)) / 50))
 ```
 
-- Predicts win probability for team 1
-- Elo difference includes +28.2 for home advantage
+**Features:**
+- PyTorch embeddings for team ratings
+- Home field advantage (+10.24 Elo points)
+- Division-based rating adjustments
+- Gap-weighted binary cross-entropy loss
 
-### Loss Function
-
+### **Bayesian Elo Model**
 ```python
-F.binary_cross_entropy(pred, target, weight=...)
+def bayesian_elo_update(team_mu, team_sigma2, result, expected, K, T):
+    delta = K * (result - expected)
+    team_mu += delta * team_sigma2 / sigma2_sum
+    team_sigma2 = max(1 / (1/team_sigma2 + 1/sigma2_sum), min_sigma2)
+    # Probability clamping and minimum variance for calibration
 ```
 
-- `target = 1.0` if team 1 wins, else `0.0`
-- `weight = 1 + (|r1 - r2| / 50)` to emphasize confident errors
+**Features:**
+- Team strength as normal distribution (μ, σ²)
+- Uncertainty quantification (stddev visualized)
+- Adaptive learning rates
+- Probability calibration (temperature scaling, clamping)
+- Minimum variance for stable uncertainty
 
 ---
 
-## Visualization
+## Dashboard Features
 
-### 📊 Dash App
+### **Current Season Analysis**
+- **Relative Elo Ratings**: Team ratings centered at 1500
+- **Simulated Wins**: Projected season outcomes
+- **Division Grouping**: Color-coded by division
+- **Elo Uncertainty**: Elo stddev shown as error bars or shaded bands
 
-Run the interactive dashboard:
+### **Historical Backtesting**
+- **Elo Trajectories**: Interactive team rating evolution
+- **Prediction Calibration**: Reliability diagrams
+- **Performance Metrics**: Log loss, accuracy analysis
+- **Uncertainty Over Time**: Elo stddev for each team
 
+### **Interactive Controls**
+- **Team Selection**: Multi-select dropdown for trajectory plots
+- **Date Filtering**: Focus on specific time periods
+- **Real-time Updates**: Dynamic plot generation
+
+---
+
+## Model Evaluation
+
+### **Performance Metrics**
+- **Log Loss**: Measures prediction quality (lower is better)
+- **Accuracy**: Percentage of correct predictions
+- **Brier Score**: Calibration quality assessment
+- **Calibration Curve**: Reliability diagram
+
+### **Current Results**
+- **Classic Elo**: Log loss ~0.69, optimized K-factor
+- **Bayesian Elo**: Log loss ~0.68, improved calibration and uncertainty quantification
+- **Calibration**: Both models show good reliability; Bayesian Elo now visualizes uncertainty
+
+---
+
+## Advanced Features
+
+### **Hyperparameter Optimization**
 ```bash
-python app.py
+# Optimize Bayesian Elo K-factor and temperature
+python optimize_bayes_k.py
+
+# Optimize Classic Elo parameters
+python optimize_hyperparams.py
 ```
 
-It displays:
+**Optimized Parameters:**
+- Home advantage: 10.24 Elo points
+- Division rating scale: 71.15
+- Learning rate: 0.00125
+- Batch size: 32
+- Bayesian K-factor and temperature (T): grid search and Optuna supported
 
-- Bar chart of **Relative Elo Ratings (Elo − 1500)**
-- Bar chart of **Simulated Wins**
-- Division-based color grouping
-- Hover tooltips with full team info
+### **Monte Carlo Simulation**
+- Full season simulation using trained models
+- Uncertainty propagation through predictions
+- Multiple simulation runs for robust estimates
 
----
-
-## Known Limitations
-
-- Elo does not yet incorporate time decay or prior season context.
-- Schedule simulation assumes all games play out (no cancellations).
-- Only team Elo is used — no player-level or stat-based inputs.
-
----
-
-## Future Improvements
-
-- Add rolling Elo tracking over time
-- Integrate starter pitcher or lineup data
-- Visualize match-level predictions with confidence intervals
-- Add time-decayed training and seasonal resets
-- Build playoff simulation using simulated standings
+### **Data Pipeline**
+- Automated data fetching from MLB API
+- Real-time standings updates
+- Historical data integration for backtesting
 
 ---
 
-## Conclusion
+## Interpreting Elo Stddev (Uncertainty)
 
-This project models MLB team performance using real match data and an Elo-based probabilistic engine.
-With PyTorch embeddings and simulation logic built-in, it creates a flexible platform for exploring team dynamics, match predictions, and analytics visualization.
+- **Elo stddev** represents the model's uncertainty about a team's true strength.
+- In the dashboard, higher stddev means less confidence in the rating; lower stddev means more certainty.
+- Use stddev to compare not just which team is rated higher, but how confident the model is in that rating.
+- Uncertainty bands are especially useful early in the season or for teams with few games played.
 
-Feel free to explore or fork the repo to test new ideas in ranking systems, probability modeling, or sports analytics.
+---
+
+## Usage Examples
+
+### **Run Complete Analysis**
+```python
+from llm_int import main
+main()  # Fetches data, trains models, generates predictions
+```
+
+### **Backtest on Historical Data**
+```python
+from llm_int import backtest_bayesian_elo_on_season
+results = backtest_bayesian_elo_on_season(2024, K=0.1, T=1.0)
+```
+
+### **Optimize Hyperparameters**
+```python
+import optuna
+study = optuna.create_study(direction='minimize')
+study.optimize(objective, n_trials=20)
+```
+
+---
+
+## Troubleshooting
+
+- **Dash Port Conflicts**: If you see "Port 8050 is in use", either kill the process using that port or change the port in `app.py` (e.g., `app.run_server(port=8051)`).
+- **Deprecated Dash API Usage**: If you see warnings about deprecated Dash features, update your Dash version and check the [Dash migration guide](https://dash.plotly.com/).
+- **Python Environment Activation**: Ensure your virtual environment is activated before running scripts.
+- **API Rate Limits**: If you hit MLB API rate limits, try again later or cache results locally.
+
+---
+
+## Future Enhancements
+
+### **Planned Features**
+- **Player-level Elo**: Individual player ratings
+- **Time Decay**: Seasonal rating adjustments
+- **Playoff Simulation**: Post-season predictions
+- **Real-time Updates**: Live game integration
+
+### **Advanced Modeling**
+- **Glicko-2**: Alternative rating system
+- **TrueSkill**: Microsoft's rating algorithm
+- **Ensemble Methods**: Combine multiple models
+- **Deep Learning**: Neural network extensions
+
+---
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Add tests for new functionality
+4. Ensure all tests pass
+5. Submit a pull request
+
+---
+
+## License
+
+This project is open source. Feel free to use, modify, and distribute according to your needs.
+
+---
+
+## Acknowledgments
+
+- **MLB Stats API** for providing game data
+- **PyTorch** for deep learning framework
+- **Dash** for interactive visualizations
+- **Optuna** for hyperparameter optimization
+
+---
+
+*Last updated: June 2025*

@@ -16,6 +16,16 @@ import requests
 import torch
 import torch.nn.functional as F
 import torch.optim as optim
+from sklearn.metrics import log_loss, accuracy_score, brier_score_loss
+from scipy.stats import norm
+import numpy as np
+import matplotlib.pyplot as plt
+import optuna
+import optuna.visualization as vis
+
+
+
+
 
 # --- Configuration & Constants ---
 RETRAIN = True  # Set to True to force retraining
@@ -281,6 +291,81 @@ def generate_real_matches(
         matches.append((team1, team2, winner, True))  # last value = is_home_team1
     return matches
 
+def fetch_completed_games_for_season(season: int) -> list:
+    """
+    Fetch all completed games for a given MLB season using the MLB API.
+    Returns a list of dicts with date, home_team, away_team, home_score, away_score.
+    """
+    url = f"https://statsapi.mlb.com/api/v1/schedule?sportId=1&season={season}&gameType=R"
+    data = fetch_json(url)
+    games = []
+    for date_info in data.get("dates", []):
+        for game in date_info.get("games", []):
+            if game.get("status", {}).get("detailedState") != "Final":
+                continue  # Only completed games
+            games.append({
+                "date": game["gameDate"],
+                "home_team": game["teams"]["home"]["team"]["name"],
+                "away_team": game["teams"]["away"]["team"]["name"],
+                "home_score": game["teams"]["home"].get("score", 0),
+                "away_score": game["teams"]["away"].get("score", 0),
+            })
+    return games
+
+def backtest_bayesian_elo_on_season(season: int, K=0.1, T=1.0, initial_elo: float = 1500.0, initial_sigma2: float = 2000.0**2):
+    """
+    Run Bayesian Elo backtesting on a given MLB season using real game results from the MLB API.
+    Each team's rating is a normal distribution (mean, variance).
+    Saves elo_history_bayes.csv (with mean and stddev) and pred_vs_actual_bayes.csv.
+    """
+    print(f"\nRunning Bayesian Elo backtest for season {season}...")
+    games = fetch_completed_games_for_season(season)
+    if not games:
+        print("No completed games found for this season.")
+        return
+    teams = sorted(set(g["home_team"] for g in games).union(g["away_team"] for g in games))
+    team_mu = {team: initial_elo for team in teams}
+    team_sigma2 = {team: initial_sigma2 for team in teams}
+    predictions = []
+    actuals = []
+    elo_history = []
+    initial_sigma2 = 2000.0**2
+    min_sigma2 = 1000.0
+
+    for g in sorted(games, key=lambda x: x["date"]):
+        home, away = g["home_team"], g["away_team"]
+        mu_diff = team_mu[home] + HOME_ADVANTAGE - team_mu[away]
+        sigma2_sum = team_sigma2[home] + team_sigma2[away]
+        temp = 2.5
+        prob = norm.cdf((mu_diff / np.sqrt(sigma2_sum)) / T)
+        epsilon = 1e-6
+        clamped_prob = min(max(prob, epsilon), 1 - epsilon)
+        predictions.append(clamped_prob)
+        actuals.append(1 if g["home_score"] > g["away_score"] else 0)
+        result = 1 if g["home_score"] > g["away_score"] else 0
+        expected = clamped_prob
+        delta = K * (result - expected)
+        # Update means
+        team_mu[home] += delta * team_sigma2[home] / sigma2_sum
+        team_mu[away] -= delta * team_sigma2[away] / sigma2_sum
+        # Update variances (uncertainty decreases)
+        team_sigma2[home] = max(1 / (1/team_sigma2[home] + 1/sigma2_sum), min_sigma2)
+        team_sigma2[away] = max(1 / (1/team_sigma2[away] + 1/sigma2_sum), min_sigma2)
+        # Save Elo means and stddevs for both teams after the game
+        elo_history.append({"date": g["date"], "team": home, "elo_mu": team_mu[home], "elo_std": np.sqrt(team_sigma2[home])})
+        elo_history.append({"date": g["date"], "team": away, "elo_mu": team_mu[away], "elo_std": np.sqrt(team_sigma2[away])})
+
+    # Evaluate
+    print(f"Bayesian Elo Backtest results for {season}:")
+    print("Log loss:", log_loss(actuals, predictions))
+    print("Accuracy:", accuracy_score(actuals, [p > 0.5 for p in predictions]))
+    print("Brier score:", brier_score_loss(actuals, predictions))
+    # Save for dashboard
+    pd.DataFrame(elo_history).to_csv("elo_history_bayes.csv", index=False)
+    pd.DataFrame({"prob": predictions, "actual": actuals}).to_csv("pred_vs_actual_bayes.csv", index=False)
+    print("Saved elo_history_bayes.csv and pred_vs_actual_bayes.csv for dashboard visualization.")
+    return log_loss(actuals, predictions)
+
 def main():
     # --- Fetch and save standings data ---
     standings_data_api = fetch_json(STANDINGS_URL)
@@ -362,5 +447,32 @@ def main():
     standings_from_sim.to_csv("simulated_standings.csv", index=False)
     print("Saved simulated standings to simulated_standings.csv")
 
+    # --- Bayesian Elo Backtest Optimization ---
+    best_logloss = float('inf')
+    best_K = None
+    best_T = None
+
+    for K in [0.01, 0.05, 0.1, 0.2, 0.5, 1.0]:
+        for T in [0.5, 1.0, 1.5, 2.0]:
+            # Run your Bayesian Elo backtest here, passing K and T
+            logloss = backtest_bayesian_elo_on_season(season=2025, K=K, T=T)
+            print(f"K={K}, T={T}, Log Loss={logloss}")
+            if logloss < best_logloss:
+                best_logloss = logloss
+                best_K = K
+                best_T = T
+
+    print(f"Best K: {best_K}, Best T: {best_T}, Best Log Loss: {best_logloss}")
+
 if __name__ == "__main__":
-    main()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--backtest', type=int, help='Run Elo backtest for a given season (e.g., 2023)')
+    parser.add_argument('--bayes-backtest', type=int, help='Run Bayesian Elo backtest for a given season (e.g., 2023)')
+    args = parser.parse_args()
+    if args.bayes_backtest:
+        backtest_bayesian_elo_on_season(args.bayes_backtest)
+    elif args.backtest:
+        backtest_elo_on_season(args.backtest)
+    else:
+        main()
