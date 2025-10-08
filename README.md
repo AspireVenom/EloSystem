@@ -1,4 +1,4 @@
-# ⚾ MLB Elo Rating System — Advanced Analytics Platform
+# MLB Elo Rating System — Advanced Analytics Platform
 
 ## Overview
 
@@ -13,28 +13,28 @@ The system now includes:
 
 ---
 
-## 🔍 Key Features
+## Key Features
 
-### 🎯 **Dual Elo Models**
+### **Dual Elo Models**
 - **Classic Elo**: Traditional rating system with gradient-based updates
 - **Bayesian Elo**: Team strengths modeled as distributions (mean + variance)
 - **Uncertainty Quantification**: Confidence intervals and Elo stddev visualized in dashboard
 - **Probability Clamping**: Prevents overconfident predictions for better calibration
 - **Minimum Variance**: Ensures uncertainty does not collapse unrealistically
 
-### 📊 **Advanced Analytics**
+### **Advanced Analytics**
 - **Historical Backtesting**: Evaluate models on 2024 and 2025 season data
 - **Model Calibration**: Reliability diagrams and calibration curves
 - **Performance Metrics**: Log loss, accuracy, Brier score
 - **Elo Trajectories**: Track team rating evolution over time
 - **Uncertainty Visualization**: Elo stddev shown in dashboard plots
 
-### 🤖 **Automated Optimization**
+### **Automated Optimization**
 - **Optuna Integration**: Bayesian hyperparameter optimization
 - **Grid Search**: For K-factor and temperature (T) in Bayesian Elo
 - **K-factor & Temperature Tuning**: Optimize learning rate and probability scaling for both models
 
-### 📈 **Interactive Visualizations**
+### **Interactive Visualizations**
 - **Elo Rating Comparisons**: Current vs. historical ratings
 - **Simulated Standings**: Win/loss projections
 - **Calibration Plots**: Model reliability assessment
