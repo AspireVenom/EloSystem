@@ -46,7 +46,7 @@ The system now includes:
 ## Dependencies
 
 ```bash
-pip install requests pandas torch dash plotly scikit-learn scipy numpy matplotlib optuna
+pip install -r requirements.txt
 ```
 
 **Core Dependencies:**
@@ -84,7 +84,7 @@ This will:
 ```bash
 python app.py
 ```
-Open http://127.0.0.1:8050/ in your browser
+Open http://127.0.0.1:8051/ in your browser
 
 ### 4. **Optimize Hyperparameters**
 ```bash
@@ -118,7 +118,7 @@ python llm_int.py --bayes-backtest 2024   # Bayesian Elo backtest for 2024
 ### **Core Application Files**
 | File | Description |
 |------|-------------|
-| `llm_int.py` | Main application with both Elo models and CLI for backtesting |
+| `llm_int.py` | Main app: data fetch, training, simulation; classic+Bayesian backtests |
 | `app.py` | Interactive Dash dashboard |
 | `optimize_bayes_k.py` | Bayesian Elo hyperparameter optimization (K, T) |
 | `optimize_hyperparams.py` | Classic Elo hyperparameter optimization |
