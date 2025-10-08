@@ -7,21 +7,44 @@ from dash.dependencies import Input, Output
 import numpy as np
 from datetime import datetime
 from sklearn.isotonic import IsotonicRegression
-from sklearn.calibration import CalibratedClassifierCV
+from sklearn.calibration import IsotonicRegression as _IsotonicRegressionAlias  # preserve import order; alias prevents unused import warnings
 import warnings
 warnings.filterwarnings('ignore')
 
 # --- Load Data ---
 print("Loading data files...")
 
-# Core data
-elo_df = pd.read_csv("final_elo_ratings.csv")
-standings_df = pd.read_csv("simulated_standings.csv")
-mlb_standings_df = pd.read_csv("mlb_standings.csv")
+# Core data (load safely)
+try:
+    elo_df = pd.read_csv("final_elo_ratings.csv")
+except Exception as e:
+    print(f"final_elo_ratings.csv not found or unreadable: {e}")
+    elo_df = pd.DataFrame(columns=["Team", "Elo Rating"]) 
 
-# Simulation data
-simulated_games_df = pd.read_csv("simulated_real_schedule_outcomes.csv")
-synthetic_predictions_df = pd.read_csv("synthetic_match_predictions.csv")
+try:
+    standings_df = pd.read_csv("simulated_standings.csv")
+except Exception as e:
+    print(f"simulated_standings.csv not found or unreadable: {e}")
+    standings_df = pd.DataFrame(columns=["Team", "Wins", "Losses", "Division Rank", "Division Name"]) 
+
+try:
+    mlb_standings_df = pd.read_csv("mlb_standings.csv")
+except Exception as e:
+    print(f"mlb_standings.csv not found or unreadable: {e}")
+    mlb_standings_df = pd.DataFrame(columns=["Team", "Wins"]) 
+
+# Simulation data (load safely)
+try:
+    simulated_games_df = pd.read_csv("simulated_real_schedule_outcomes.csv")
+except Exception as e:
+    print(f"simulated_real_schedule_outcomes.csv not found or unreadable: {e}")
+    simulated_games_df = pd.DataFrame(columns=["Home Team", "Away Team", "Winner", "Home Win"]) 
+
+try:
+    synthetic_predictions_df = pd.read_csv("synthetic_match_predictions.csv")
+except Exception as e:
+    print(f"synthetic_match_predictions.csv not found or unreadable: {e}")
+    synthetic_predictions_df = pd.DataFrame(columns=["Team 1 Win Prob", "Team 2 Win Prob"]) 
 
 # Historical/backtest data
 try:
@@ -43,7 +66,7 @@ mean_elo = elo_df["Elo Rating"].mean()
 elo_df["Relative Elo"] = elo_df["Elo Rating"] - mean_elo
 
 # Merge standings data
-merged_df = pd.merge(elo_df, standings_df, on="Team")
+merged_df = pd.merge(elo_df, standings_df, on="Team") if not elo_df.empty and not standings_df.empty else pd.DataFrame()
 merged_df = merged_df.sort_values(by="Relative Elo", ascending=False)
 
 # Process simulation data
@@ -664,7 +687,7 @@ app.layout = html.Div([
     Input('team-dropdown', 'value')
 )
 def update_elo_trajectory(selected_teams):
-    if not selected_teams or not elo_traj_df.empty:
+    if not selected_teams or elo_traj_df.empty:
         return px.scatter(title="No data available")
     
     filtered = elo_traj_df[elo_traj_df["team"].isin(selected_teams)]
@@ -691,5 +714,5 @@ def update_bayes_reliability(selected_teams):
 
 if __name__ == '__main__':
     print("Starting Dash app...")
-    app.run(debug=True, port=8051)
+    app.run_server(debug=True, port=8051)
     print("Dash is running on http://127.0.0.1:8051/")

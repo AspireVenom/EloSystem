@@ -366,6 +366,60 @@ def backtest_bayesian_elo_on_season(season: int, K=0.1, T=1.0, initial_elo: floa
     print("Saved elo_history_bayes.csv and pred_vs_actual_bayes.csv for dashboard visualization.")
     return log_loss(actuals, predictions)
 
+def backtest_elo_on_season(season: int) -> float:
+    """
+    Classic Elo backtest for a given season using MLB completed games.
+    Writes elo_history.csv and pred_vs_actual.csv for the dashboard.
+    Returns log loss.
+    """
+    print(f"\nRunning Classic Elo backtest for season {season}...")
+    games = fetch_completed_games_for_season(season)
+    if not games:
+        print("No completed games found for this season.")
+        return 10.0
+    teams = sorted(set(g["home_team"] for g in games).union(g["away_team"] for g in games))
+    team_to_idx = {team: i for i, team in enumerate(teams)}
+    num_teams = len(teams)
+    elo_ratings = torch.nn.Embedding(num_teams, 1)
+    torch.nn.init.constant_(elo_ratings.weight, 1500.0)
+    predictions: List[float] = []
+    actuals: List[int] = []
+    elo_history_rows: List[Dict[str, Any]] = []
+    # Iterate chronologically
+    for g in sorted(games, key=lambda x: x["date"]):
+        home_idx = team_to_idx[g["home_team"]]
+        away_idx = team_to_idx[g["away_team"]]
+        r_home = elo_ratings(torch.tensor([home_idx])).item() + HOME_ADVANTAGE
+        r_away = elo_ratings(torch.tensor([away_idx])).item()
+        p_home = elo_probability(torch.tensor(r_home), torch.tensor(r_away)).item()
+        epsilon = 1e-6
+        p_home = min(max(p_home, epsilon), 1 - epsilon)
+        predictions.append(p_home)
+        actual = 1 if g["home_score"] > g["away_score"] else 0
+        actuals.append(actual)
+        # Update Elo via simple K-factor gradient step (use LEARNING_RATE as step)
+        expected = p_home
+        result = actual
+        delta = (result - expected)
+        # Apply symmetric updates
+        with torch.no_grad():
+            current_home = elo_ratings.weight[home_idx, 0]
+            current_away = elo_ratings.weight[away_idx, 0]
+            elo_ratings.weight[home_idx, 0] = current_home + 32.0 * delta
+            elo_ratings.weight[away_idx, 0] = current_away - 32.0 * delta
+        # Record history after game
+        elo_history_rows.append({"date": g["date"], "team": g["home_team"], "elo": elo_ratings(torch.tensor([home_idx])).item()})
+        elo_history_rows.append({"date": g["date"], "team": g["away_team"], "elo": elo_ratings(torch.tensor([away_idx])).item()})
+    ll = log_loss(actuals, predictions)
+    print("Classic Elo Backtest:")
+    print("Log loss:", ll)
+    print("Accuracy:", accuracy_score(actuals, [p > 0.5 for p in predictions]))
+    print("Brier score:", brier_score_loss(actuals, predictions))
+    pd.DataFrame(elo_history_rows).to_csv("elo_history.csv", index=False)
+    pd.DataFrame({"prob": predictions, "actual": actuals}).to_csv("pred_vs_actual.csv", index=False)
+    print("Saved elo_history.csv and pred_vs_actual.csv for dashboard visualization.")
+    return ll
+
 def main():
     # --- Fetch and save standings data ---
     standings_data_api = fetch_json(STANDINGS_URL)
