@@ -312,7 +312,7 @@ def fetch_completed_games_for_season(season: int) -> list:
             })
     return games
 
-def backtest_bayesian_elo_on_season(season: int, K=0.1, T=1.0, initial_elo: float = 1500.0, initial_sigma2: float = 2000.0**2):
+def backtest_bayesian_elo_on_season(season: int, K=0.18996047667375743, T=2.2618733578878105, initial_elo: float = 1500.0, initial_sigma2: float = 2000.0**2, output_dir: str = "."):
     """
     Run Bayesian Elo backtesting on a given MLB season using real game results from the MLB API.
     Each team's rating is a normal distribution (mean, variance).
@@ -361,12 +361,13 @@ def backtest_bayesian_elo_on_season(season: int, K=0.1, T=1.0, initial_elo: floa
     print("Accuracy:", accuracy_score(actuals, [p > 0.5 for p in predictions]))
     print("Brier score:", brier_score_loss(actuals, predictions))
     # Save for dashboard
-    pd.DataFrame(elo_history).to_csv("elo_history_bayes.csv", index=False)
-    pd.DataFrame({"prob": predictions, "actual": actuals}).to_csv("pred_vs_actual_bayes.csv", index=False)
+    os.makedirs(output_dir, exist_ok=True)
+    pd.DataFrame(elo_history).to_csv(os.path.join(output_dir, "elo_history_bayes.csv"), index=False)
+    pd.DataFrame({"prob": predictions, "actual": actuals}).to_csv(os.path.join(output_dir, "pred_vs_actual_bayes.csv"), index=False)
     print("Saved elo_history_bayes.csv and pred_vs_actual_bayes.csv for dashboard visualization.")
     return log_loss(actuals, predictions)
 
-def backtest_elo_on_season(season: int) -> float:
+def backtest_elo_on_season(season: int, output_dir: str = ".") -> float:
     """
     Classic Elo backtest for a given season using MLB completed games.
     Writes elo_history.csv and pred_vs_actual.csv for the dashboard.
@@ -397,7 +398,6 @@ def backtest_elo_on_season(season: int) -> float:
         predictions.append(p_home)
         actual = 1 if g["home_score"] > g["away_score"] else 0
         actuals.append(actual)
-        # Update Elo via simple K-factor gradient step (use LEARNING_RATE as step)
         expected = p_home
         result = actual
         delta = (result - expected)
@@ -407,7 +407,6 @@ def backtest_elo_on_season(season: int) -> float:
             current_away = elo_ratings.weight[away_idx, 0]
             elo_ratings.weight[home_idx, 0] = current_home + 32.0 * delta
             elo_ratings.weight[away_idx, 0] = current_away - 32.0 * delta
-        # Record history after game
         elo_history_rows.append({"date": g["date"], "team": g["home_team"], "elo": elo_ratings(torch.tensor([home_idx])).item()})
         elo_history_rows.append({"date": g["date"], "team": g["away_team"], "elo": elo_ratings(torch.tensor([away_idx])).item()})
     ll = log_loss(actuals, predictions)
@@ -415,8 +414,9 @@ def backtest_elo_on_season(season: int) -> float:
     print("Log loss:", ll)
     print("Accuracy:", accuracy_score(actuals, [p > 0.5 for p in predictions]))
     print("Brier score:", brier_score_loss(actuals, predictions))
-    pd.DataFrame(elo_history_rows).to_csv("elo_history.csv", index=False)
-    pd.DataFrame({"prob": predictions, "actual": actuals}).to_csv("pred_vs_actual.csv", index=False)
+    os.makedirs(output_dir, exist_ok=True)
+    pd.DataFrame(elo_history_rows).to_csv(os.path.join(output_dir, "elo_history.csv"), index=False)
+    pd.DataFrame({"prob": predictions, "actual": actuals}).to_csv(os.path.join(output_dir, "pred_vs_actual.csv"), index=False)
     print("Saved elo_history.csv and pred_vs_actual.csv for dashboard visualization.")
     return ll
 
@@ -521,12 +521,18 @@ def main():
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument('--backtest', type=int, help='Run Elo backtest for a given season (e.g., 2023)')
-    parser.add_argument('--bayes-backtest', type=int, help='Run Bayesian Elo backtest for a given season (e.g., 2023)')
+    parser.add_argument('--backtest', type=int, help='Run Elo backtest for a given season (e.g., 2024)')
+    parser.add_argument('--bayes-backtest', type=int, help='Run Bayesian Elo backtest for a given season (e.g., 2024)')
+    parser.add_argument('--season', type=int, help='Season override for main flow (e.g., 2025)')
+    parser.add_argument('--bayes-K', dest='bayes_K', type=float, help='Bayesian K factor')
+    parser.add_argument('--bayes-T', dest='bayes_T', type=float, help='Bayesian temperature T')
+    parser.add_argument('--output', type=str, default='.', help='Output directory for backtest CSVs')
     args = parser.parse_args()
+
     if args.bayes_backtest:
-        backtest_bayesian_elo_on_season(args.bayes_backtest)
+        backtest_bayesian_elo_on_season(args.bayes_backtest, K=args.bayes_K or 0.18996047667375743, T=args.bayes_T or 2.2618733578878105, output_dir=args.output)
     elif args.backtest:
-        backtest_elo_on_season(args.backtest)
+        backtest_elo_on_season(args.backtest, output_dir=args.output)
     else:
+        # main flow currently uses hardcoded 2025 endpoints; args.season reserved for future extension
         main()
