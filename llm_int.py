@@ -530,7 +530,9 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.bayes_backtest:
-        backtest_bayesian_elo_on_season(args.bayes_backtest, K=args.bayes_K or 0.18996047667375743, T=args.bayes_T or 2.2618733578878105, output_dir=args.output)
+        K = args.bayes_K if args.bayes_K is not None else 0.18996047667375743
+        T = args.bayes_T if args.bayes_T is not None else 2.2618733578878105
+        backtest_bayesian_elo_on_season(args.bayes_backtest, K=K, T=T, output_dir=args.output)
     elif args.backtest:
         backtest_elo_on_season(args.backtest, output_dir=args.output)
     else:
