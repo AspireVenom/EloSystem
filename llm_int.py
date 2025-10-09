@@ -17,11 +17,16 @@ import torch
 import torch.nn.functional as F
 import torch.optim as optim
 from sklearn.metrics import log_loss, accuracy_score, brier_score_loss
+from sklearn.linear_model import LogisticRegression
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
 from scipy.stats import norm
 import numpy as np
 import matplotlib.pyplot as plt
 import optuna
 import optuna.visualization as vis
+import math
+from datetime import datetime
 
 
 
@@ -367,7 +372,14 @@ def backtest_bayesian_elo_on_season(season: int, K=0.18996047667375743, T=2.2618
     print("Saved elo_history_bayes.csv and pred_vs_actual_bayes.csv for dashboard visualization.")
     return log_loss(actuals, predictions)
 
-def backtest_elo_on_season(season: int, output_dir: str = ".") -> float:
+def backtest_elo_on_season(
+    season: int,
+    output_dir: str = ".",
+    classic_K: float = 32.0,
+    mov_scale: float = 1.0,
+    recency_lambda: float = 0.0,
+    dyn_alpha: float = 0.01,
+) -> float:
     """
     Classic Elo backtest for a given season using MLB completed games.
     Writes elo_history.csv and pred_vs_actual.csv for the dashboard.
@@ -386,8 +398,20 @@ def backtest_elo_on_season(season: int, output_dir: str = ".") -> float:
     predictions: List[float] = []
     actuals: List[int] = []
     elo_history_rows: List[Dict[str, Any]] = []
+    # Pre-compute parsed dates and latest date for recency weighting
+    for g in games:
+        try:
+            g["_parsed_date"] = datetime.fromisoformat(g["date"].replace("Z", "+00:00"))
+        except Exception:
+            g["_parsed_date"] = None
+    valid_dates = [g["_parsed_date"] for g in games if g["_parsed_date"] is not None]
+    latest_date = max(valid_dates) if valid_dates else None
+
+    # Track games played per team for dynamic K
+    games_played = {team: 0 for team in teams}
+
     # Iterate chronologically
-    for g in sorted(games, key=lambda x: x["date"]):
+    for g in sorted(games, key=lambda x: x.get("_parsed_date") or x["date"]):
         home_idx = team_to_idx[g["home_team"]]
         away_idx = team_to_idx[g["away_team"]]
         r_home = elo_ratings(torch.tensor([home_idx])).item() + HOME_ADVANTAGE
@@ -400,15 +424,43 @@ def backtest_elo_on_season(season: int, output_dir: str = ".") -> float:
         actuals.append(actual)
         expected = p_home
         result = actual
-        delta = (result - expected)
+
+        # Compute modifiers
+        # Margin of victory (run differential)
+        run_diff = abs(g["home_score"] - g["away_score"])
+        mov_factor = math.log1p(run_diff) * mov_scale if run_diff > 0 else 1.0
+        # Elo gap dampening to avoid huge swings on mismatches
+        elo_gap = abs(r_home - r_away)
+        mov_dampen = 2.2 / (0.001 * elo_gap + 2.2)
+        mov_factor *= mov_dampen
+
+        # Recency weighting (more recent games get higher weight)
+        if latest_date is not None and g.get("_parsed_date") is not None and recency_lambda > 0:
+            days_from_end = (latest_date - g["_parsed_date"]).days
+            recency_factor = math.exp(-recency_lambda * days_from_end)
+        else:
+            recency_factor = 1.0
+
+        # Dynamic K (reduce as teams accumulate games)
+        dyn_factor_home = 1.0 / (1.0 + dyn_alpha * games_played[g["home_team"]])
+        dyn_factor_away = 1.0 / (1.0 + dyn_alpha * games_played[g["away_team"]])
+        dyn_factor = (dyn_factor_home + dyn_factor_away) / 2.0
+
+        K_effective = classic_K * mov_factor * recency_factor * dyn_factor
+        delta = (result - expected) * K_effective
+
         # Apply symmetric updates
         with torch.no_grad():
             current_home = elo_ratings.weight[home_idx, 0]
             current_away = elo_ratings.weight[away_idx, 0]
-            elo_ratings.weight[home_idx, 0] = current_home + 32.0 * delta
-            elo_ratings.weight[away_idx, 0] = current_away - 32.0 * delta
+            elo_ratings.weight[home_idx, 0] = current_home + delta
+            elo_ratings.weight[away_idx, 0] = current_away - delta
         elo_history_rows.append({"date": g["date"], "team": g["home_team"], "elo": elo_ratings(torch.tensor([home_idx])).item()})
         elo_history_rows.append({"date": g["date"], "team": g["away_team"], "elo": elo_ratings(torch.tensor([away_idx])).item()})
+
+        # Increment games played after update
+        games_played[g["home_team"]] += 1
+        games_played[g["away_team"]] += 1
     ll = log_loss(actuals, predictions)
     print("Classic Elo Backtest:")
     print("Log loss:", ll)
@@ -419,6 +471,123 @@ def backtest_elo_on_season(season: int, output_dir: str = ".") -> float:
     pd.DataFrame({"prob": predictions, "actual": actuals}).to_csv(os.path.join(output_dir, "pred_vs_actual.csv"), index=False)
     print("Saved elo_history.csv and pred_vs_actual.csv for dashboard visualization.")
     return ll
+
+def _safe_mean(values: List[float], default: float = 0.0) -> float:
+    vals = [v for v in values if v is not None]
+    if not vals:
+        return default
+    return float(np.mean(vals))
+
+def build_hybrid_dataset_for_season(season: int, last_n: int = 10, base_k: float = 32.0) -> Tuple[np.ndarray, np.ndarray]:
+    games = fetch_completed_games_for_season(season)
+    if not games:
+        return np.empty((0, 6)), np.empty((0,))
+    teams = sorted(set(g["home_team"] for g in games).union(g["away_team"] for g in games))
+    team_to_idx = {team: i for i, team in enumerate(teams)}
+    num_teams = len(teams)
+    # Elo state per team for pre-game feature
+    elo = np.full((num_teams,), 1500.0, dtype=float)
+    last_results: Dict[str, List[int]] = {t: [] for t in teams}
+    last_run_diffs: Dict[str, List[float]] = {t: [] for t in teams}
+    last_date: Dict[str, datetime] = {t: None for t in teams}
+
+    # Parse dates
+    for g in games:
+        try:
+            g["_parsed_date"] = datetime.fromisoformat(g["date"].replace("Z", "+00:00"))
+        except Exception:
+            g["_parsed_date"] = None
+    games_sorted = sorted(games, key=lambda x: x.get("_parsed_date") or x["date"])
+
+    rows: List[List[float]] = []
+    labels: List[int] = []
+
+    for g in games_sorted:
+        home = g["home_team"]
+        away = g["away_team"]
+        hi = team_to_idx[home]
+        ai = team_to_idx[away]
+        # Features prior to the game
+        elo_diff_pre = (elo[hi] + HOME_ADVANTAGE) - elo[ai]
+        wr_home = _safe_mean(last_results[home][-last_n:], 0.5)
+        wr_away = _safe_mean(last_results[away][-last_n:], 0.5)
+        rd_home = _safe_mean(last_run_diffs[home][-last_n:], 0.0)
+        rd_away = _safe_mean(last_run_diffs[away][-last_n:], 0.0)
+        # Rest days
+        if last_date[home] is not None and g.get("_parsed_date") is not None:
+            rest_home = (g["_parsed_date"] - last_date[home]).days
+        else:
+            rest_home = 0
+        if last_date[away] is not None and g.get("_parsed_date") is not None:
+            rest_away = (g["_parsed_date"] - last_date[away]).days
+        else:
+            rest_away = 0
+        rest_diff = float(rest_home - rest_away)
+
+        rows.append([elo_diff_pre, wr_home, wr_away, rd_home, rd_away, rest_diff])
+        labels.append(1 if g["home_score"] > g["away_score"] else 0)
+
+        # Update states after the game
+        p_home = 1.0 / (1.0 + math.exp((elo[ai] - (elo[hi] + HOME_ADVANTAGE)) * math.log(10.0) / 50.0))
+        result = 1.0 if g["home_score"] > g["away_score"] else 0.0
+        delta = base_k * (result - p_home)
+        elo[hi] += delta
+        elo[ai] -= delta
+        # Update recency stats
+        last_results[home].append(int(result))
+        last_results[away].append(int(1 - result))
+        run_diff_home = float(g["home_score"] - g["away_score"])
+        last_run_diffs[home].append(run_diff_home)
+        last_run_diffs[away].append(-run_diff_home)
+        # Keep only last N
+        if len(last_results[home]) > last_n:
+            last_results[home] = last_results[home][-last_n:]
+        if len(last_results[away]) > last_n:
+            last_results[away] = last_results[away][-last_n:]
+        if len(last_run_diffs[home]) > last_n:
+            last_run_diffs[home] = last_run_diffs[home][-last_n:]
+        if len(last_run_diffs[away]) > last_n:
+            last_run_diffs[away] = last_run_diffs[away][-last_n:]
+        # Update last date
+        if g.get("_parsed_date") is not None:
+            last_date[home] = g["_parsed_date"]
+            last_date[away] = g["_parsed_date"]
+
+    X = np.array(rows, dtype=float)
+    y = np.array(labels, dtype=int)
+    return X, y
+
+def run_hybrid_model(train_seasons: List[int], test_season: int, output_path: str = "hybrid_predictions.csv") -> Dict[str, float]:
+    X_train_list, y_train_list = [], []
+    for s in train_seasons:
+        Xs, ys = build_hybrid_dataset_for_season(s)
+        if Xs.size:
+            X_train_list.append(Xs)
+            y_train_list.append(ys)
+    if not X_train_list:
+        print("No training data built.")
+        return {"ok": False}
+    X_train = np.vstack(X_train_list)
+    y_train = np.concatenate(y_train_list)
+
+    X_test, y_test = build_hybrid_dataset_for_season(test_season)
+    if not X_test.size:
+        print("No test data.")
+        return {"ok": False}
+
+    model = Pipeline([
+        ("scaler", StandardScaler()),
+        ("lr", LogisticRegression(max_iter=2000, solver="lbfgs")),
+    ])
+    model.fit(X_train, y_train)
+    proba = model.predict_proba(X_test)[:, 1]
+    preds = (proba > 0.5).astype(int)
+    acc = accuracy_score(y_test, preds)
+    ll = log_loss(y_test, proba)
+    bs = brier_score_loss(y_test, proba)
+    print(f"Hybrid model — Test {test_season}: Accuracy={acc:.4f} LogLoss={ll:.4f} Brier={bs:.4f}")
+    pd.DataFrame({"prob": proba, "actual": y_test}).to_csv(output_path, index=False)
+    return {"ok": True, "accuracy": acc, "logloss": ll, "brier": bs}
 
 def main():
     # --- Fetch and save standings data ---
@@ -527,6 +696,15 @@ if __name__ == "__main__":
     parser.add_argument('--bayes-K', dest='bayes_K', type=float, help='Bayesian K factor')
     parser.add_argument('--bayes-T', dest='bayes_T', type=float, help='Bayesian temperature T')
     parser.add_argument('--output', type=str, default='.', help='Output directory for backtest CSVs')
+    # Classic backtest tuning flags
+    parser.add_argument('--classic-K', dest='classic_K', type=float, default=32.0, help='Base K for classic Elo')
+    parser.add_argument('--mov-scale', dest='mov_scale', type=float, default=1.0, help='Scale for margin-of-victory log1p factor')
+    parser.add_argument('--recency-lambda', dest='recency_lambda', type=float, default=0.0, help='Recency decay rate per day (0 disables)')
+    parser.add_argument('--dyn-alpha', dest='dyn_alpha', type=float, default=0.01, help='Dynamic K decay per game for teams')
+    # Hybrid model flags
+    parser.add_argument('--hybrid-train', nargs='+', type=int, help='Train seasons for hybrid model (space-separated)')
+    parser.add_argument('--hybrid-test', type=int, help='Test season for hybrid model')
+    parser.add_argument('--hybrid-output', type=str, default='hybrid_predictions.csv', help='Output CSV for hybrid predictions')
     args = parser.parse_args()
 
     if args.bayes_backtest:
@@ -534,7 +712,16 @@ if __name__ == "__main__":
         T = args.bayes_T if args.bayes_T is not None else 2.2618733578878105
         backtest_bayesian_elo_on_season(args.bayes_backtest, K=K, T=T, output_dir=args.output)
     elif args.backtest:
-        backtest_elo_on_season(args.backtest, output_dir=args.output)
+        backtest_elo_on_season(
+            args.backtest,
+            output_dir=args.output,
+            classic_K=args.classic_K,
+            mov_scale=args.mov_scale,
+            recency_lambda=args.recency_lambda,
+            dyn_alpha=args.dyn_alpha,
+        )
+    elif args.hybrid_train and args.hybrid_test:
+        run_hybrid_model(args.hybrid_train, args.hybrid_test, output_path=args.hybrid_output)
     else:
         # main flow currently uses hardcoded 2025 endpoints; args.season reserved for future extension
         main()
