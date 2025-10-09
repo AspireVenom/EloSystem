@@ -485,7 +485,6 @@ def build_hybrid_dataset_for_season(season: int, last_n: int = 10, base_k: float
     teams = sorted(set(g["home_team"] for g in games).union(g["away_team"] for g in games))
     team_to_idx = {team: i for i, team in enumerate(teams)}
     num_teams = len(teams)
-    # Elo state per team for pre-game feature
     elo = np.full((num_teams,), 1500.0, dtype=float)
     last_results: Dict[str, List[int]] = {t: [] for t in teams}
     last_run_diffs: Dict[str, List[float]] = {t: [] for t in teams}
@@ -507,13 +506,13 @@ def build_hybrid_dataset_for_season(season: int, last_n: int = 10, base_k: float
         away = g["away_team"]
         hi = team_to_idx[home]
         ai = team_to_idx[away]
-        # Features prior to the game
+
         elo_diff_pre = (elo[hi] + HOME_ADVANTAGE) - elo[ai]
         wr_home = _safe_mean(last_results[home][-last_n:], 0.5)
         wr_away = _safe_mean(last_results[away][-last_n:], 0.5)
         rd_home = _safe_mean(last_run_diffs[home][-last_n:], 0.0)
         rd_away = _safe_mean(last_run_diffs[away][-last_n:], 0.0)
-        # Rest days
+
         if last_date[home] is not None and g.get("_parsed_date") is not None:
             rest_home = (g["_parsed_date"] - last_date[home]).days
         else:
@@ -527,7 +526,6 @@ def build_hybrid_dataset_for_season(season: int, last_n: int = 10, base_k: float
         rows.append([elo_diff_pre, wr_home, wr_away, rd_home, rd_away, rest_diff])
         labels.append(1 if g["home_score"] > g["away_score"] else 0)
 
-        # Update states after the game
         p_home = 1.0 / (1.0 + math.exp((elo[ai] - (elo[hi] + HOME_ADVANTAGE)) * math.log(10.0) / 50.0))
         result = 1.0 if g["home_score"] > g["away_score"] else 0.0
         delta = base_k * (result - p_home)
@@ -539,7 +537,6 @@ def build_hybrid_dataset_for_season(season: int, last_n: int = 10, base_k: float
         run_diff_home = float(g["home_score"] - g["away_score"])
         last_run_diffs[home].append(run_diff_home)
         last_run_diffs[away].append(-run_diff_home)
-        # Keep only last N
         if len(last_results[home]) > last_n:
             last_results[home] = last_results[home][-last_n:]
         if len(last_results[away]) > last_n:
@@ -548,7 +545,6 @@ def build_hybrid_dataset_for_season(season: int, last_n: int = 10, base_k: float
             last_run_diffs[home] = last_run_diffs[home][-last_n:]
         if len(last_run_diffs[away]) > last_n:
             last_run_diffs[away] = last_run_diffs[away][-last_n:]
-        # Update last date
         if g.get("_parsed_date") is not None:
             last_date[home] = g["_parsed_date"]
             last_date[away] = g["_parsed_date"]
